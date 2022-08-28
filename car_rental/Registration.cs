@@ -49,20 +49,36 @@ namespace car_rental
                 result = MessageBox.Show(message, caption, buttons);
             }
             if (input_ID.Text.Length < 9 || input_ID.Text.Length > 9)
-            {
-                for(int i=0;i<=input_ID.Text.Length;i++)
-                    if (char.IsDigit(input_ID.Text[i]) == false)
-                {
-                    flag = false;
-                    string message = "Your ID number is not valid";
-                    string caption = "Error Detected in Input";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult result;
-                    // Displays the MessageBox.
-                    result = MessageBox.Show(message, caption, buttons);
-                }
+            { 
+                        flag = false;
+                       string message = "Your ID number is not valid";
+                       string caption = "Error Detected in Input";
+                       MessageBoxButtons buttons = MessageBoxButtons.OK;
+                       DialogResult result;
+                        // Displays the MessageBox.
+                       result = MessageBox.Show(message, caption, buttons);
+                        
             }
-            
+            if(input_UserName.Text.Length == 0)
+            {
+                flag = false;
+                string message = "You didnt enter User Name";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+            if(input_Password.Text.Length < 5)
+            {
+                flag = false;
+                string message = "Your Password is too short";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
             if (flagPickedCar == false)
             {
                 flag = false;
@@ -77,6 +93,14 @@ namespace car_rental
             {
                 Client clientemp = new Client(input_Fname.Text.ToString(), input_Lname.Text.ToString(), uint.Parse(input_ID.Text.ToString()), input_UserName.Text.ToString(), input_Password.Text.ToString(), FavoriteCarIn.Text.ToString());
                 clientList.Add(clientemp);
+                string message = "You have been succsecfully Registered";
+                string caption = "Congrats and Welcome";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                this.Close();
+                
             }
 
         }
