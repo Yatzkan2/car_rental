@@ -8,17 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO; //Working with File
 
 namespace car_rental
 {
     public partial class Registration : Form
     {
-        public static List<Client> clientList = new List<Client>();
+   
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rental25\car_rental\Data\UserNameInput.txt";
+        List<string> Useres = new List<string>();
         private bool flagPickedCar = false;
 
         public Registration()
         {
             InitializeComponent();
+            Useres = File.ReadAllLines(file).ToList(); // Loading list of all existing users
         }
 
         private void FavoriteCarIn_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,6 +73,26 @@ namespace car_rental
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons);
             }
+
+            //Checking if UserName is already Taken
+            foreach(string user in Useres)
+            {
+                string[] items = user.Split(',');
+                string existedUsername = items[3];
+                if(input_UserName.Text == existedUsername)
+                {
+                    flag = false;
+                    string message = "UserName is already taken";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    break;
+                }   
+               
+            }
+
             if(input_Password.Text.Length < 5)
             {
                 flag = false;
@@ -91,8 +115,11 @@ namespace car_rental
             }
             if (flag == true)
             {
-                Client clientemp = new Client(input_Fname.Text.ToString(), input_Lname.Text.ToString(), uint.Parse(input_ID.Text.ToString()), input_UserName.Text.ToString(), input_Password.Text.ToString(), FavoriteCarIn.Text.ToString());
-                clientList.Add(clientemp);
+              
+               
+                string newUser = input_Fname.Text +","+ input_Lname.Text+","+input_ID.Text+ ","+input_UserName.Text + "," + input_Password.Text + "," + input_Password.Text + "," + FavoriteCarIn.Text;
+                Useres.Add(newUser);
+                File.WriteAllLines(file, Useres);
                 string message = "You have been succsecfully Registered";
                 string caption = "Congrats and Welcome";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;

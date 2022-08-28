@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace car_rental
@@ -21,12 +22,17 @@ namespace car_rental
         public static Admin admin2 = new Admin("Yair", "Yatzkan", 1231241, "admin2", "admin123");
         public static string whoisLoged;
 
+        //For User Log In
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rental25\car_rental\Data\UserNameInput.txt";
+        List<string> Useres = new List<string>();
+
 
 
 
         public Form1()
         {
             InitializeComponent();
+            Useres = File.ReadAllLines(file).ToList();
             adminsList.Add(admin1);
             adminsList.Add(admin2);
 
@@ -80,6 +86,30 @@ namespace car_rental
                 }
 
             }
+
+            foreach (string userCheck in Useres) // Loop to check if User Exists
+            {
+                string[] items = userCheck.Split(',');
+                if(userName_input.Text == items[3] && password_input.Text == items[4]) //Checking if the pass and username are fit
+                {
+                    whoisLoged = items[0];
+                    adDashboard a = new adDashboard();
+                    a.Show();
+                    break;
+
+                }
+                else
+                {
+                    string message = "Wrong Username / Password try agian!";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    break;
+                }
+            }
+               
             
         }
 
