@@ -35,7 +35,6 @@
             this.userName_input = new System.Windows.Forms.TextBox();
             this.user_name = new System.Windows.Forms.Label();
             this.butt_Reg = new System.Windows.Forms.Button();
-            this.lbl_wrong = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // butt_login
@@ -102,23 +101,11 @@
             this.butt_Reg.UseVisualStyleBackColor = true;
             this.butt_Reg.Click += new System.EventHandler(this.butt_Reg_Click);
             // 
-            // lbl_wrong
-            // 
-            this.lbl_wrong.AutoSize = true;
-            this.lbl_wrong.ForeColor = System.Drawing.Color.Red;
-            this.lbl_wrong.Location = new System.Drawing.Point(237, 103);
-            this.lbl_wrong.Name = "lbl_wrong";
-            this.lbl_wrong.Size = new System.Drawing.Size(78, 13);
-            this.lbl_wrong.TabIndex = 7;
-            this.lbl_wrong.Text = "*Wrong Details";
-            this.lbl_wrong.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 136);
-            this.Controls.Add(this.lbl_wrong);
             this.Controls.Add(this.butt_Reg);
             this.Controls.Add(this.user_name);
             this.Controls.Add(this.userName_input);
@@ -142,7 +129,6 @@
         private System.Windows.Forms.TextBox userName_input;
         private System.Windows.Forms.Label user_name;
         private System.Windows.Forms.Button butt_Reg;
-        private System.Windows.Forms.Label lbl_wrong;
     }
 }
 

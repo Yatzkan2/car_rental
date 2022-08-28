@@ -45,7 +45,6 @@ namespace car_rental
             this.lbl_favCar = new System.Windows.Forms.Label();
             this.butt_Register = new System.Windows.Forms.Button();
             this.FavoriteCarIn = new System.Windows.Forms.ComboBox();
-            this.onlycheck = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -169,21 +168,11 @@ namespace car_rental
             this.FavoriteCarIn.DropDown += new System.EventHandler(this.FavoriteCarIN_DropDown);
             this.FavoriteCarIn.SelectedIndexChanged += new System.EventHandler(this.FavoriteCarIn_SelectedIndexChanged);
             // 
-            // onlycheck
-            // 
-            this.onlycheck.AutoSize = true;
-            this.onlycheck.Location = new System.Drawing.Point(336, 176);
-            this.onlycheck.Name = "onlycheck";
-            this.onlycheck.Size = new System.Drawing.Size(35, 13);
-            this.onlycheck.TabIndex = 13;
-            this.onlycheck.Text = "label1";
-            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 259);
-            this.Controls.Add(this.onlycheck);
             this.Controls.Add(this.FavoriteCarIn);
             this.Controls.Add(this.butt_Register);
             this.Controls.Add(this.lbl_favCar);
@@ -226,6 +215,5 @@ namespace car_rental
         private System.Windows.Forms.Label lbl_favCar;
         private System.Windows.Forms.Button butt_Register;
         private System.Windows.Forms.ComboBox FavoriteCarIn;
-        private System.Windows.Forms.Label onlycheck;
     }
 }

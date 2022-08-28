@@ -14,22 +14,22 @@ namespace project_oop_car_rental
 {
     public partial class Form1 : Form
     {
-       
+
         static bool is_visible_password = false;
-        public static List <Admin> adminsList = new List<Admin>();
+        public static List<Admin> adminsList = new List<Admin>();
         public static Admin admin1 = new Admin("Arad", "David", 1233455, "admin1", "admin1234");
         public static Admin admin2 = new Admin("Yair", "Yatzkan", 1231241, "admin2", "admin123");
         public static string whoisLoged;
-   
-  
-        
-       
+
+
+
+
         public Form1()
         {
             InitializeComponent();
             adminsList.Add(admin1);
             adminsList.Add(admin2);
-           
+
         }
 
         private void is_password_visible_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace project_oop_car_rental
                 password_input.UseSystemPasswordChar = false;
                 is_visible_password = true;
                 is_password_visible.Text = "Hide Password";
-              
+
             }
             else
             {
@@ -63,15 +63,22 @@ namespace project_oop_car_rental
                 if (userName_input.Text == adminCheck.getUserName() && password_input.Text == adminCheck.getPassword())
                 {
                     whoisLoged = adminCheck.getPrivateName();
-                    lbl_wrong.Visible = false;
                     adDashboard a = new adDashboard();
                     a.Show();
-                    
-                    
-                   
+                    break;
+
                 }
                 else
-                    lbl_wrong.Visible = true;
+                {
+                    string message = "Wrong Username / Password try agian!";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    break;
+                }
+
             }
         }
 
