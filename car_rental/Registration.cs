@@ -14,8 +14,8 @@ namespace car_rental
 {
     public partial class Registration : Form
     {
-   
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rental25\car_rental\Data\UserNameInput.txt";
+
+        string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
         List<string> Useres = new List<string>();
         private bool flagPickedCar = false;
 
@@ -116,7 +116,7 @@ namespace car_rental
             if (flag == true)
             {
               
-               
+
                 string newUser = input_Fname.Text +","+ input_Lname.Text+","+input_ID.Text+ ","+input_UserName.Text + "," + input_Password.Text + "," + input_Password.Text + "," + FavoriteCarIn.Text;
                 Useres.Add(newUser);
                 File.WriteAllLines(file, Useres);
