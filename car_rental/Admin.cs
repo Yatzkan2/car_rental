@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace project_oop_car_rental
+namespace car_rental
 {
     public class Admin : Person
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //second_change
-namespace project_oop_car_rental
+namespace car_rental
 {
     internal static class Program
     {

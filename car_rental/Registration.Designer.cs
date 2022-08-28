@@ -153,6 +153,7 @@ namespace car_rental
             this.butt_Register.TabIndex = 12;
             this.butt_Register.Text = "Register";
             this.butt_Register.UseVisualStyleBackColor = true;
+            this.butt_Register.Click += new System.EventHandler(this.butt_Register_Click_1);
             // 
             // FavoriteCarIn
             // 

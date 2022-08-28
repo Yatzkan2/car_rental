@@ -1,4 +1,4 @@
-﻿using project_oop_car_rental;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +15,7 @@ namespace car_rental
     {
         public static List<Client> clientList = new List<Client>();
         private bool flagPickedCar = false;
+
         public Registration()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace car_rental
             flagPickedCar = true;
         }
 
-        private void butt_Register_Click(object sender, EventArgs e)
+        private void butt_Register_Click_1(object sender, EventArgs e)
         {
             bool flag = true;
             if (input_Fname.Text.Length == 0)
@@ -35,7 +36,7 @@ namespace car_rental
                 string caption = "Error Detected in Input";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 // Displays the MessageBox.
-                 MessageBox.Show(message, caption, buttons);
+                MessageBox.Show(message, caption, buttons);
             }
             if (input_Lname.Text.Length == 0)
             {
@@ -47,21 +48,22 @@ namespace car_rental
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons);
             }
-            if (input_ID.Text.Length < 9)
+            if (input_ID.Text.Length < 9 || input_ID.Text.Length > 9)
             {
-                flag = false;
-                string message = "Your ID number is too short";
-                string caption = "Error Detected in Input";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-                // Displays the MessageBox.
-                result = MessageBox.Show(message, caption, buttons);
+                for(int i=0;i<=input_ID.Text.Length;i++)
+                    if (char.IsDigit(input_ID.Text[i]) == false)
+                {
+                    flag = false;
+                    string message = "Your ID number is not valid";
+                    string caption = "Error Detected in Input";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                }
             }
-        
-
-
-
-            if (flagPickedCar == false )
+            
+            if (flagPickedCar == false)
             {
                 flag = false;
                 string message = "You didnt pick favorite Car!";
@@ -76,6 +78,7 @@ namespace car_rental
                 Client clientemp = new Client(input_Fname.Text.ToString(), input_Lname.Text.ToString(), uint.Parse(input_ID.Text.ToString()), input_UserName.Text.ToString(), input_Password.Text.ToString(), FavoriteCarIn.Text.ToString());
                 clientList.Add(clientemp);
             }
+
         }
     }
 }

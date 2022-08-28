@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace project_oop_car_rental
+namespace car_rental
 {
     public partial class Form1 : Form
     {

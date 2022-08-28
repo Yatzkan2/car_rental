@@ -1,4 +1,4 @@
-﻿namespace project_oop_car_rental
+﻿namespace car_rental
 {
     partial class Form1
     {
