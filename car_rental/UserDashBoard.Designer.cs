@@ -39,6 +39,7 @@
             this.go_to_VehicleType.TabIndex = 0;
             this.go_to_VehicleType.Text = "Catalog";
             this.go_to_VehicleType.UseVisualStyleBackColor = true;
+            this.go_to_VehicleType.Click += new System.EventHandler(this.go_to_VehicleType_Click);
             // 
             // UserDashBoard
             // 

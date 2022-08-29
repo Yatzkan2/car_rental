@@ -19,26 +19,17 @@ namespace car_rental
 
         private void go_to_VehicleType_Click(object sender, EventArgs e)
         {
-            VehicleType form = new VehicleType();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new VehicleType());
         }
 
         private void go_to_AllVehicle_Click(object sender, EventArgs e)
         {
-            AllVehicles form = new AllVehicles();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new AllVehicles());
         }
 
         private void back_button_Click(object sender, EventArgs e)
         {
-            adDashboard form = new adDashboard();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+           Program.OpenCenteredForm(this, new adDashboard());
         }
     }
 }

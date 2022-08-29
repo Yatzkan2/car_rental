@@ -19,10 +19,7 @@ namespace car_rental
 
         private void back_button_Click(object sender, EventArgs e)
         {
-            CatalogMain form = new CatalogMain();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new CatalogMain());
         }
     }
 }

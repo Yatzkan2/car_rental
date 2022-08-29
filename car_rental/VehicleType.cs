@@ -19,34 +19,22 @@ namespace car_rental
 
         private void go_to_MotorcycleCatalog_Click(object sender, EventArgs e)
         {
-            MotorcycleCatalog form = new MotorcycleCatalog();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new MotorcycleCatalog());
         }
 
         private void back_button_Click(object sender, EventArgs e)
         {
-            CatalogMain form = new CatalogMain();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new CatalogMain());
         }
 
         private void go_to_PrivateCarCAtalog_Click(object sender, EventArgs e)
         {
-            PrivateCarCatalog form = new PrivateCarCatalog();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new PrivateCarCatalog());
         }
 
         private void go_to_CargoCatalog_Click(object sender, EventArgs e)
         {
-            CargoCatalog form = new CargoCatalog();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
+            Program.OpenCenteredForm(this, new CargoCatalog());
         }
     }
 }

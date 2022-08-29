@@ -29,5 +29,13 @@ namespace car_rental
             if (Application.OpenForms.Count == 0) Application.ExitThread();
             else Application.OpenForms[0].FormClosed += FormClosed;
         }
+
+        //form_parent will be closed and form_son will be opened
+        public static void OpenCenteredForm(Form form_Parent, Form form_son)
+        {
+            form_son.StartPosition = FormStartPosition.CenterScreen;
+            form_son.Show();
+            form_Parent.Close();
+        }
     }
 }

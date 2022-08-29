@@ -16,5 +16,10 @@ namespace car_rental
         {
             InitializeComponent();
         }
+
+        private void go_to_VehicleType_Click(object sender, EventArgs e)
+        {
+            Program.OpenCenteredForm(this, new VehicleType());
+        }
     }
 }
