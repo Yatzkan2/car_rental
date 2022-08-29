@@ -21,5 +21,11 @@ namespace car_rental
         {
             Program.OpenCenteredForm(this, new VehicleType());
         }
+
+        private void butt_logout_Click(object sender, EventArgs e)
+        {
+            Form1 log = new Form1();
+            Program.OpenCenteredForm(this,log);
+        }
     }
 }

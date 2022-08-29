@@ -21,7 +21,8 @@ namespace car_rental
 
         private void butt_logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form1 log = new Form1();
+            Program.OpenCenteredForm(this, log);
  
 
         }

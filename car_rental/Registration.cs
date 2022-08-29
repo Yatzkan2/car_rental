@@ -15,7 +15,7 @@ namespace car_rental
     public partial class Registration : Form
     {
 
-        string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
+         string file = @"C:\Users\IMOE001\Source\Repos\car_rental25\car_rental\Data\UserNameInput.txt";
         List<string> Useres = new List<string>();
         private bool flagPickedCar = false;
 
@@ -126,7 +126,8 @@ namespace car_rental
                 DialogResult result;
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons);
-                this.Close();
+                Form1 log = new Form1();
+                Program.OpenCenteredForm(this, log);
                 
             }
 

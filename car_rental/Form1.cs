@@ -21,9 +21,10 @@ namespace car_rental
         public static Admin admin1 = new Admin("Arad", "David", 1233455, "admin1", "admin1234");
         public static Admin admin2 = new Admin("Yair", "Yatzkan", 1231241, "admin2", "admin123");
         public static string whoisLoged;
+        bool flagIsRightPass = false;
 
         //For User Log In
-        string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rental25\car_rental\Data\UserNameInput.txt";
         List<string> Useres = new List<string>();
 
 
@@ -59,55 +60,60 @@ namespace car_rental
         private void butt_Reg_Click(object sender, EventArgs e)
         {
             Registration f1 = new Registration();
-            f1.Show();
+            Program.OpenCenteredForm(this, f1);
+            
         }
 
         private void butt_login_Click(object sender, EventArgs e)
         {
-            foreach (Admin adminCheck in adminsList)
+            foreach (Admin adminCheck in adminsList) //Check login for admin
             {
                 if (userName_input.Text == adminCheck.getUserName() && password_input.Text == adminCheck.getPassword())
                 {
+                    flagIsRightPass = true;
                     whoisLoged = adminCheck.getPrivateName();
                     adDashboard a = new adDashboard();
-                    a.Show();
+                    Program.OpenCenteredForm(this, a);
                     break;
 
                 }
                 else
                 {
-                    string message = "Wrong Username / Password try agian!";
-                    string caption = "Error Detected in Input";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult result;
-                    // Displays the MessageBox.
-                    result = MessageBox.Show(message, caption, buttons);
-                    break;
+                    flagIsRightPass = false;
                 }
 
             }
 
-            foreach (string userCheck in Useres) // Loop to check if User Exists
+            if (flagIsRightPass == false) // Check if admin login wasnt succseed
             {
-                string[] items = userCheck.Split(',');
-                if(userName_input.Text == items[3] && password_input.Text == items[4]) //Checking if the pass and username are fit
+                foreach (string userCheck in Useres) // Loop to check if User Exists
                 {
-                    whoisLoged = items[0];
-                    adDashboard a = new adDashboard();
-                    a.Show();
-                    break;
+                    string[] items = userCheck.Split(',');
+                    if (userName_input.Text == items[3] && password_input.Text == items[4]) //Checking if the pass and username are fit
+                    {
+                        flagIsRightPass = true;
+                        whoisLoged = items[0];
+                        UserDashBoard us = new UserDashBoard();
+                        Program.OpenCenteredForm(this, us);
+                        break;
 
+                    }
+                    else
+                    {
+                        flagIsRightPass = false;
+
+                    }
                 }
-                else
-                {
-                    string message = "Wrong Username / Password try agian!";
-                    string caption = "Error Detected in Input";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult result;
-                    // Displays the MessageBox.
-                    result = MessageBox.Show(message, caption, buttons);
-                    break;
-                }
+            }
+
+            if (flagIsRightPass == false) // Check if Password isnt correct to show an error
+            {
+                string message = "Wrong Username / Password try agian!";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
             }
                
  

@@ -1,0 +1,8 @@
+Before loading the Project , You need to load the data base by this insturctions :
+1. Press on Data Folder Right Click
+2. pick "Open folder in file explorer"
+3. Click right click on "UsernameInput"
+4. click properties
+5. copy the address of the file 
+6. pase it in "Form1.cs" on string file =@"";
+7.Paste in in "Registration.cs" on string file =@"";
