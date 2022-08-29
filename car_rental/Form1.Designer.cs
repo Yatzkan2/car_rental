@@ -80,7 +80,7 @@
             this.userName_input.Name = "userName_input";
             this.userName_input.Size = new System.Drawing.Size(138, 20);
             this.userName_input.TabIndex = 4;
-            this.userName_input.TextChanged += new System.EventHandler(this.userName_input_TextChanged);
+            
             // 
             // user_name
             // 

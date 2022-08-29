@@ -48,6 +48,14 @@ namespace car_rental
         {
             return this.first_Name;
         }
+        public string getLastName()
+        {
+            return this.last_Name;
+        }
+        public uint getIDnum()
+        {
+            return this.Id;
+        }
         
         public string First_name
         {

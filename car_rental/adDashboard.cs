@@ -34,5 +34,11 @@ namespace car_rental
             form.Show();
             this.Close();
         }
+
+        private void but_userMng_Click(object sender, EventArgs e)
+        {
+            UserMng us = new UserMng();
+            Program.OpenCenteredForm(this, us);
+        }
     }
 }

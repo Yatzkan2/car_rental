@@ -13,5 +13,10 @@ namespace car_rental
         {
             this.favorite_Car = favorite_Car;   
         }
+        public string getFavoriteCar()
+        {
+            return this.favorite_Car;
+        }
     }
+    
 }

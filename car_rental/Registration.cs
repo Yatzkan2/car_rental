@@ -117,7 +117,7 @@ namespace car_rental
             {
               
 
-                string newUser = input_Fname.Text +","+ input_Lname.Text+","+input_ID.Text+ ","+input_UserName.Text + "," + input_Password.Text + "," + input_Password.Text + "," + FavoriteCarIn.Text;
+                string newUser = input_Fname.Text +","+ input_Lname.Text+","+input_ID.Text+ ","+input_UserName.Text + "," + input_Password.Text + "," +  FavoriteCarIn.Text;
                 Useres.Add(newUser);
                 File.WriteAllLines(file, Useres);
                 string message = "You have been succsecfully Registered";

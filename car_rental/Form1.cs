@@ -18,7 +18,7 @@ namespace car_rental
 
         static bool is_visible_password = false;
         public static List<Admin> adminsList = new List<Admin>();
-        public static Admin admin1 = new Admin("Arad", "David", 1233455, "admin1", "admin1234");
+        public static Admin admin1 = new Admin("Arad", "David", 12345, "admin1", "admin1234");
         public static Admin admin2 = new Admin("Yair", "Yatzkan", 1231241, "admin2", "admin123");
         public static string whoisLoged;
         bool flagIsRightPass = false;
@@ -119,10 +119,7 @@ namespace car_rental
  
         }
 
-        private void userName_input_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 
 }
