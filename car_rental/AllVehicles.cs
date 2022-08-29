@@ -1,5 +1,4 @@
-﻿using car_rental;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,22 +10,14 @@ using System.Windows.Forms;
 
 namespace car_rental
 {
-    public partial class adDashboard : Form
+    public partial class AllVehicles : Form
     {
-        public adDashboard()
+        public AllVehicles()
         {
             InitializeComponent();
-            lbl_hello.Text += Form1.whoisLoged;
         }
 
-        private void butt_logout_Click(object sender, EventArgs e)
-        {
-            this.Close();
- 
-
-        }
-
-        private void go_to_CatalogMain_Click(object sender, EventArgs e)
+        private void back_button_Click(object sender, EventArgs e)
         {
             CatalogMain form = new CatalogMain();
             form.StartPosition = FormStartPosition.CenterScreen;

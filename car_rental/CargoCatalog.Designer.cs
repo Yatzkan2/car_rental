@@ -1,6 +1,6 @@
 ﻿namespace car_rental
 {
-    partial class UserDashBoard
+    partial class CargoCatalog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.go_to_VehicleType = new System.Windows.Forms.Button();
+            this.back_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // go_to_VehicleType
+            // back_button
             // 
-            this.go_to_VehicleType.Location = new System.Drawing.Point(130, 194);
-            this.go_to_VehicleType.Name = "go_to_VehicleType";
-            this.go_to_VehicleType.Size = new System.Drawing.Size(136, 51);
-            this.go_to_VehicleType.TabIndex = 0;
-            this.go_to_VehicleType.Text = "Catalog";
-            this.go_to_VehicleType.UseVisualStyleBackColor = true;
+            this.back_button.Location = new System.Drawing.Point(0, 0);
+            this.back_button.Name = "back_button";
+            this.back_button.Size = new System.Drawing.Size(75, 23);
+            this.back_button.TabIndex = 0;
+            this.back_button.Text = "Back";
+            this.back_button.UseVisualStyleBackColor = true;
+            this.back_button.Click += new System.EventHandler(this.back_button_Click);
             // 
-            // UserDashBoard
+            // CargoCatalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.go_to_VehicleType);
-            this.Name = "UserDashBoard";
-            this.Text = "UserDashBoard";
+            this.Controls.Add(this.back_button);
+            this.Name = "CargoCatalog";
+            this.Text = "CargoCatalog";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button go_to_VehicleType;
+        private System.Windows.Forms.Button back_button;
     }
 }

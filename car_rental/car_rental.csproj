@@ -53,6 +53,24 @@
       <DependentUpon>adDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs" />
+    <Compile Include="AllVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllVehicles.Designer.cs">
+      <DependentUpon>AllVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargoCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargoCatalog.Designer.cs">
+      <DependentUpon>CargoCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogMain.Designer.cs">
+      <DependentUpon>CatalogMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="ElectricCar.cs" />
@@ -61,6 +79,24 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleType.Designer.cs">
+      <DependentUpon>VehicleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateCarCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrivateCarCatalog.Designer.cs">
+      <DependentUpon>PrivateCarCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotorcycleCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotorcycleCatalog.Designer.cs">
+      <DependentUpon>MotorcycleCatalog.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
@@ -84,7 +120,25 @@
     <EmbeddedResource Include="adDashboard.resx">
       <DependentUpon>adDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllVehicles.resx">
+      <DependentUpon>AllVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoCatalog.resx">
+      <DependentUpon>CargoCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogMain.resx">
+      <DependentUpon>CatalogMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx" />
+    <EmbeddedResource Include="MotorcycleCatalog.resx">
+      <DependentUpon>MotorcycleCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrivateCarCatalog.resx">
+      <DependentUpon>PrivateCarCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleType.resx">
+      <DependentUpon>VehicleType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
