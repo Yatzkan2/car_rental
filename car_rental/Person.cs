@@ -59,9 +59,14 @@ namespace car_rental
             return this.Id;
         }
 
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            throw new NotImplementedException();
+            info.AddValue("First_Name", First_name);
+            info.AddValue("Last_Name", this.getLastName());
+            info.AddValue("ID", this.getIDnum());
+            info.AddValue("UserName", this.getUserName());
+            info.AddValue("Password", this.getPassword());
+            
         }
 
         public string First_name

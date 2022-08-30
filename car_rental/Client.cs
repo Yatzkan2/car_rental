@@ -20,17 +20,14 @@ namespace car_rental
         {
             return this.favorite_Car;
         }
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("First_Name", First_name);
-            info.AddValue("Last_Name", this.getLastName());
-            info.AddValue("ID", this.getIDnum());
-            info.AddValue("UserName", this.getUserName());
-            info.AddValue("Password", this.getPassword());
+            base.GetObjectData(info, context);
             info.AddValue("Favorite_Car", this.favorite_Car);
         }
         public Client(SerializationInfo info, StreamingContext context) //Getting from the saved data
         {
+           
             First_name = (string)info.GetValue("First_Name",typeof(string));
             Last_name = (string)info.GetValue("Last_Name",typeof(string)) ;
             id = (uint)info.GetValue("ID", typeof(uint));
