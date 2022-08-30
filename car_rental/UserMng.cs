@@ -61,7 +61,24 @@ namespace car_rental
 
         private void butt_delUser_Click(object sender, EventArgs e)
         {
+            string message = "Are You sure you want to delete this user?";
+            string caption = "Validation";
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            DialogResult result;
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == DialogResult.OK)
+            {
+                int i = 0;
+                while (UsersDownList.Text != Clients[i].getUserName()) // Looking for the user in the clinet list
+                {
+                    i++;
+                }
+                Useres.Remove(Useres[i]); // Delete in the clients string that goes to the data
+                File.WriteAllLines(file, Useres); // overwrite to the data the new list without the deleted client
+                Program.OpenCenteredForm(this, new UserMng());
 
+            }
         }
 
         private void butt_editUs_Click(object sender, EventArgs e)
