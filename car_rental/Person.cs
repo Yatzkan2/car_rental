@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 namespace car_rental
 {
-    public abstract class Person
+    [Serializable()]
+    public abstract class Person:ISerializable
     {
         private string first_Name;
         private string last_Name;
@@ -56,7 +58,12 @@ namespace car_rental
         {
             return this.Id;
         }
-        
+
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            throw new NotImplementedException();
+        }
+
         public string First_name
         {
             get
@@ -66,6 +73,52 @@ namespace car_rental
             set
             {
                 first_Name = value;
+            }
+        }
+
+        public string Last_name
+        {
+            get
+            {
+                return last_Name;
+            }
+            set
+            {
+                last_Name = value;
+            }
+        }
+        public uint id
+        {
+            get
+            {
+                return Id;
+            }
+            set
+            {
+                Id = value;
+            }
+        }
+        public string userName
+        {
+            get
+            {
+                return user_Name;
+            }
+            set
+            {
+                user_Name = value;
+            }   
+            
+        }
+        public string password
+        {
+            get
+            {
+                return Password;
+            }
+            set
+            {
+                Password = value;
             }
         }
 
