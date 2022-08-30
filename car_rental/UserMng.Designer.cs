@@ -48,7 +48,6 @@
             this.butt_backmenu = new System.Windows.Forms.Button();
             this.butt_delUser = new System.Windows.Forms.Button();
             this.butt_editUs = new System.Windows.Forms.Button();
-            this.butt_restoreUsr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_headr
@@ -227,23 +226,11 @@
             this.butt_editUs.UseVisualStyleBackColor = true;
             this.butt_editUs.Click += new System.EventHandler(this.butt_editUs_Click);
             // 
-            // butt_restoreUsr
-            // 
-            this.butt_restoreUsr.Location = new System.Drawing.Point(263, 223);
-            this.butt_restoreUsr.Name = "butt_restoreUsr";
-            this.butt_restoreUsr.Size = new System.Drawing.Size(83, 48);
-            this.butt_restoreUsr.TabIndex = 21;
-            this.butt_restoreUsr.Text = "Restore Last Deleted User ";
-            this.butt_restoreUsr.UseVisualStyleBackColor = true;
-            this.butt_restoreUsr.Visible = false;
-            this.butt_restoreUsr.Click += new System.EventHandler(this.butt_restoreUsr_Click);
-            // 
             // UserMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 335);
-            this.Controls.Add(this.butt_restoreUsr);
             this.Controls.Add(this.butt_editUs);
             this.Controls.Add(this.butt_delUser);
             this.Controls.Add(this.butt_backmenu);
@@ -292,6 +279,5 @@
         private System.Windows.Forms.Button butt_backmenu;
         private System.Windows.Forms.Button butt_delUser;
         private System.Windows.Forms.Button butt_editUs;
-        private System.Windows.Forms.Button butt_restoreUsr;
     }
 }

@@ -12,24 +12,71 @@ namespace car_rental
 {
     public partial class CatalogMain : Form
     {
+        //testing lists
+        //--------------------------------//
+        public MotorCycle harley = new MotorCycle(true, 500, 500, 14, 9586854, 150, 2, "1000", 9, 200, 1978, "Red", 4, "Harley Davivdson");
+        public MotorCycle yamaha = new MotorCycle(true, 400, 400, 14, 12345678, 200, 2, "1000", 9, 200, 1978, "Blue", 4, "Yamaha");
+        public static List<MotorCycle> motorCycleList = new List<MotorCycle>();
+        
+
+        //--------------------------------//
+
+        List<Vehicle> vehicle_model_global;
         public CatalogMain()
         {
             InitializeComponent();
+            //intializing lists
+            motorCycleList.Add(yamaha);
+            motorCycleList.Add(harley);
+            
         }
-
-        private void go_to_VehicleType_Click(object sender, EventArgs e)
+        //manual functions
+        //--------------------------------------------------------//
+        public void MakeVehicleViewButtons(List<Vehicle> vehicle_model)
         {
-            Program.OpenCenteredForm(this, new VehicleType());
+            vehicle_model_global = vehicle_model;
+            foreach (Vehicle vehicle in vehicle_model)
+            {
+                RenderButton(vehicle);
+            }
         }
-
-        private void go_to_AllVehicle_Click(object sender, EventArgs e)
+        void RenderButton(Vehicle vehicle)
         {
-            Program.OpenCenteredForm(this, new AllVehicles());
+            Button button = new Button();
+            button.Parent = this;
+            button.Name = vehicle.Model;
+            button.Text = vehicle.Model;
+            button.Click += new EventHandler(this.open_vehicle_view_Click);
+            button.Size = new Size(155, 23);
+            flowLayoutPanelVehicleButtons.Controls.Add(button);
         }
+        //--------------------------------------------------------//
 
+        //button events: Manual functions
+        private void open_vehicle_view_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in flowLayoutPanelVehicleButtons.Controls)
+            {
+                if (sender.Equals(control))
+                {
+                    foreach(Vehicle vehicle in vehicle_model_global)
+                    {
+                        if (control.Name == vehicle.Model)
+                            Program.OpenCenteredForm(null, new VehicleViewWindow(vehicle));
+                    }
+                    break;
+                }
+            }
+        }
+        //button events: Automatic functions
         private void back_button_Click(object sender, EventArgs e)
         {
            Program.OpenCenteredForm(this, new adDashboard());
+        }
+
+        private void open_motorcycle_view_CheckedChanged(object sender, EventArgs e)
+        {
+            //MakeVehicleViewButtons((Vehicle)motorCycleList);// חרא רציני cannot convert motorcycle to vhicle
         }
     }
 }

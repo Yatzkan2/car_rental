@@ -19,7 +19,7 @@ namespace car_rental
 
         private void go_to_VehicleType_Click(object sender, EventArgs e)
         {
-            Program.OpenCenteredForm(this, new VehicleType());
+            Program.OpenCenteredForm(this, new CatalogMain());
         }
 
         private void butt_logout_Click(object sender, EventArgs e)
