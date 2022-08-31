@@ -1,4 +1,2 @@
-test,test,131444444,test,123456,BMW
 test2,test2,141414122,test2,123456789,,Mercedes
-idan,tubis,123456789,idanTubis,123456,Mercedes
-test6,test6,123456788,test6,123456,Mercedes
+test,test,131444444,test,123456,BMW

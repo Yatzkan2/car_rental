@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace car_rental
 {
-    public abstract class Person
+    [Serializable()]
+    public abstract class Person:ISerializable
     {
         private string first_Name;
         private string last_Name;
@@ -30,8 +34,26 @@ namespace car_rental
             this.Id = Id;
             this.user_Name = user_name;
             this.Password = password;
-            
+           
         }
+        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("First_Name", First_name);
+            info.AddValue("Last_Name", this.getLastName());
+            info.AddValue("ID", this.getIDnum());
+            info.AddValue("UserName", this.getUserName());
+            info.AddValue("Password", this.getPassword());
+
+        }
+        public Person(SerializationInfo info, StreamingContext context)
+        {
+            First_name = (string)info.GetValue("First_Name", typeof(string));
+            Last_name = (string)info.GetValue("Last_Name", typeof(string));
+            id = (uint)info.GetValue("ID", typeof(uint));
+            userName = (string)info.GetValue("UserName", typeof(string));
+            password = (string)info.GetValue("Password", typeof(string));
+        }
+
         ~Person()
         {
 
