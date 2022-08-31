@@ -56,7 +56,7 @@ namespace car_rental
         {
             return this.Id;
         }
-        
+
         public string First_name
         {
             get
@@ -68,6 +68,53 @@ namespace car_rental
                 first_Name = value;
             }
         }
+
+        public string Last_name
+        {
+            get
+            {
+                return last_Name;
+            }
+            set
+            {
+                last_Name = value;
+            }
+        }
+        public uint id
+        {
+            get
+            {
+                return Id;
+            }
+            set
+            {
+                Id = value;
+            }
+        }
+        public string userName
+        {
+            get
+            {
+                return user_Name;
+            }
+            set
+            {
+                user_Name = value;
+            }
+
+        }
+        public string password
+        {
+            get
+            {
+                return Password;
+            }
+            set
+            {
+                Password = value;
+            }
+        }
+
 
 
 
