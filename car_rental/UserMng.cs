@@ -65,7 +65,7 @@ namespace car_rental
 
         private void butt_delUser_Click(object sender, EventArgs e)
         {
-            if (countUsers > 0)
+            if (countUsers > 0 && UsersDownList.Text != "User:" )
             {
                 string message = "Are You sure you want to delete this user?";
                 string caption = "Validation";

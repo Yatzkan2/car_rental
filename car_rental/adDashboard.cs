@@ -27,18 +27,17 @@ namespace car_rental
 
         }
 
-        private void go_to_CatalogMain_Click(object sender, EventArgs e)
-        {
-            CatalogMain form = new CatalogMain();
-            form.StartPosition = FormStartPosition.CenterScreen;
-            form.Show();
-            this.Close();
-        }
+        
 
         private void but_userMng_Click(object sender, EventArgs e)
         {
             UserMng us = new UserMng();
             Program.OpenCenteredForm(this, us);
+        }
+
+        private void butt_mngCatalog_Click(object sender, EventArgs e)
+        {
+            Program.OpenCenteredForm(this, new CatalogMng());
         }
     }
 }

@@ -59,6 +59,12 @@
     <Compile Include="CatalogMain.Designer.cs">
       <DependentUpon>CatalogMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="CatalogMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CatalogMng.Designer.cs">
+      <DependentUpon>CatalogMng.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="ElectricCar.cs" />
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CatalogMain.resx">
       <DependentUpon>CatalogMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CatalogMng.resx">
+      <DependentUpon>CatalogMng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx" />
     <EmbeddedResource Include="UserMng.resx">
