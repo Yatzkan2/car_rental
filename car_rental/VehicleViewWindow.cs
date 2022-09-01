@@ -12,6 +12,10 @@ namespace car_rental
 {
     public partial class VehicleViewWindow : Form
     {
+        private GasolineVehicle gasolineVehicle_tmp;
+        private MotorCycle motorCycle_tmp;
+        private GasolinePrivateCar gasPrivateCar_tmp;
+        private Cargo cargo_tmp;
         private static Vehicle vehicle;
         public VehicleViewWindow(Vehicle vehicle_item)
         {
@@ -26,20 +30,39 @@ namespace car_rental
             model.Text = "Model: " + vehicle.Model;
             color.Text = "Color: " + vehicle.Color;
             year.Text = "Year: " + vehicle.Manufacturing_year;
+
             flowLayoutPanel_technicalDetails.Controls.Add(model);
             flowLayoutPanel_technicalDetails.Controls.Add(color);
             flowLayoutPanel_technicalDetails.Controls.Add(year);
-            //general Gasoline vehicle lables
-            //if(vehicle is GasolinePrivateCar)
+            
                
             
             switch (vehicle.GetType().BaseType.Name)
             {
                 case "GasolineVehicle":
+                    //general Gasoline vehicle lables
+                    gasolineVehicle_tmp = (GasolineVehicle)vehicle;//casting to current class type
+
+                    gear.Text = (gasolineVehicle_tmp.Gear) ? "Gear : " + "Manual" : "Gear : " + "Automatic";
+                    gear.Visible = true;
+                    engine_capcity.Text = "Engine capacity: " + gasolineVehicle_tmp.EngineCapacity.ToString();
+                    engine_capcity.Visible = true;
+                    fuel_consumption.Text = "Fuel consumption: " + gasolineVehicle_tmp.FuelConsumption.ToString();
+                    fuel_consumption.Visible = true;
+                    fuel_tank_capacity.Text = "Tank capacity: " + gasolineVehicle_tmp.FuelTankCapacity.ToString();
+                    fuel_tank_capacity.Visible = true;
+
+                    flowLayoutPanel_technicalDetails.Controls.Add(gear);
+                    flowLayoutPanel_technicalDetails.Controls.Add(engine_capcity);
+                    flowLayoutPanel_technicalDetails.Controls.Add(fuel_consumption);
+                    flowLayoutPanel_technicalDetails.Controls.Add(fuel_tank_capacity);
+
 
                     switch (vehicle.GetType().Name)
                     {
+
                         case "MotorCycle":
+                            motorCycle_tmp = (MotorCycle)vehicle;
 
                             break;
                         case "GasolinePrivateCar":
