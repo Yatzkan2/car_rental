@@ -53,6 +53,7 @@
       <DependentUpon>adDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs" />
+    <Compile Include="Cargo.cs" />
     <Compile Include="CatalogMain.cs">
       <SubType>Form</SubType>
     </Compile>

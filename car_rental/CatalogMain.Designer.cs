@@ -30,14 +30,14 @@
         {
             this.back_button = new System.Windows.Forms.Button();
             this.open_motorcycle_view = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.open_groupBox_pricvate_car = new System.Windows.Forms.RadioButton();
             this.open_cargo_view = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.open_gasoline_private_car_view = new System.Windows.Forms.RadioButton();
+            this.open_elc_private_car_view = new System.Windows.Forms.RadioButton();
+            this.open_all_private_car_view = new System.Windows.Forms.RadioButton();
+            this.groupBoxPrivateCar = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanelVehicleButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxPrivateCar.SuspendLayout();
             this.SuspendLayout();
             // 
             // back_button
@@ -62,16 +62,17 @@
             this.open_motorcycle_view.UseVisualStyleBackColor = true;
             this.open_motorcycle_view.CheckedChanged += new System.EventHandler(this.open_motorcycle_view_CheckedChanged);
             // 
-            // radioButton2
+            // open_groupBox_pricvate_car
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(324, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.open_groupBox_pricvate_car.AutoSize = true;
+            this.open_groupBox_pricvate_car.Location = new System.Drawing.Point(324, 51);
+            this.open_groupBox_pricvate_car.Name = "open_groupBox_pricvate_car";
+            this.open_groupBox_pricvate_car.Size = new System.Drawing.Size(58, 17);
+            this.open_groupBox_pricvate_car.TabIndex = 4;
+            this.open_groupBox_pricvate_car.TabStop = true;
+            this.open_groupBox_pricvate_car.Text = "Private";
+            this.open_groupBox_pricvate_car.UseVisualStyleBackColor = true;
+            this.open_groupBox_pricvate_car.CheckedChanged += new System.EventHandler(this.open_groupBox_pricvate_car_CheckedChanged);
             // 
             // open_cargo_view
             // 
@@ -83,51 +84,55 @@
             this.open_cargo_view.TabStop = true;
             this.open_cargo_view.Text = "Cargo";
             this.open_cargo_view.UseVisualStyleBackColor = true;
+            this.open_cargo_view.CheckedChanged += new System.EventHandler(this.open_cargo_view_CheckedChanged);
             // 
-            // radioButton4
+            // open_gasoline_private_car_view
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(16, 23);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(85, 17);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.open_gasoline_private_car_view.AutoSize = true;
+            this.open_gasoline_private_car_view.Location = new System.Drawing.Point(16, 23);
+            this.open_gasoline_private_car_view.Name = "open_gasoline_private_car_view";
+            this.open_gasoline_private_car_view.Size = new System.Drawing.Size(44, 17);
+            this.open_gasoline_private_car_view.TabIndex = 5;
+            this.open_gasoline_private_car_view.TabStop = true;
+            this.open_gasoline_private_car_view.Text = "Gas";
+            this.open_gasoline_private_car_view.UseVisualStyleBackColor = true;
+            this.open_gasoline_private_car_view.CheckedChanged += new System.EventHandler(this.open_gasoline_private_car_view_CheckedChanged);
             // 
-            // radioButton5
+            // open_elc_private_car_view
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(16, 46);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(85, 17);
-            this.radioButton5.TabIndex = 8;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "radioButton5";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.open_elc_private_car_view.AutoSize = true;
+            this.open_elc_private_car_view.Location = new System.Drawing.Point(16, 46);
+            this.open_elc_private_car_view.Name = "open_elc_private_car_view";
+            this.open_elc_private_car_view.Size = new System.Drawing.Size(60, 17);
+            this.open_elc_private_car_view.TabIndex = 8;
+            this.open_elc_private_car_view.TabStop = true;
+            this.open_elc_private_car_view.Text = "Electric";
+            this.open_elc_private_car_view.UseVisualStyleBackColor = true;
+            this.open_elc_private_car_view.CheckedChanged += new System.EventHandler(this.open_elc_private_car_view_CheckedChanged);
             // 
-            // radioButton6
+            // open_all_private_car_view
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(16, 69);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(85, 17);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "radioButton6";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.open_all_private_car_view.AutoSize = true;
+            this.open_all_private_car_view.Location = new System.Drawing.Point(16, 69);
+            this.open_all_private_car_view.Name = "open_all_private_car_view";
+            this.open_all_private_car_view.Size = new System.Drawing.Size(36, 17);
+            this.open_all_private_car_view.TabIndex = 7;
+            this.open_all_private_car_view.TabStop = true;
+            this.open_all_private_car_view.Text = "All";
+            this.open_all_private_car_view.UseVisualStyleBackColor = true;
+            this.open_all_private_car_view.CheckedChanged += new System.EventHandler(this.open_all_private_car_view_CheckedChanged);
             // 
-            // groupBox1
+            // groupBoxPrivateCar
             // 
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Location = new System.Drawing.Point(295, 87);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBoxPrivateCar.Controls.Add(this.open_elc_private_car_view);
+            this.groupBoxPrivateCar.Controls.Add(this.open_gasoline_private_car_view);
+            this.groupBoxPrivateCar.Controls.Add(this.open_all_private_car_view);
+            this.groupBoxPrivateCar.Location = new System.Drawing.Point(295, 87);
+            this.groupBoxPrivateCar.Name = "groupBoxPrivateCar";
+            this.groupBoxPrivateCar.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxPrivateCar.TabIndex = 9;
+            this.groupBoxPrivateCar.TabStop = false;
+            this.groupBoxPrivateCar.Visible = false;
             // 
             // flowLayoutPanelVehicleButtons
             // 
@@ -142,15 +147,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 582);
             this.Controls.Add(this.flowLayoutPanelVehicleButtons);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxPrivateCar);
             this.Controls.Add(this.open_cargo_view);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.open_groupBox_pricvate_car);
             this.Controls.Add(this.open_motorcycle_view);
             this.Controls.Add(this.back_button);
             this.Name = "CatalogMain";
             this.Text = "CatalogMain";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxPrivateCar.ResumeLayout(false);
+            this.groupBoxPrivateCar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,12 +164,12 @@
         #endregion
         private System.Windows.Forms.Button back_button;
         private System.Windows.Forms.RadioButton open_motorcycle_view;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton open_groupBox_pricvate_car;
         private System.Windows.Forms.RadioButton open_cargo_view;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton open_gasoline_private_car_view;
+        private System.Windows.Forms.RadioButton open_elc_private_car_view;
+        private System.Windows.Forms.RadioButton open_all_private_car_view;
+        private System.Windows.Forms.GroupBox groupBoxPrivateCar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelVehicleButtons;
     }
 }
