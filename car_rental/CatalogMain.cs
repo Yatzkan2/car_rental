@@ -14,14 +14,14 @@ namespace car_rental
     {
         //testing lists
         //--------------------------------//
-        public MotorCycle harley = new MotorCycle(true, 500, 500, 14, 9586854, 150, 2, "1000", 9, 200, 1978, "Red", 4, "Harley Davivdson");
+        public MotorCycle harley = new MotorCycle(true, 500, 500, 14, 9586854, 150, 2, "1000", 9, 200, 1978, "Red", 4, "Harley Davidson");
         public MotorCycle yamaha = new MotorCycle(true, 400, 400, 14, 12345678, 200, 2, "1000", 9, 200, 1978, "Blue", 4, "Yamaha");
-        public static List<MotorCycle> motorCycleList = new List<MotorCycle>();
+        public static List<Vehicle> motorCycleList = new List<Vehicle>();
         
 
         //--------------------------------//
 
-        List<Vehicle> vehicle_model_global;
+        List<Vehicle> vehicle_model_global; // to "pass" object of specific view button to 'VehicleViewWindow'
         public CatalogMain()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace car_rental
         //--------------------------------------------------------//
         public void MakeVehicleViewButtons(List<Vehicle> vehicle_model)
         {
-            vehicle_model_global = vehicle_model;
+            vehicle_model_global = vehicle_model; //passing the 
             foreach (Vehicle vehicle in vehicle_model)
             {
                 RenderButton(vehicle);
@@ -55,6 +55,7 @@ namespace car_rental
         //button events: Manual functions
         private void open_vehicle_view_Click(object sender, EventArgs e)
         {
+            
             foreach (Control control in flowLayoutPanelVehicleButtons.Controls)
             {
                 if (sender.Equals(control))
@@ -76,7 +77,8 @@ namespace car_rental
 
         private void open_motorcycle_view_CheckedChanged(object sender, EventArgs e)
         {
-            //MakeVehicleViewButtons((Vehicle)motorCycleList);// חרא רציני cannot convert motorcycle to vhicle
+            flowLayoutPanelVehicleButtons.Controls.Clear();
+            MakeVehicleViewButtons(motorCycleList);
         }
     }
 }
