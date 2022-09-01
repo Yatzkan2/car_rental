@@ -36,69 +36,75 @@ namespace car_rental
             flowLayoutPanel_technicalDetails.Controls.Add(model);
             flowLayoutPanel_technicalDetails.Controls.Add(color);
             flowLayoutPanel_technicalDetails.Controls.Add(year);
-            
-               
-            
-            switch (vehicle.GetType().BaseType.Name)
+
+
+
+            if (vehicle.GetType().BaseType.Name == "GasolineVehicle")
             {
-                case "GasolineVehicle":
-                    //general Gasoline vehicle lables
-                    gasolineVehicle_tmp = (GasolineVehicle)vehicle;//casting to current class type
 
-                    gear.Text = (gasolineVehicle_tmp.Gear) ? "Gear : " + "Manual" : "Gear : " + "Automatic";
-                    gear.Visible = true;
-                    engine_capcity.Text = "Engine capacity: " + gasolineVehicle_tmp.EngineCapacity.ToString() + "L";
-                    engine_capcity.Visible = true;
-                    fuel_consumption.Text = "Fuel consumption: " + gasolineVehicle_tmp.FuelConsumption.ToString() + "Km/L";
-                    fuel_consumption.Visible = true;
-                    fuel_tank_capacity.Text = "Tank capacity: " + gasolineVehicle_tmp.FuelTankCapacity.ToString() + "L";
-                    fuel_tank_capacity.Visible = true;
+                //general Gasoline vehicle lables
+                gasolineVehicle_tmp = (GasolineVehicle)vehicle;//casting to current class type
 
-                    flowLayoutPanel_technicalDetails.Controls.Add(gear);
-                    flowLayoutPanel_technicalDetails.Controls.Add(engine_capcity);
-                    flowLayoutPanel_technicalDetails.Controls.Add(fuel_consumption);
-                    flowLayoutPanel_technicalDetails.Controls.Add(fuel_tank_capacity);
+                gear.Text = (gasolineVehicle_tmp.Gear) ? "Gear : " + "Manual" : "Gear : " + "Automatic";
+                gear.Visible = true;
+                engine_capcity.Text = "Engine capacity: " + gasolineVehicle_tmp.EngineCapacity.ToString() + "L";
+                engine_capcity.Visible = true;
+                fuel_consumption.Text = "Fuel consumption: " + gasolineVehicle_tmp.FuelConsumption.ToString() + "Km/L";
+                fuel_consumption.Visible = true;
+                fuel_tank_capacity.Text = "Tank capacity: " + gasolineVehicle_tmp.FuelTankCapacity.ToString() + "L";
+                fuel_tank_capacity.Visible = true;
+
+                flowLayoutPanel_technicalDetails.Controls.Add(gear);
+                flowLayoutPanel_technicalDetails.Controls.Add(engine_capcity);
+                flowLayoutPanel_technicalDetails.Controls.Add(fuel_consumption);
+                flowLayoutPanel_technicalDetails.Controls.Add(fuel_tank_capacity);
 
 
-                    switch (vehicle.GetType().Name)
-                    {
+                switch (vehicle.GetType().Name)
+                {
+                    case "MotorCycle":
+                        motorCycle_tmp = (MotorCycle)vehicle;//casting to current class type
+                        break;
+                    case "GasolinePrivateCar":
+                        gasPrivateCar_tmp = (GasolinePrivateCar)vehicle;//casting to current class type
 
-                        case "MotorCycle":
-                            motorCycle_tmp = (MotorCycle)vehicle;
-                            break;
-                        case "GasolinePrivateCar":
-                            gasPrivateCar_tmp = (GasolinePrivateCar)vehicle;
-                            type.Text = "Type: " + gasPrivateCar_tmp.Type;
-                            type.Visible = true;
-                            flowLayoutPanel_technicalDetails.Controls.Add(type);
-                            break;
-                        case "Cargo":
-                            cargo_tmp = (Cargo)vehicle;
-                            hieght.Text = "Hieght: " + cargo_tmp.Hieght.ToString() + "M";
-                            hieght.Visible = true;
-                            length.Text = "Length" + cargo_tmp.Length.ToString() + "M";
-                            length.Visible = true;
+                        type.Text = "Type: " + gasPrivateCar_tmp.Type;
+                        type.Visible = true;
+                        flowLayoutPanel_technicalDetails.Controls.Add(type);
+                        break;
+                    case "Cargo":
+                        cargo_tmp = (Cargo)vehicle;//casting to current class type
 
-                            flowLayoutPanel_technicalDetails.Controls.Add(hieght);
-                            flowLayoutPanel_technicalDetails.Controls.Add(length);
-                            break;
-                          
-                    }
-                    break;
+                        hieght.Text = "Hieght: " + cargo_tmp.Hieght.ToString() + "M";
+                        hieght.Visible = true;
+                        length.Text = "Length" + cargo_tmp.Length.ToString() + "M";
+                        length.Visible = true;
 
-                case "ElectricCar":
-                    electric_tmp = (ElectricCar)vehicle;
+                        flowLayoutPanel_technicalDetails.Controls.Add(hieght);
+                        flowLayoutPanel_technicalDetails.Controls.Add(length);
+                        break;
+
+                }
+            }
+
+                if(vehicle.GetType().Name == "ElectricCar")
+                {
+                    electric_tmp = (ElectricCar)vehicle;//casting to current class type
+
                     range.Text = "Range: " + electric_tmp.Range.ToString();
                     range.Visible = true;
-                    battery_kwh.Text = "Battery KWH: " + battery_kwh.ToString();
+                    battery_kwh.Text = "Battery KWH: " + electric_tmp.BatteryKwh.ToString();
                     battery_kwh.Visible = true;
-                    charging_time.Text = "Chraging time: " + charging_time.ToString() + "hours";
+                    charging_time.Text = "Chraging time: " + electric_tmp.ChargingTime.ToString() + "H";
+                    charging_time.Visible = true;
 
                     flowLayoutPanel_technicalDetails.Controls.Add(range);
                     flowLayoutPanel_technicalDetails.Controls.Add(battery_kwh);
                     flowLayoutPanel_technicalDetails.Controls.Add(charging_time);
-                    break;
-            }
+
+                }
+                    
+            
                 
         }
     }

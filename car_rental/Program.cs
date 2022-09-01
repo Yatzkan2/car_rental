@@ -35,7 +35,8 @@ namespace car_rental
         {
             form_son.StartPosition = FormStartPosition.CenterScreen;
             form_son.Show();
-            form_Parent.Close();
+            if(form_Parent != null)
+                form_Parent.Close();
         }
     }
 }

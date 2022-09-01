@@ -35,7 +35,7 @@ namespace car_rental
         //--------------------------------//
         
 
-        List<Vehicle> vehicle_model_global; // to "pass" object of specific view button to 'VehicleViewWindow'
+        public List<Vehicle> vehicle_model_global; // to "pass" object of specific view button to 'VehicleViewWindow'
         public CatalogMain()
         {
             InitializeComponent();
@@ -54,17 +54,13 @@ namespace car_rental
             privateElcCarList.Add(toyotaLQ);
 
             allPrivatelist.AddRange(privateGasCarList);
-            allPrivatelist.AddRange(privateElcCarList);
-
-           
-            
+            allPrivatelist.AddRange(privateElcCarList);                    
         }
         //manual functions
         //--------------------------------------------------------//
         public void MakeVehicleViewButtons(List<Vehicle> vehicle_model)
         {
-            vehicle_model_global = vehicle_model; //passing the 
-            
+            vehicle_model_global = vehicle_model; //passing the objects to the 'ViewVehicleWindow'
             foreach (Vehicle vehicle in vehicle_model)
             {
                 RenderButton(vehicle);
@@ -92,7 +88,7 @@ namespace car_rental
                     foreach(Vehicle vehicle in vehicle_model_global)
                     {
                         if (control.Name == vehicle.Model)
-                            Program.OpenCenteredForm(this, new VehicleViewWindow(vehicle));
+                            Program.OpenCenteredForm(null, new VehicleViewWindow(vehicle));
                     }
                     break;
                 }
@@ -101,7 +97,7 @@ namespace car_rental
         //button events: Automatic functions
         private void back_button_Click(object sender, EventArgs e)
         {
-           Program.OpenCenteredForm(this, new UserDashBoard());
+            Program.OpenCenteredForm(this, new UserDashBoard());
         }
 
         private void open_motorcycle_view_CheckedChanged(object sender, EventArgs e)

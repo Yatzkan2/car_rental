@@ -42,6 +42,7 @@
             this.range = new System.Windows.Forms.Label();
             this.battery_kwh = new System.Windows.Forms.Label();
             this.charging_time = new System.Windows.Forms.Label();
+            this.rent_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel_technicalDetails
@@ -179,11 +180,21 @@
             this.charging_time.Text = "Charging time";
             this.charging_time.Visible = false;
             // 
+            // rent_button
+            // 
+            this.rent_button.Location = new System.Drawing.Point(639, 356);
+            this.rent_button.Name = "rent_button";
+            this.rent_button.Size = new System.Drawing.Size(75, 56);
+            this.rent_button.TabIndex = 0;
+            this.rent_button.Text = "Rent This Vehicle";
+            this.rent_button.UseVisualStyleBackColor = true;
+            // 
             // VehicleViewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rent_button);
             this.Controls.Add(this.charging_time);
             this.Controls.Add(this.battery_kwh);
             this.Controls.Add(this.range);
@@ -222,5 +233,6 @@
         private System.Windows.Forms.Label range;
         private System.Windows.Forms.Label battery_kwh;
         private System.Windows.Forms.Label charging_time;
+        private System.Windows.Forms.Button rent_button;
     }
 }
