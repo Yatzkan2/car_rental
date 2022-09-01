@@ -8,8 +8,7 @@ namespace car_rental
 {
     public class GasolinePrivateCar : GasolineVehicle
     {
-        //private CarSystem car_system;
-        //private Company company;
+        
         private string type;
         public GasolinePrivateCar(string type, bool gear, double engine_capacity, int fuel_tank_capacity, double fuel_consumption,
                                 uint liecense_plate, double weight, int wheels, string wheel_size,
@@ -19,5 +18,7 @@ namespace car_rental
         {
             this.type = type; 
         }
+        public string Type 
+        { get { return type; } set { type = value; } }
     }
 }

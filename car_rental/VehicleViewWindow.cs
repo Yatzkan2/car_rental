@@ -17,12 +17,43 @@ namespace car_rental
         {
             InitializeComponent();
             vehicle = vehicle_item;
-            string type = vehicle.GetType().Name;
-            switch (type)
+            this.Text = vehicle_item.Model;
+        }
+
+        private void VehicleViewWindow_Load(object sender, EventArgs e)
+        {
+            //general lables
+            model.Text = "Model: " + vehicle.Model;
+            color.Text = "Color: " + vehicle.Color;
+            year.Text = "Year: " + vehicle.Manufacturing_year;
+            flowLayoutPanel_technicalDetails.Controls.Add(model);
+            flowLayoutPanel_technicalDetails.Controls.Add(color);
+            flowLayoutPanel_technicalDetails.Controls.Add(year);
+            //general Gasoline vehicle lables
+            //if(vehicle is GasolinePrivateCar)
+               
+            
+            switch (vehicle.GetType().BaseType.Name)
             {
-                case "Motorcycle":
+                case "GasolineVehicle":
+
+                    switch (vehicle.GetType().Name)
+                    {
+                        case "MotorCycle":
+
+                            break;
+                        case "GasolinePrivateCar":
+                            break;
+                        case "Cargo":
+                            break;
+                          
+                    }
+                    break;
+
+                case "ElectricCar":
                     break;
             }
+                
         }
     }
 }

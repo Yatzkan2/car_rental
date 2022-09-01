@@ -18,9 +18,9 @@ namespace car_rental
         public MotorCycle yamaha = new MotorCycle(true, 400, 400, 14, 12345678, 200, 2, "1000", 9, 200, 1978, "Blue", 4, "Yamaha");
         public static List<Vehicle> motorCycleList = new List<Vehicle>();
 
-        public Cargo isuzuSumo = new Cargo(true, 2000, 100, 8, 35468598, 7.5, 4, "6000", 3, 150, 2021, "Green", 10, "Isuzu Sumo");
-        public Cargo mercedesActross = new Cargo(true, 4500, 400, 6, 15984754, 18, 4, "5500", 3.5, 160, 2016, "Black", 7, "Mercedes Actross");
-        public Cargo fiatDucato = new Cargo(true, 1500, 400, 6, 62485971, 4.2, 4, "3500", 4, 200, 2020, "White", 4, "Fiat Ducato");
+        public Cargo isuzuSumo = new Cargo(true, 2000, 100, 8, 35468598, 7.5, 4, "6000", 3, 150, 2021, "Green", 10, "Isuzu Sumo", 4.5, 10.2);
+        public Cargo mercedesActross = new Cargo(true, 4500, 400, 6, 15984754, 18, 4, "5500", 3.5, 160, 2016, "Black", 7, "Mercedes Actross", 3.2, 6.4);
+        public Cargo fiatDucato = new Cargo(true, 1500, 400, 6, 62485971, 4.2, 4, "3500", 4, 200, 2020, "White", 4, "Fiat Ducato", 2.4, 3.6);
         public static List<Vehicle> cargoList = new List<Vehicle>();
 
         public GasolinePrivateCar bmwX5 = new GasolinePrivateCar("SUV", false, 360, 60, 12, 25976184, 0.7, 4, "700", 6, 280, 2022, "Grey", 25, "BMW X5");
@@ -55,6 +55,8 @@ namespace car_rental
 
             allPrivatelist.AddRange(privateGasCarList);
             allPrivatelist.AddRange(privateElcCarList);
+
+           
             
         }
         //manual functions
@@ -62,6 +64,7 @@ namespace car_rental
         public void MakeVehicleViewButtons(List<Vehicle> vehicle_model)
         {
             vehicle_model_global = vehicle_model; //passing the 
+            
             foreach (Vehicle vehicle in vehicle_model)
             {
                 RenderButton(vehicle);
@@ -89,7 +92,7 @@ namespace car_rental
                     foreach(Vehicle vehicle in vehicle_model_global)
                     {
                         if (control.Name == vehicle.Model)
-                            Program.OpenCenteredForm(null, new VehicleViewWindow(vehicle));
+                            Program.OpenCenteredForm(this, new VehicleViewWindow(vehicle));
                     }
                     break;
                 }
@@ -138,6 +141,11 @@ namespace car_rental
         {
             flowLayoutPanelVehicleButtons.Controls.Clear(); 
             MakeVehicleViewButtons(allPrivatelist);
+        }
+
+        private void CatalogMain_Load(object sender, EventArgs e)// to be deleted
+        {
+            flowLayoutPanelVehicleButtons.Controls.Clear();
         }
     }
 }

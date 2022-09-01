@@ -23,5 +23,13 @@ namespace car_rental
             this.fuel_tank_capacity = fuel_tank_capacity;
             this.fuel_consumption = fuel_consumption;
         }
+        public bool Gear
+        { get { return gear; } set { gear = value; } }
+        public double EngineCapacity 
+        { get { return engine_capacity; } set { engine_capacity = value; } }
+        public int FuelTankCapacity 
+        { get { return fuel_tank_capacity; } set { fuel_tank_capacity = value; } }
+        public double FuelConsumption 
+        { get { return fuel_consumption; } set { fuel_consumption = value; } }
     }
 }
