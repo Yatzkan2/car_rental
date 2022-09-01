@@ -11,8 +11,7 @@ namespace car_rental
         private double range;
         private double battery_KWH;
         private double charging_time;
-        //private Company;
-        //struct car system;
+        
          public ElectricCar(double range, double battery_KWH, double charging_time, uint liecense_plate, 
                                  double weight, int wheels, string wheel_size, double acceleration, double max_speed, 
                                  uint manufacturing_year, string color, int amount, string model) 
@@ -21,6 +20,10 @@ namespace car_rental
             this.range = range;
             this.battery_KWH = battery_KWH;
             this.charging_time = charging_time;
-        }       
+        } 
+        public double Range { get { return range; } set { range = value; } } 
+        public double BatteryKwh { get { return battery_KWH; } set { battery_KWH = value; } }
+        public double ChargingTime { get { return charging_time; } set { charging_time = value; } }
+
     }
 }
