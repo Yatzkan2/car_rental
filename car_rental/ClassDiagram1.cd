@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="car_rental.adDashboard" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAEIAICAAAgCIAAAAAAAAAAAAAAAgAQ=</HashCode>
+      <FileName>adDashboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Admin" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAQgAAAAAACAAAAAA=</HashCode>
+      <FileName>Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Cargo" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAABAAAAAAAAABAAAAAQAAAA=</HashCode>
+      <FileName>Cargo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.CatalogMain" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAICARBASAIAIQAwQCCAAMCEgAgAlMAgQAAJAQAAGQ=</HashCode>
+      <FileName>CatalogMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.CatalogMng" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACBAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>CatalogMng.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Client" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.ElectricCar" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAACAAAAAAAAAAAAAAAABAAAiAAAAAAIAA=</HashCode>
+      <FileName>ElectricCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Form1" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCAAAEAADCAAKAAACACAQAACgIkAAAAABAJAAAAAAIA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.GasolinePrivateCar" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>GasolinePrivateCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.GasolineVehicle" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAACAAAAQABAQBAAQg=</HashCode>
+      <FileName>GasolineVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.MotorCycle" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MotorCycle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Person" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAAAAAAEIAAEggBAAACACAAJAAgEAQgA=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="car_rental.Program" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Registration" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAAACAQAQAAEAKEAAgGgLIQIEAAJAAAAAAAAAQ=</HashCode>
+      <FileName>Registration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.UserDashBoard" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAACAAAAEAAACAAAACIAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserDashBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.UserMng" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIgAkQAQIDgQAJAAAKKAAAgCAIIAACgBhCAEAAAAACA=</HashCode>
+      <FileName>UserMng.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Vehicle" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAEAACAACAAgASwACjEkAAokAA=</HashCode>
+      <FileName>Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.VehicleViewWindow" Collapsed="true">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIICEEAAAQAECEAQACAAABAASABgABAAAIAAg=</HashCode>
+      <FileName>VehicleViewWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Properties.Resources" Collapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="car_rental.Properties.Settings" Collapsed="true">
+    <Position X="15.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

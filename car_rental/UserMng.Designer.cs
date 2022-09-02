@@ -49,9 +49,6 @@
             this.butt_delUser = new System.Windows.Forms.Button();
             this.butt_editUs = new System.Windows.Forms.Button();
             this.butt_restoreUsr = new System.Windows.Forms.Button();
-            this.but_saveChng = new System.Windows.Forms.Button();
-            this.but_Cancelchng = new System.Windows.Forms.Button();
-            this.FavoriteCarIn = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_headr
@@ -241,50 +238,11 @@
             this.butt_restoreUsr.Visible = false;
             this.butt_restoreUsr.Click += new System.EventHandler(this.butt_restoreUsr_Click);
             // 
-            // but_saveChng
-            // 
-            this.but_saveChng.Location = new System.Drawing.Point(214, 277);
-            this.but_saveChng.Name = "but_saveChng";
-            this.but_saveChng.Size = new System.Drawing.Size(83, 46);
-            this.but_saveChng.TabIndex = 23;
-            this.but_saveChng.Text = "Save Changes!";
-            this.but_saveChng.UseVisualStyleBackColor = true;
-            this.but_saveChng.Visible = false;
-            this.but_saveChng.Click += new System.EventHandler(this.but_saveChng_Click);
-            // 
-            // but_Cancelchng
-            // 
-            this.but_Cancelchng.Location = new System.Drawing.Point(317, 277);
-            this.but_Cancelchng.Name = "but_Cancelchng";
-            this.but_Cancelchng.Size = new System.Drawing.Size(84, 46);
-            this.but_Cancelchng.TabIndex = 24;
-            this.but_Cancelchng.Text = "Cancel Changes";
-            this.but_Cancelchng.UseVisualStyleBackColor = true;
-            this.but_Cancelchng.Visible = false;
-            this.but_Cancelchng.Click += new System.EventHandler(this.but_Cancelchng_Click);
-            // 
-            // FavoriteCarIn
-            // 
-            this.FavoriteCarIn.Items.AddRange(new object[] {
-            "Alfa Romeo",
-            "Mercedes",
-            "BMW"});
-            this.FavoriteCarIn.Location = new System.Drawing.Point(376, 168);
-            this.FavoriteCarIn.Name = "FavoriteCarIn";
-            this.FavoriteCarIn.Size = new System.Drawing.Size(100, 21);
-            this.FavoriteCarIn.TabIndex = 25;
-            this.FavoriteCarIn.Text = "Pick from list:";
-            this.FavoriteCarIn.Visible = false;
-            this.FavoriteCarIn.SelectedIndexChanged += new System.EventHandler(this.FavoriteCarIn_SelectedIndexChanged);
-            // 
             // UserMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 335);
-            this.Controls.Add(this.FavoriteCarIn);
-            this.Controls.Add(this.but_Cancelchng);
-            this.Controls.Add(this.but_saveChng);
             this.Controls.Add(this.butt_restoreUsr);
             this.Controls.Add(this.butt_editUs);
             this.Controls.Add(this.butt_delUser);
@@ -335,8 +293,5 @@
         private System.Windows.Forms.Button butt_delUser;
         private System.Windows.Forms.Button butt_editUs;
         private System.Windows.Forms.Button butt_restoreUsr;
-        private System.Windows.Forms.Button but_saveChng;
-        private System.Windows.Forms.Button but_Cancelchng;
-        private System.Windows.Forms.ComboBox FavoriteCarIn;
     }
 }

@@ -111,7 +111,6 @@ namespace car_rental
         {
             groupBoxPrivateCar.Visible = true;
             flowLayoutPanelVehicleButtons.Controls.Clear();
-
         }
 
         private void open_gasoline_private_car_view_CheckedChanged(object sender, EventArgs e)

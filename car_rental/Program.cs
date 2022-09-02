@@ -22,6 +22,7 @@ namespace car_rental
             main.Show();
             Application.Run();
         }
+        
 
         static void FormClosed(object sender, FormClosedEventArgs e)
         {
