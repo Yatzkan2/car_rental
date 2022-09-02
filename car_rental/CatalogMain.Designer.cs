@@ -154,7 +154,6 @@
             this.Controls.Add(this.back_button);
             this.Name = "CatalogMain";
             this.Text = "CatalogMain";
-            this.Load += new System.EventHandler(this.CatalogMain_Load);
             this.groupBoxPrivateCar.ResumeLayout(false);
             this.groupBoxPrivateCar.PerformLayout();
             this.ResumeLayout(false);

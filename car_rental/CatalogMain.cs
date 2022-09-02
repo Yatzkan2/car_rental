@@ -81,17 +81,10 @@ namespace car_rental
         //button events: Manual functions
         private void open_vehicle_view_Click(object sender, EventArgs e)
         {
-            foreach (Control control in flowLayoutPanelVehicleButtons.Controls)
+            foreach (Vehicle vehicle in vehicle_model_global)
             {
-                if (sender.Equals(control))
-                {
-                    foreach(Vehicle vehicle in vehicle_model_global)
-                    {
-                        if (control.Name == vehicle.Model)
-                            Program.OpenCenteredForm(null, new VehicleViewWindow(vehicle));
-                    }
-                    break;
-                }
+                if (((Control)sender).Name == vehicle.Model)
+                    Program.OpenCenteredForm(null, new VehicleViewWindow(vehicle));
             }
         }
         //button events: Automatic functions
@@ -137,11 +130,6 @@ namespace car_rental
         {
             flowLayoutPanelVehicleButtons.Controls.Clear(); 
             MakeVehicleViewButtons(allPrivatelist);
-        }
-
-        private void CatalogMain_Load(object sender, EventArgs e)// to be deleted
-        {
-            flowLayoutPanelVehicleButtons.Controls.Clear();
         }
     }
 }
