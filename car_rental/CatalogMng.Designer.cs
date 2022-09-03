@@ -73,6 +73,12 @@
             this.input_highet = new System.Windows.Forms.TextBox();
             this.lbl_length = new System.Windows.Forms.Label();
             this.input_length = new System.Windows.Forms.TextBox();
+            this.lbl_range = new System.Windows.Forms.Label();
+            this.input_Range = new System.Windows.Forms.TextBox();
+            this.lbl_batterycap = new System.Windows.Forms.Label();
+            this.input_capaa = new System.Windows.Forms.TextBox();
+            this.lbl_chargetime = new System.Windows.Forms.Label();
+            this.input_ChargeTime = new System.Windows.Forms.TextBox();
             this.input_engineCap.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +114,12 @@
             // 
             // input_engineCap
             // 
+            this.input_engineCap.Controls.Add(this.input_ChargeTime);
+            this.input_engineCap.Controls.Add(this.lbl_chargetime);
+            this.input_engineCap.Controls.Add(this.input_capaa);
+            this.input_engineCap.Controls.Add(this.lbl_batterycap);
+            this.input_engineCap.Controls.Add(this.input_Range);
+            this.input_engineCap.Controls.Add(this.lbl_range);
             this.input_engineCap.Controls.Add(this.input_length);
             this.input_engineCap.Controls.Add(this.lbl_length);
             this.input_engineCap.Controls.Add(this.input_highet);
@@ -485,7 +497,7 @@
             // lbl_liencePlate
             // 
             this.lbl_liencePlate.AutoSize = true;
-            this.lbl_liencePlate.Location = new System.Drawing.Point(207, 236);
+            this.lbl_liencePlate.Location = new System.Drawing.Point(183, 236);
             this.lbl_liencePlate.Name = "lbl_liencePlate";
             this.lbl_liencePlate.Size = new System.Drawing.Size(75, 13);
             this.lbl_liencePlate.TabIndex = 34;
@@ -493,7 +505,7 @@
             // 
             // input_liecenePl
             // 
-            this.input_liecenePl.Location = new System.Drawing.Point(288, 233);
+            this.input_liecenePl.Location = new System.Drawing.Point(264, 233);
             this.input_liecenePl.Name = "input_liecenePl";
             this.input_liecenePl.ReadOnly = true;
             this.input_liecenePl.Size = new System.Drawing.Size(119, 20);
@@ -501,7 +513,7 @@
             // 
             // butt_saveCar
             // 
-            this.butt_saveCar.Location = new System.Drawing.Point(248, 322);
+            this.butt_saveCar.Location = new System.Drawing.Point(248, 332);
             this.butt_saveCar.Name = "butt_saveCar";
             this.butt_saveCar.Size = new System.Drawing.Size(104, 45);
             this.butt_saveCar.TabIndex = 36;
@@ -512,7 +524,7 @@
             // lbl_highet
             // 
             this.lbl_highet.AutoSize = true;
-            this.lbl_highet.Location = new System.Drawing.Point(160, 272);
+            this.lbl_highet.Location = new System.Drawing.Point(183, 272);
             this.lbl_highet.Name = "lbl_highet";
             this.lbl_highet.Size = new System.Drawing.Size(41, 13);
             this.lbl_highet.TabIndex = 37;
@@ -520,7 +532,7 @@
             // 
             // input_highet
             // 
-            this.input_highet.Location = new System.Drawing.Point(207, 269);
+            this.input_highet.Location = new System.Drawing.Point(235, 269);
             this.input_highet.Name = "input_highet";
             this.input_highet.ReadOnly = true;
             this.input_highet.Size = new System.Drawing.Size(75, 20);
@@ -529,7 +541,7 @@
             // lbl_length
             // 
             this.lbl_length.AutoSize = true;
-            this.lbl_length.Location = new System.Drawing.Point(309, 272);
+            this.lbl_length.Location = new System.Drawing.Point(348, 272);
             this.lbl_length.Name = "lbl_length";
             this.lbl_length.Size = new System.Drawing.Size(43, 13);
             this.lbl_length.TabIndex = 39;
@@ -537,11 +549,62 @@
             // 
             // input_length
             // 
-            this.input_length.Location = new System.Drawing.Point(349, 269);
+            this.input_length.Location = new System.Drawing.Point(405, 269);
             this.input_length.Name = "input_length";
             this.input_length.ReadOnly = true;
             this.input_length.Size = new System.Drawing.Size(100, 20);
             this.input_length.TabIndex = 40;
+            // 
+            // lbl_range
+            // 
+            this.lbl_range.AutoSize = true;
+            this.lbl_range.Location = new System.Drawing.Point(405, 236);
+            this.lbl_range.Name = "lbl_range";
+            this.lbl_range.Size = new System.Drawing.Size(42, 13);
+            this.lbl_range.TabIndex = 41;
+            this.lbl_range.Text = "Range:";
+            // 
+            // input_Range
+            // 
+            this.input_Range.Location = new System.Drawing.Point(452, 233);
+            this.input_Range.Name = "input_Range";
+            this.input_Range.ReadOnly = true;
+            this.input_Range.Size = new System.Drawing.Size(100, 20);
+            this.input_Range.TabIndex = 42;
+            // 
+            // lbl_batterycap
+            // 
+            this.lbl_batterycap.AutoSize = true;
+            this.lbl_batterycap.Location = new System.Drawing.Point(18, 272);
+            this.lbl_batterycap.Name = "lbl_batterycap";
+            this.lbl_batterycap.Size = new System.Drawing.Size(87, 13);
+            this.lbl_batterycap.TabIndex = 43;
+            this.lbl_batterycap.Text = "Battery Capacity:";
+            // 
+            // input_capaa
+            // 
+            this.input_capaa.Location = new System.Drawing.Point(102, 269);
+            this.input_capaa.Name = "input_capaa";
+            this.input_capaa.ReadOnly = true;
+            this.input_capaa.Size = new System.Drawing.Size(59, 20);
+            this.input_capaa.TabIndex = 44;
+            // 
+            // lbl_chargetime
+            // 
+            this.lbl_chargetime.AutoSize = true;
+            this.lbl_chargetime.Location = new System.Drawing.Point(193, 304);
+            this.lbl_chargetime.Name = "lbl_chargetime";
+            this.lbl_chargetime.Size = new System.Drawing.Size(78, 13);
+            this.lbl_chargetime.TabIndex = 45;
+            this.lbl_chargetime.Text = "Charging Time:";
+            // 
+            // input_ChargeTime
+            // 
+            this.input_ChargeTime.Location = new System.Drawing.Point(276, 301);
+            this.input_ChargeTime.Name = "input_ChargeTime";
+            this.input_ChargeTime.ReadOnly = true;
+            this.input_ChargeTime.Size = new System.Drawing.Size(100, 20);
+            this.input_ChargeTime.TabIndex = 46;
             // 
             // CatalogMng
             // 
@@ -607,5 +670,11 @@
         private System.Windows.Forms.Label lbl_highet;
         private System.Windows.Forms.TextBox input_length;
         private System.Windows.Forms.Label lbl_length;
+        private System.Windows.Forms.TextBox input_capaa;
+        private System.Windows.Forms.Label lbl_batterycap;
+        private System.Windows.Forms.TextBox input_Range;
+        private System.Windows.Forms.Label lbl_range;
+        private System.Windows.Forms.TextBox input_ChargeTime;
+        private System.Windows.Forms.Label lbl_chargetime;
     }
 }
