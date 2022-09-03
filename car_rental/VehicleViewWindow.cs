@@ -93,5 +93,21 @@ namespace car_rental
             
                 
         }
+
+        private void rent_button_Click(object sender, EventArgs e)
+        {
+            string message = "Are You sure you want to retn this vehicle?";
+            string caption = "Validation";
+            MessageBoxButtons rent_validation = MessageBoxButtons.YesNo;
+            DialogResult result;
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, rent_validation);
+            if (result == DialogResult.Yes)
+            {
+                vehicle.Amount--;
+                MessageBox.Show("Thank you for purchasing, hope to see you again!");
+                this.Close();
+            }  
+        }
     }
 }

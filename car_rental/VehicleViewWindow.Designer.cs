@@ -188,6 +188,7 @@
             this.rent_button.TabIndex = 0;
             this.rent_button.Text = "Rent This Vehicle";
             this.rent_button.UseVisualStyleBackColor = true;
+            this.rent_button.Click += new System.EventHandler(this.rent_button_Click);
             // 
             // VehicleViewWindow
             // 
