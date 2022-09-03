@@ -57,7 +57,7 @@ namespace car_rental
             }
             if (input_ID.Text.Length < 9 || input_ID.Text.Length > 9)
             { 
-                        flag = false;
+                       flag = false;
                        string message = "Your ID number is not valid";
                        string caption = "Error Detected in Input";
                        MessageBoxButtons buttons = MessageBoxButtons.OK;

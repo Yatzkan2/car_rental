@@ -71,7 +71,7 @@ namespace car_rental
         public static List<Vehicle> cargoList = new List<Vehicle>();
 
         public static GasolinePrivateCar bmwX5 = new GasolinePrivateCar("SUV", false, 360, 60, 12, 25976184, 0.7, 4, "700", 6, 280, 2022, "Grey", 25, "BMW X5");
-        public static GasolinePrivateCar ferarriLaferarri = new GasolinePrivateCar("cupe", true, 6.3, 75, 9.5, 12685794, 1.58, 4, "2650", 3, 370, 2014, "Red", 3, "Ferarri Laferarri");
+        public static GasolinePrivateCar ferarriLaferarri = new GasolinePrivateCar("coupe", true, 6.3, 75, 9.5, 12685794, 1.58, 4, "2650", 3, 370, 2014, "Red", 3, "Ferarri Laferarri");
         public static List<Vehicle> privateGasCarList = new List<Vehicle>();
 
         public static ElectricCar teslaModelX = new ElectricCar(536, 100, 7.5, 35264758, 2.36, 4, "5.2", 2.3, 250, 2022, "Silver", 6, "Tesla Model X");

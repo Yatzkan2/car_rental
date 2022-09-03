@@ -118,10 +118,8 @@ namespace car_rental
             show_Lname.ReadOnly = false;
             show_id.ReadOnly = false;
             show_pass.ReadOnly = false;
-
-           
-
-
+            
+          
 
         }
 

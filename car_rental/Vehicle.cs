@@ -17,7 +17,7 @@ namespace car_rental
         private uint manufacturing_year;
         private string color;
         private int amount;
-        private string model; //lamborgini 911, ferarri la ferarri, etc...
+        private string model; //Porsch 911, ferarri la ferarri, etc...
         public Vehicle(uint liecense_plate, double weight, int wheels, string wheel_size, 
                        double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model)
         {
