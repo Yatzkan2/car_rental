@@ -19,6 +19,10 @@ namespace car_rental
         string[] CargoCompanys = { "Isuzu", "Mercedes", "Chevrolette" };
         string[] ElectrisCarsCOmpany = { "Tesla", "Huyndai" };
         public static Vehicle temp; // an object to create a new object and put it into the lists
+        private enum Types{
+            MotorCycle,PrivateElectricCar,PrivateGasCar,Cargo
+        };
+        private int type;
         public CatalogMng()
         {
             InitializeComponent();
@@ -48,7 +52,7 @@ namespace car_rental
         private void rdButt_Private_CheckedChanged(object sender, EventArgs e)
         {
             enablesForallPrivateCars();
-            ///need to fix the bug that it doesnt update immedialty
+           
         }
 
         private void rdbutt_Motor_CheckedChanged(object sender, EventArgs e)
@@ -79,6 +83,7 @@ namespace car_rental
         private void cb_enigneType_SelectedIndexChanged(object sender, EventArgs e)
         {
             enableInputs();
+            cb_Companies.Enabled = true;
             if (cb_enigneType.Text == "Gasoline")
             {
                 for (int i = 0; i < PrivateCompanys.Length; i++)
@@ -106,7 +111,7 @@ namespace car_rental
         {
             cb_Companies.Enabled = true;
             cb_Companies.Items.Clear();
-            input_Model.ReadOnly = false;
+            cb_Companies.ResetText(); 
             chkBox_Auto.Enabled = true;
             chkBox_Manual.Enabled = true;
             input_enigneCapa.ReadOnly = false;
@@ -290,6 +295,8 @@ namespace car_rental
         }
         private void enablesForallPrivateCars()
         {
+            cb_Companies.ResetText();
+            cb_Companies.Enabled = false;
             cb_enigneType.Enabled = true;
             cb_enigneType.SelectedItem = cb_enigneType.Items[0];
             input_highet.ReadOnly = true;
@@ -303,6 +310,7 @@ namespace car_rental
             input_capaa.Text = "-";
         }
 
+        /// Edit Stock Panel
         private void chekBoxE_manual_CheckedChanged(object sender, EventArgs e)
         {
             chkBoxE_name.Checked = false;
@@ -318,17 +326,82 @@ namespace car_rental
             cBE_vecType.Enabled = false;
             cBE_model.Visible = false;
             lblE_model.Visible = false;
+            
            }
 
         private void cBE_vecType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblE_model.Visible = true;
-            cBE_model.Visible = true;
+            
             cBE_model.Enabled = true;
+            cBE_model.Items.Clear();
+            cBE_model.ResetText();
 
+            
             if(cBE_vecType.Text == "Private Car")
             {
+                rdBE_Electric.Visible = true;
+                rdBE_Gas.Visible = true;
+
+            }
+            else if(cBE_vecType.Text == "MotorCycle")
+            {
                
+                lblE_model.Visible = true;
+                cBE_model.Visible = true;
+                type = 0;
+                foreach (MotorCycle motor in Program.motorCycleList)
+                {
+                    cBE_model.Items.Add(motor.Model);
+                    
+                }
+            }
+            else if(cBE_vecType.Text == "Cargo")
+            {
+                type = 3;
+                lblE_model.Visible = true;
+                cBE_model.Visible = true;
+                foreach (Cargo car in Program.cargoList)
+                {
+                    cBE_model.Items.Add(car.Model);
+                }
+            }
+        }
+
+        private void rdBE_Gas_CheckedChanged(object sender, EventArgs e)
+        {
+            cBE_model.Items.Clear();
+            type = 2;
+            foreach (GasolinePrivateCar car in Program.privateGasCarList)
+            {
+                lblE_model.Visible = true;
+                cBE_model.Visible = true;
+                cBE_model.Items.Add(car.Model);
+            }
+        }
+
+        private void rdBE_Electric_CheckedChanged(object sender, EventArgs e)
+        {
+            cBE_model.Items.Clear();
+            type = 1;
+            foreach(ElectricCar car in Program.privateElcCarList )
+            {
+                lblE_model.Visible = true;
+                cBE_model.Visible = true;
+                cBE_model.Items.Add(car.Model);
+            }
+        }
+
+        private void cBE_model_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(type)
+            {
+                case 0:
+                   
+
+
+                case 1:
+                case 2:
+                case 3:
             }
         }
     }

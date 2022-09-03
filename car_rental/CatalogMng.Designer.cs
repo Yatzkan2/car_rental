@@ -91,6 +91,12 @@
             this.lbl_edit = new System.Windows.Forms.Label();
             this.rdBE_Gas = new System.Windows.Forms.RadioButton();
             this.rdBE_Electric = new System.Windows.Forms.RadioButton();
+            this.lblE_stock = new System.Windows.Forms.Label();
+            this.inputE_stcok = new System.Windows.Forms.TextBox();
+            this.buttE_edit = new System.Windows.Forms.Button();
+            this.buttE_details = new System.Windows.Forms.Button();
+            this.buttE_Save = new System.Windows.Forms.Button();
+            this.buttE_delete = new System.Windows.Forms.Button();
             this.panel_addNew.SuspendLayout();
             this.Panel_edit.SuspendLayout();
             this.SuspendLayout();
@@ -621,6 +627,12 @@
             // 
             // Panel_edit
             // 
+            this.Panel_edit.Controls.Add(this.buttE_delete);
+            this.Panel_edit.Controls.Add(this.buttE_Save);
+            this.Panel_edit.Controls.Add(this.buttE_details);
+            this.Panel_edit.Controls.Add(this.buttE_edit);
+            this.Panel_edit.Controls.Add(this.inputE_stcok);
+            this.Panel_edit.Controls.Add(this.lblE_stock);
             this.Panel_edit.Controls.Add(this.rdBE_Electric);
             this.Panel_edit.Controls.Add(this.rdBE_Gas);
             this.Panel_edit.Controls.Add(this.chkBoxE_name);
@@ -634,7 +646,7 @@
             this.Panel_edit.Controls.Add(this.lbl_edit);
             this.Panel_edit.Location = new System.Drawing.Point(195, 0);
             this.Panel_edit.Name = "Panel_edit";
-            this.Panel_edit.Size = new System.Drawing.Size(575, 393);
+            this.Panel_edit.Size = new System.Drawing.Size(575, 196);
             this.Panel_edit.TabIndex = 4;
             this.Panel_edit.Visible = false;
             // 
@@ -687,12 +699,13 @@
             this.cBE_model.Size = new System.Drawing.Size(121, 21);
             this.cBE_model.TabIndex = 4;
             this.cBE_model.Visible = false;
+            this.cBE_model.SelectedIndexChanged += new System.EventHandler(this.cBE_model_SelectedIndexChanged);
             // 
             // input_byModel
             // 
-            this.input_byModel.Enabled = false;
             this.input_byModel.Location = new System.Drawing.Point(381, 28);
             this.input_byModel.Name = "input_byModel";
+            this.input_byModel.ReadOnly = true;
             this.input_byModel.Size = new System.Drawing.Size(178, 20);
             this.input_byModel.TabIndex = 3;
             // 
@@ -731,7 +744,7 @@
             // rdBE_Gas
             // 
             this.rdBE_Gas.AutoSize = true;
-            this.rdBE_Gas.Location = new System.Drawing.Point(346, 90);
+            this.rdBE_Gas.Location = new System.Drawing.Point(303, 54);
             this.rdBE_Gas.Name = "rdBE_Gas";
             this.rdBE_Gas.Size = new System.Drawing.Size(44, 17);
             this.rdBE_Gas.TabIndex = 9;
@@ -739,11 +752,12 @@
             this.rdBE_Gas.Text = "Gas";
             this.rdBE_Gas.UseVisualStyleBackColor = true;
             this.rdBE_Gas.Visible = false;
+            this.rdBE_Gas.CheckedChanged += new System.EventHandler(this.rdBE_Gas_CheckedChanged);
             // 
             // rdBE_Electric
             // 
             this.rdBE_Electric.AutoSize = true;
-            this.rdBE_Electric.Location = new System.Drawing.Point(418, 90);
+            this.rdBE_Electric.Location = new System.Drawing.Point(365, 54);
             this.rdBE_Electric.Name = "rdBE_Electric";
             this.rdBE_Electric.Size = new System.Drawing.Size(60, 17);
             this.rdBE_Electric.TabIndex = 10;
@@ -751,6 +765,61 @@
             this.rdBE_Electric.Text = "Electric";
             this.rdBE_Electric.UseVisualStyleBackColor = true;
             this.rdBE_Electric.Visible = false;
+            this.rdBE_Electric.CheckedChanged += new System.EventHandler(this.rdBE_Electric_CheckedChanged);
+            // 
+            // lblE_stock
+            // 
+            this.lblE_stock.AutoSize = true;
+            this.lblE_stock.Location = new System.Drawing.Point(155, 131);
+            this.lblE_stock.Name = "lblE_stock";
+            this.lblE_stock.Size = new System.Drawing.Size(38, 13);
+            this.lblE_stock.TabIndex = 11;
+            this.lblE_stock.Text = "Stock:";
+            // 
+            // inputE_stcok
+            // 
+            this.inputE_stcok.Location = new System.Drawing.Point(204, 128);
+            this.inputE_stcok.Name = "inputE_stcok";
+            this.inputE_stcok.ReadOnly = true;
+            this.inputE_stcok.Size = new System.Drawing.Size(116, 20);
+            this.inputE_stcok.TabIndex = 12;
+            // 
+            // buttE_edit
+            // 
+            this.buttE_edit.Location = new System.Drawing.Point(336, 127);
+            this.buttE_edit.Name = "buttE_edit";
+            this.buttE_edit.Size = new System.Drawing.Size(39, 23);
+            this.buttE_edit.TabIndex = 13;
+            this.buttE_edit.Text = "Edit";
+            this.buttE_edit.UseVisualStyleBackColor = true;
+            // 
+            // buttE_details
+            // 
+            this.buttE_details.Location = new System.Drawing.Point(101, 155);
+            this.buttE_details.Name = "buttE_details";
+            this.buttE_details.Size = new System.Drawing.Size(75, 23);
+            this.buttE_details.TabIndex = 14;
+            this.buttE_details.Text = "Details";
+            this.buttE_details.UseVisualStyleBackColor = true;
+            this.buttE_details.Visible = false;
+            // 
+            // buttE_Save
+            // 
+            this.buttE_Save.Location = new System.Drawing.Point(212, 155);
+            this.buttE_Save.Name = "buttE_Save";
+            this.buttE_Save.Size = new System.Drawing.Size(108, 23);
+            this.buttE_Save.TabIndex = 15;
+            this.buttE_Save.Text = "Save Changes";
+            this.buttE_Save.UseVisualStyleBackColor = true;
+            // 
+            // buttE_delete
+            // 
+            this.buttE_delete.Location = new System.Drawing.Point(336, 155);
+            this.buttE_delete.Name = "buttE_delete";
+            this.buttE_delete.Size = new System.Drawing.Size(121, 23);
+            this.buttE_delete.TabIndex = 16;
+            this.buttE_delete.Text = "Delete this Vechile";
+            this.buttE_delete.UseVisualStyleBackColor = true;
             // 
             // CatalogMng
             // 
@@ -837,5 +906,11 @@
         private System.Windows.Forms.Label lbl_edit;
         private System.Windows.Forms.RadioButton rdBE_Electric;
         private System.Windows.Forms.RadioButton rdBE_Gas;
+        private System.Windows.Forms.Button buttE_delete;
+        private System.Windows.Forms.Button buttE_Save;
+        private System.Windows.Forms.Button buttE_details;
+        private System.Windows.Forms.Button buttE_edit;
+        private System.Windows.Forms.TextBox inputE_stcok;
+        private System.Windows.Forms.Label lblE_stock;
     }
 }
