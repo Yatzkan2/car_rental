@@ -31,55 +31,68 @@
             this.butt_gotoadmn = new System.Windows.Forms.Button();
             this.butt_addnew = new System.Windows.Forms.Button();
             this.butt_editstock = new System.Windows.Forms.Button();
-            this.input_engineCap = new System.Windows.Forms.Panel();
-            this.lbl_addnew = new System.Windows.Forms.Label();
-            this.lbl_vecType = new System.Windows.Forms.Label();
-            this.rdButt_Private = new System.Windows.Forms.RadioButton();
-            this.rdbutt_Motor = new System.Windows.Forms.RadioButton();
-            this.rdbutt_Cargo = new System.Windows.Forms.RadioButton();
-            this.cb_enigneType = new System.Windows.Forms.ComboBox();
-            this.lbl_engineType = new System.Windows.Forms.Label();
-            this.cb_Companies = new System.Windows.Forms.ComboBox();
-            this.lbl_company = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.input_Model = new System.Windows.Forms.TextBox();
-            this.chkBox_Auto = new System.Windows.Forms.CheckBox();
-            this.chkBox_Manual = new System.Windows.Forms.CheckBox();
-            this.lbl_gear = new System.Windows.Forms.Label();
-            this.lbl_engineCap = new System.Windows.Forms.Label();
-            this.input_enigneCapa = new System.Windows.Forms.TextBox();
-            this.lbl_bodyType = new System.Windows.Forms.Label();
-            this.cb_bodyType = new System.Windows.Forms.ComboBox();
-            this.lbl_FuelTank = new System.Windows.Forms.Label();
-            this.input_fuelCap = new System.Windows.Forms.TextBox();
-            this.lbl_fuelCuns = new System.Windows.Forms.Label();
-            this.input_fuelCons = new System.Windows.Forms.TextBox();
-            this.lbl_manuyear = new System.Windows.Forms.Label();
-            this.cb_manuYear = new System.Windows.Forms.ComboBox();
-            this.lbl_Weight = new System.Windows.Forms.Label();
-            this.input_weight = new System.Windows.Forms.TextBox();
-            this.lbl_wheelSize = new System.Windows.Forms.Label();
-            this.input_wheelSize = new System.Windows.Forms.TextBox();
-            this.lbl_maxspeed = new System.Windows.Forms.Label();
-            this.input_maxspeed = new System.Windows.Forms.TextBox();
-            this.lbl_acc = new System.Windows.Forms.Label();
-            this.input_Accele = new System.Windows.Forms.TextBox();
-            this.lbl_color = new System.Windows.Forms.Label();
-            this.input_color = new System.Windows.Forms.TextBox();
-            this.lbl_liencePlate = new System.Windows.Forms.Label();
-            this.input_liecenePl = new System.Windows.Forms.TextBox();
-            this.butt_saveCar = new System.Windows.Forms.Button();
-            this.lbl_highet = new System.Windows.Forms.Label();
-            this.input_highet = new System.Windows.Forms.TextBox();
-            this.lbl_length = new System.Windows.Forms.Label();
-            this.input_length = new System.Windows.Forms.TextBox();
-            this.lbl_range = new System.Windows.Forms.Label();
-            this.input_Range = new System.Windows.Forms.TextBox();
-            this.lbl_batterycap = new System.Windows.Forms.Label();
-            this.input_capaa = new System.Windows.Forms.TextBox();
-            this.lbl_chargetime = new System.Windows.Forms.Label();
+            this.panel_addNew = new System.Windows.Forms.Panel();
             this.input_ChargeTime = new System.Windows.Forms.TextBox();
-            this.input_engineCap.SuspendLayout();
+            this.lbl_chargetime = new System.Windows.Forms.Label();
+            this.input_capaa = new System.Windows.Forms.TextBox();
+            this.lbl_batterycap = new System.Windows.Forms.Label();
+            this.input_Range = new System.Windows.Forms.TextBox();
+            this.lbl_range = new System.Windows.Forms.Label();
+            this.input_length = new System.Windows.Forms.TextBox();
+            this.lbl_length = new System.Windows.Forms.Label();
+            this.input_highet = new System.Windows.Forms.TextBox();
+            this.lbl_highet = new System.Windows.Forms.Label();
+            this.butt_saveCar = new System.Windows.Forms.Button();
+            this.input_liecenePl = new System.Windows.Forms.TextBox();
+            this.lbl_liencePlate = new System.Windows.Forms.Label();
+            this.input_color = new System.Windows.Forms.TextBox();
+            this.lbl_color = new System.Windows.Forms.Label();
+            this.input_Accele = new System.Windows.Forms.TextBox();
+            this.lbl_acc = new System.Windows.Forms.Label();
+            this.input_maxspeed = new System.Windows.Forms.TextBox();
+            this.lbl_maxspeed = new System.Windows.Forms.Label();
+            this.input_wheelSize = new System.Windows.Forms.TextBox();
+            this.lbl_wheelSize = new System.Windows.Forms.Label();
+            this.input_weight = new System.Windows.Forms.TextBox();
+            this.lbl_Weight = new System.Windows.Forms.Label();
+            this.cb_manuYear = new System.Windows.Forms.ComboBox();
+            this.lbl_manuyear = new System.Windows.Forms.Label();
+            this.input_fuelCons = new System.Windows.Forms.TextBox();
+            this.lbl_fuelCuns = new System.Windows.Forms.Label();
+            this.input_fuelCap = new System.Windows.Forms.TextBox();
+            this.lbl_FuelTank = new System.Windows.Forms.Label();
+            this.cb_bodyType = new System.Windows.Forms.ComboBox();
+            this.lbl_bodyType = new System.Windows.Forms.Label();
+            this.input_enigneCapa = new System.Windows.Forms.TextBox();
+            this.lbl_engineCap = new System.Windows.Forms.Label();
+            this.lbl_gear = new System.Windows.Forms.Label();
+            this.chkBox_Manual = new System.Windows.Forms.CheckBox();
+            this.chkBox_Auto = new System.Windows.Forms.CheckBox();
+            this.input_Model = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_company = new System.Windows.Forms.Label();
+            this.cb_Companies = new System.Windows.Forms.ComboBox();
+            this.lbl_engineType = new System.Windows.Forms.Label();
+            this.cb_enigneType = new System.Windows.Forms.ComboBox();
+            this.rdbutt_Cargo = new System.Windows.Forms.RadioButton();
+            this.rdbutt_Motor = new System.Windows.Forms.RadioButton();
+            this.rdButt_Private = new System.Windows.Forms.RadioButton();
+            this.lbl_vecType = new System.Windows.Forms.Label();
+            this.lbl_addnew = new System.Windows.Forms.Label();
+            this.Panel_edit = new System.Windows.Forms.Panel();
+            this.chkBoxE_name = new System.Windows.Forms.CheckBox();
+            this.chekBoxE_manual = new System.Windows.Forms.CheckBox();
+            this.lblE_bymodel = new System.Windows.Forms.Label();
+            this.lblE_model = new System.Windows.Forms.Label();
+            this.cBE_model = new System.Windows.Forms.ComboBox();
+            this.input_byModel = new System.Windows.Forms.TextBox();
+            this.cBE_vecType = new System.Windows.Forms.ComboBox();
+            this.lblE_vectype = new System.Windows.Forms.Label();
+            this.lbl_edit = new System.Windows.Forms.Label();
+            this.rdBE_Gas = new System.Windows.Forms.RadioButton();
+            this.rdBE_Electric = new System.Windows.Forms.RadioButton();
+            this.panel_addNew.SuspendLayout();
+            this.Panel_edit.SuspendLayout();
             this.SuspendLayout();
             // 
             // butt_gotoadmn
@@ -112,231 +125,312 @@
             this.butt_editstock.UseVisualStyleBackColor = true;
             this.butt_editstock.Click += new System.EventHandler(this.butt_editstock_Click);
             // 
-            // input_engineCap
+            // panel_addNew
             // 
-            this.input_engineCap.Controls.Add(this.input_ChargeTime);
-            this.input_engineCap.Controls.Add(this.lbl_chargetime);
-            this.input_engineCap.Controls.Add(this.input_capaa);
-            this.input_engineCap.Controls.Add(this.lbl_batterycap);
-            this.input_engineCap.Controls.Add(this.input_Range);
-            this.input_engineCap.Controls.Add(this.lbl_range);
-            this.input_engineCap.Controls.Add(this.input_length);
-            this.input_engineCap.Controls.Add(this.lbl_length);
-            this.input_engineCap.Controls.Add(this.input_highet);
-            this.input_engineCap.Controls.Add(this.lbl_highet);
-            this.input_engineCap.Controls.Add(this.butt_saveCar);
-            this.input_engineCap.Controls.Add(this.input_liecenePl);
-            this.input_engineCap.Controls.Add(this.lbl_liencePlate);
-            this.input_engineCap.Controls.Add(this.input_color);
-            this.input_engineCap.Controls.Add(this.lbl_color);
-            this.input_engineCap.Controls.Add(this.input_Accele);
-            this.input_engineCap.Controls.Add(this.lbl_acc);
-            this.input_engineCap.Controls.Add(this.input_maxspeed);
-            this.input_engineCap.Controls.Add(this.lbl_maxspeed);
-            this.input_engineCap.Controls.Add(this.input_wheelSize);
-            this.input_engineCap.Controls.Add(this.lbl_wheelSize);
-            this.input_engineCap.Controls.Add(this.input_weight);
-            this.input_engineCap.Controls.Add(this.lbl_Weight);
-            this.input_engineCap.Controls.Add(this.cb_manuYear);
-            this.input_engineCap.Controls.Add(this.lbl_manuyear);
-            this.input_engineCap.Controls.Add(this.input_fuelCons);
-            this.input_engineCap.Controls.Add(this.lbl_fuelCuns);
-            this.input_engineCap.Controls.Add(this.input_fuelCap);
-            this.input_engineCap.Controls.Add(this.lbl_FuelTank);
-            this.input_engineCap.Controls.Add(this.cb_bodyType);
-            this.input_engineCap.Controls.Add(this.lbl_bodyType);
-            this.input_engineCap.Controls.Add(this.input_enigneCapa);
-            this.input_engineCap.Controls.Add(this.lbl_engineCap);
-            this.input_engineCap.Controls.Add(this.lbl_gear);
-            this.input_engineCap.Controls.Add(this.chkBox_Manual);
-            this.input_engineCap.Controls.Add(this.chkBox_Auto);
-            this.input_engineCap.Controls.Add(this.input_Model);
-            this.input_engineCap.Controls.Add(this.label1);
-            this.input_engineCap.Controls.Add(this.lbl_company);
-            this.input_engineCap.Controls.Add(this.cb_Companies);
-            this.input_engineCap.Controls.Add(this.lbl_engineType);
-            this.input_engineCap.Controls.Add(this.cb_enigneType);
-            this.input_engineCap.Controls.Add(this.rdbutt_Cargo);
-            this.input_engineCap.Controls.Add(this.rdbutt_Motor);
-            this.input_engineCap.Controls.Add(this.rdButt_Private);
-            this.input_engineCap.Controls.Add(this.lbl_vecType);
-            this.input_engineCap.Controls.Add(this.lbl_addnew);
-            this.input_engineCap.Location = new System.Drawing.Point(192, 12);
-            this.input_engineCap.Name = "input_engineCap";
-            this.input_engineCap.Size = new System.Drawing.Size(576, 393);
-            this.input_engineCap.TabIndex = 3;
-            this.input_engineCap.Visible = false;
+            this.panel_addNew.Controls.Add(this.input_ChargeTime);
+            this.panel_addNew.Controls.Add(this.lbl_chargetime);
+            this.panel_addNew.Controls.Add(this.input_capaa);
+            this.panel_addNew.Controls.Add(this.lbl_batterycap);
+            this.panel_addNew.Controls.Add(this.input_Range);
+            this.panel_addNew.Controls.Add(this.lbl_range);
+            this.panel_addNew.Controls.Add(this.input_length);
+            this.panel_addNew.Controls.Add(this.lbl_length);
+            this.panel_addNew.Controls.Add(this.input_highet);
+            this.panel_addNew.Controls.Add(this.lbl_highet);
+            this.panel_addNew.Controls.Add(this.butt_saveCar);
+            this.panel_addNew.Controls.Add(this.input_liecenePl);
+            this.panel_addNew.Controls.Add(this.lbl_liencePlate);
+            this.panel_addNew.Controls.Add(this.input_color);
+            this.panel_addNew.Controls.Add(this.lbl_color);
+            this.panel_addNew.Controls.Add(this.input_Accele);
+            this.panel_addNew.Controls.Add(this.lbl_acc);
+            this.panel_addNew.Controls.Add(this.input_maxspeed);
+            this.panel_addNew.Controls.Add(this.lbl_maxspeed);
+            this.panel_addNew.Controls.Add(this.input_wheelSize);
+            this.panel_addNew.Controls.Add(this.lbl_wheelSize);
+            this.panel_addNew.Controls.Add(this.input_weight);
+            this.panel_addNew.Controls.Add(this.lbl_Weight);
+            this.panel_addNew.Controls.Add(this.cb_manuYear);
+            this.panel_addNew.Controls.Add(this.lbl_manuyear);
+            this.panel_addNew.Controls.Add(this.input_fuelCons);
+            this.panel_addNew.Controls.Add(this.lbl_fuelCuns);
+            this.panel_addNew.Controls.Add(this.input_fuelCap);
+            this.panel_addNew.Controls.Add(this.lbl_FuelTank);
+            this.panel_addNew.Controls.Add(this.cb_bodyType);
+            this.panel_addNew.Controls.Add(this.lbl_bodyType);
+            this.panel_addNew.Controls.Add(this.input_enigneCapa);
+            this.panel_addNew.Controls.Add(this.lbl_engineCap);
+            this.panel_addNew.Controls.Add(this.lbl_gear);
+            this.panel_addNew.Controls.Add(this.chkBox_Manual);
+            this.panel_addNew.Controls.Add(this.chkBox_Auto);
+            this.panel_addNew.Controls.Add(this.input_Model);
+            this.panel_addNew.Controls.Add(this.label1);
+            this.panel_addNew.Controls.Add(this.lbl_company);
+            this.panel_addNew.Controls.Add(this.cb_Companies);
+            this.panel_addNew.Controls.Add(this.lbl_engineType);
+            this.panel_addNew.Controls.Add(this.cb_enigneType);
+            this.panel_addNew.Controls.Add(this.rdbutt_Cargo);
+            this.panel_addNew.Controls.Add(this.rdbutt_Motor);
+            this.panel_addNew.Controls.Add(this.rdButt_Private);
+            this.panel_addNew.Controls.Add(this.lbl_vecType);
+            this.panel_addNew.Controls.Add(this.lbl_addnew);
+            this.panel_addNew.Location = new System.Drawing.Point(147, 3);
+            this.panel_addNew.Name = "panel_addNew";
+            this.panel_addNew.Size = new System.Drawing.Size(576, 393);
+            this.panel_addNew.TabIndex = 3;
+            this.panel_addNew.Visible = false;
             // 
-            // lbl_addnew
+            // input_ChargeTime
             // 
-            this.lbl_addnew.AutoSize = true;
-            this.lbl_addnew.Location = new System.Drawing.Point(245, 10);
-            this.lbl_addnew.Name = "lbl_addnew";
-            this.lbl_addnew.Size = new System.Drawing.Size(71, 13);
-            this.lbl_addnew.TabIndex = 0;
-            this.lbl_addnew.Text = "Add new Car:";
+            this.input_ChargeTime.Location = new System.Drawing.Point(276, 301);
+            this.input_ChargeTime.Name = "input_ChargeTime";
+            this.input_ChargeTime.ReadOnly = true;
+            this.input_ChargeTime.Size = new System.Drawing.Size(100, 20);
+            this.input_ChargeTime.TabIndex = 46;
             // 
-            // lbl_vecType
+            // lbl_chargetime
             // 
-            this.lbl_vecType.AutoSize = true;
-            this.lbl_vecType.Location = new System.Drawing.Point(12, 28);
-            this.lbl_vecType.Name = "lbl_vecType";
-            this.lbl_vecType.Size = new System.Drawing.Size(96, 13);
-            this.lbl_vecType.TabIndex = 1;
-            this.lbl_vecType.Text = "Pick Veichle Type:";
+            this.lbl_chargetime.AutoSize = true;
+            this.lbl_chargetime.Location = new System.Drawing.Point(193, 304);
+            this.lbl_chargetime.Name = "lbl_chargetime";
+            this.lbl_chargetime.Size = new System.Drawing.Size(78, 13);
+            this.lbl_chargetime.TabIndex = 45;
+            this.lbl_chargetime.Text = "Charging Time:";
             // 
-            // rdButt_Private
+            // input_capaa
             // 
-            this.rdButt_Private.AutoSize = true;
-            this.rdButt_Private.Location = new System.Drawing.Point(124, 28);
-            this.rdButt_Private.Name = "rdButt_Private";
-            this.rdButt_Private.Size = new System.Drawing.Size(77, 17);
-            this.rdButt_Private.TabIndex = 2;
-            this.rdButt_Private.TabStop = true;
-            this.rdButt_Private.Text = "Private Car";
-            this.rdButt_Private.UseVisualStyleBackColor = true;
-            this.rdButt_Private.CheckedChanged += new System.EventHandler(this.rdButt_Private_CheckedChanged);
+            this.input_capaa.Location = new System.Drawing.Point(102, 269);
+            this.input_capaa.Name = "input_capaa";
+            this.input_capaa.ReadOnly = true;
+            this.input_capaa.Size = new System.Drawing.Size(59, 20);
+            this.input_capaa.TabIndex = 44;
             // 
-            // rdbutt_Motor
+            // lbl_batterycap
             // 
-            this.rdbutt_Motor.AutoSize = true;
-            this.rdbutt_Motor.Location = new System.Drawing.Point(259, 28);
-            this.rdbutt_Motor.Name = "rdbutt_Motor";
-            this.rdbutt_Motor.Size = new System.Drawing.Size(78, 17);
-            this.rdbutt_Motor.TabIndex = 3;
-            this.rdbutt_Motor.TabStop = true;
-            this.rdbutt_Motor.Text = "MotorCycle";
-            this.rdbutt_Motor.UseVisualStyleBackColor = true;
-            this.rdbutt_Motor.CheckedChanged += new System.EventHandler(this.rdbutt_Motor_CheckedChanged);
+            this.lbl_batterycap.AutoSize = true;
+            this.lbl_batterycap.Location = new System.Drawing.Point(18, 272);
+            this.lbl_batterycap.Name = "lbl_batterycap";
+            this.lbl_batterycap.Size = new System.Drawing.Size(87, 13);
+            this.lbl_batterycap.TabIndex = 43;
+            this.lbl_batterycap.Text = "Battery Capacity:";
             // 
-            // rdbutt_Cargo
+            // input_Range
             // 
-            this.rdbutt_Cargo.AutoSize = true;
-            this.rdbutt_Cargo.Location = new System.Drawing.Point(430, 28);
-            this.rdbutt_Cargo.Name = "rdbutt_Cargo";
-            this.rdbutt_Cargo.Size = new System.Drawing.Size(53, 17);
-            this.rdbutt_Cargo.TabIndex = 4;
-            this.rdbutt_Cargo.TabStop = true;
-            this.rdbutt_Cargo.Text = "Cargo";
-            this.rdbutt_Cargo.UseVisualStyleBackColor = true;
-            this.rdbutt_Cargo.CheckedChanged += new System.EventHandler(this.rdbutt_Cargo_CheckedChanged);
+            this.input_Range.Location = new System.Drawing.Point(452, 233);
+            this.input_Range.Name = "input_Range";
+            this.input_Range.ReadOnly = true;
+            this.input_Range.Size = new System.Drawing.Size(100, 20);
+            this.input_Range.TabIndex = 42;
             // 
-            // cb_enigneType
+            // lbl_range
             // 
-            this.cb_enigneType.Enabled = false;
-            this.cb_enigneType.FormattingEnabled = true;
-            this.cb_enigneType.Items.AddRange(new object[] {
-            "Gasoline",
-            "Electric"});
-            this.cb_enigneType.Location = new System.Drawing.Point(79, 70);
-            this.cb_enigneType.Name = "cb_enigneType";
-            this.cb_enigneType.Size = new System.Drawing.Size(82, 21);
-            this.cb_enigneType.TabIndex = 5;
-            this.cb_enigneType.SelectedIndexChanged += new System.EventHandler(this.cb_enigneType_SelectedIndexChanged);
+            this.lbl_range.AutoSize = true;
+            this.lbl_range.Location = new System.Drawing.Point(405, 236);
+            this.lbl_range.Name = "lbl_range";
+            this.lbl_range.Size = new System.Drawing.Size(42, 13);
+            this.lbl_range.TabIndex = 41;
+            this.lbl_range.Text = "Range:";
             // 
-            // lbl_engineType
+            // input_length
             // 
-            this.lbl_engineType.AutoSize = true;
-            this.lbl_engineType.Location = new System.Drawing.Point(3, 73);
-            this.lbl_engineType.Name = "lbl_engineType";
-            this.lbl_engineType.Size = new System.Drawing.Size(70, 13);
-            this.lbl_engineType.TabIndex = 6;
-            this.lbl_engineType.Text = "Enigne Type:";
+            this.input_length.Location = new System.Drawing.Point(405, 269);
+            this.input_length.Name = "input_length";
+            this.input_length.ReadOnly = true;
+            this.input_length.Size = new System.Drawing.Size(100, 20);
+            this.input_length.TabIndex = 40;
             // 
-            // cb_Companies
+            // lbl_length
             // 
-            this.cb_Companies.Enabled = false;
-            this.cb_Companies.FormattingEnabled = true;
-            this.cb_Companies.Location = new System.Drawing.Point(248, 70);
-            this.cb_Companies.Name = "cb_Companies";
-            this.cb_Companies.Size = new System.Drawing.Size(104, 21);
-            this.cb_Companies.TabIndex = 7;
+            this.lbl_length.AutoSize = true;
+            this.lbl_length.Location = new System.Drawing.Point(348, 272);
+            this.lbl_length.Name = "lbl_length";
+            this.lbl_length.Size = new System.Drawing.Size(43, 13);
+            this.lbl_length.TabIndex = 39;
+            this.lbl_length.Text = "Length:";
             // 
-            // lbl_company
+            // input_highet
             // 
-            this.lbl_company.AutoSize = true;
-            this.lbl_company.Location = new System.Drawing.Point(191, 73);
-            this.lbl_company.Name = "lbl_company";
-            this.lbl_company.Size = new System.Drawing.Size(54, 13);
-            this.lbl_company.TabIndex = 8;
-            this.lbl_company.Text = "Company:";
+            this.input_highet.Location = new System.Drawing.Point(235, 269);
+            this.input_highet.Name = "input_highet";
+            this.input_highet.ReadOnly = true;
+            this.input_highet.Size = new System.Drawing.Size(75, 20);
+            this.input_highet.TabIndex = 38;
             // 
-            // label1
+            // lbl_highet
             // 
-            this.label1.AccessibleDescription = "lbl_model";
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(368, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Model:";
+            this.lbl_highet.AutoSize = true;
+            this.lbl_highet.Location = new System.Drawing.Point(183, 272);
+            this.lbl_highet.Name = "lbl_highet";
+            this.lbl_highet.Size = new System.Drawing.Size(41, 13);
+            this.lbl_highet.TabIndex = 37;
+            this.lbl_highet.Text = "Highet:";
             // 
-            // input_Model
+            // butt_saveCar
             // 
-            this.input_Model.Location = new System.Drawing.Point(413, 70);
-            this.input_Model.Name = "input_Model";
-            this.input_Model.ReadOnly = true;
-            this.input_Model.Size = new System.Drawing.Size(126, 20);
-            this.input_Model.TabIndex = 10;
+            this.butt_saveCar.Location = new System.Drawing.Point(248, 332);
+            this.butt_saveCar.Name = "butt_saveCar";
+            this.butt_saveCar.Size = new System.Drawing.Size(104, 45);
+            this.butt_saveCar.TabIndex = 36;
+            this.butt_saveCar.Text = "Add Car To Stock";
+            this.butt_saveCar.UseVisualStyleBackColor = true;
+            this.butt_saveCar.Click += new System.EventHandler(this.butt_saveCar_Click);
             // 
-            // chkBox_Auto
+            // input_liecenePl
             // 
-            this.chkBox_Auto.AutoSize = true;
-            this.chkBox_Auto.Enabled = false;
-            this.chkBox_Auto.Location = new System.Drawing.Point(51, 112);
-            this.chkBox_Auto.Name = "chkBox_Auto";
-            this.chkBox_Auto.Size = new System.Drawing.Size(73, 17);
-            this.chkBox_Auto.TabIndex = 11;
-            this.chkBox_Auto.Text = "Automatic";
-            this.chkBox_Auto.UseVisualStyleBackColor = true;
-            this.chkBox_Auto.CheckedChanged += new System.EventHandler(this.chkBox_Auto_CheckedChanged);
+            this.input_liecenePl.Location = new System.Drawing.Point(264, 233);
+            this.input_liecenePl.Name = "input_liecenePl";
+            this.input_liecenePl.ReadOnly = true;
+            this.input_liecenePl.Size = new System.Drawing.Size(119, 20);
+            this.input_liecenePl.TabIndex = 35;
             // 
-            // chkBox_Manual
+            // lbl_liencePlate
             // 
-            this.chkBox_Manual.AutoSize = true;
-            this.chkBox_Manual.Enabled = false;
-            this.chkBox_Manual.Location = new System.Drawing.Point(51, 128);
-            this.chkBox_Manual.Name = "chkBox_Manual";
-            this.chkBox_Manual.Size = new System.Drawing.Size(61, 17);
-            this.chkBox_Manual.TabIndex = 12;
-            this.chkBox_Manual.Text = "Manual";
-            this.chkBox_Manual.UseVisualStyleBackColor = true;
-            this.chkBox_Manual.CheckedChanged += new System.EventHandler(this.chkBox_Manual_CheckedChanged);
+            this.lbl_liencePlate.AutoSize = true;
+            this.lbl_liencePlate.Location = new System.Drawing.Point(183, 236);
+            this.lbl_liencePlate.Name = "lbl_liencePlate";
+            this.lbl_liencePlate.Size = new System.Drawing.Size(75, 13);
+            this.lbl_liencePlate.TabIndex = 34;
+            this.lbl_liencePlate.Text = "Liecene Plate:";
             // 
-            // lbl_gear
+            // input_color
             // 
-            this.lbl_gear.AutoSize = true;
-            this.lbl_gear.Location = new System.Drawing.Point(12, 112);
-            this.lbl_gear.Name = "lbl_gear";
-            this.lbl_gear.Size = new System.Drawing.Size(33, 13);
-            this.lbl_gear.TabIndex = 13;
-            this.lbl_gear.Text = "Gear:";
+            this.input_color.Location = new System.Drawing.Point(51, 233);
+            this.input_color.Name = "input_color";
+            this.input_color.ReadOnly = true;
+            this.input_color.Size = new System.Drawing.Size(100, 20);
+            this.input_color.TabIndex = 33;
             // 
-            // lbl_engineCap
+            // lbl_color
             // 
-            this.lbl_engineCap.AutoSize = true;
-            this.lbl_engineCap.Location = new System.Drawing.Point(142, 112);
-            this.lbl_engineCap.Name = "lbl_engineCap";
-            this.lbl_engineCap.Size = new System.Drawing.Size(87, 13);
-            this.lbl_engineCap.TabIndex = 14;
-            this.lbl_engineCap.Text = "Engine Capacity:";
+            this.lbl_color.AutoSize = true;
+            this.lbl_color.Location = new System.Drawing.Point(12, 236);
+            this.lbl_color.Name = "lbl_color";
+            this.lbl_color.Size = new System.Drawing.Size(34, 13);
+            this.lbl_color.TabIndex = 32;
+            this.lbl_color.Text = "Color:";
             // 
-            // input_enigneCapa
+            // input_Accele
             // 
-            this.input_enigneCapa.Location = new System.Drawing.Point(235, 109);
-            this.input_enigneCapa.Name = "input_enigneCapa";
-            this.input_enigneCapa.ReadOnly = true;
-            this.input_enigneCapa.Size = new System.Drawing.Size(100, 20);
-            this.input_enigneCapa.TabIndex = 15;
+            this.input_Accele.Location = new System.Drawing.Point(477, 193);
+            this.input_Accele.Name = "input_Accele";
+            this.input_Accele.ReadOnly = true;
+            this.input_Accele.Size = new System.Drawing.Size(62, 20);
+            this.input_Accele.TabIndex = 31;
+            this.input_Accele.Text = "0-100 sec";
             // 
-            // lbl_bodyType
+            // lbl_acc
             // 
-            this.lbl_bodyType.AutoSize = true;
-            this.lbl_bodyType.Location = new System.Drawing.Point(346, 112);
-            this.lbl_bodyType.Name = "lbl_bodyType";
-            this.lbl_bodyType.Size = new System.Drawing.Size(61, 13);
-            this.lbl_bodyType.TabIndex = 16;
-            this.lbl_bodyType.Text = "Body Type:";
+            this.lbl_acc.AutoSize = true;
+            this.lbl_acc.Location = new System.Drawing.Point(410, 196);
+            this.lbl_acc.Name = "lbl_acc";
+            this.lbl_acc.Size = new System.Drawing.Size(69, 13);
+            this.lbl_acc.TabIndex = 30;
+            this.lbl_acc.Text = "Acceleration:";
+            // 
+            // input_maxspeed
+            // 
+            this.input_maxspeed.Location = new System.Drawing.Point(343, 193);
+            this.input_maxspeed.Name = "input_maxspeed";
+            this.input_maxspeed.ReadOnly = true;
+            this.input_maxspeed.Size = new System.Drawing.Size(48, 20);
+            this.input_maxspeed.TabIndex = 29;
+            // 
+            // lbl_maxspeed
+            // 
+            this.lbl_maxspeed.AutoSize = true;
+            this.lbl_maxspeed.Location = new System.Drawing.Point(273, 196);
+            this.lbl_maxspeed.Name = "lbl_maxspeed";
+            this.lbl_maxspeed.Size = new System.Drawing.Size(64, 13);
+            this.lbl_maxspeed.TabIndex = 28;
+            this.lbl_maxspeed.Text = "Max Speed:";
+            // 
+            // input_wheelSize
+            // 
+            this.input_wheelSize.Location = new System.Drawing.Point(207, 193);
+            this.input_wheelSize.Name = "input_wheelSize";
+            this.input_wheelSize.ReadOnly = true;
+            this.input_wheelSize.Size = new System.Drawing.Size(51, 20);
+            this.input_wheelSize.TabIndex = 27;
+            this.input_wheelSize.Text = "inch";
+            // 
+            // lbl_wheelSize
+            // 
+            this.lbl_wheelSize.AutoSize = true;
+            this.lbl_wheelSize.Location = new System.Drawing.Point(137, 196);
+            this.lbl_wheelSize.Name = "lbl_wheelSize";
+            this.lbl_wheelSize.Size = new System.Drawing.Size(64, 13);
+            this.lbl_wheelSize.TabIndex = 26;
+            this.lbl_wheelSize.Text = "Wheel Size:";
+            // 
+            // input_weight
+            // 
+            this.input_weight.Location = new System.Drawing.Point(61, 193);
+            this.input_weight.Name = "input_weight";
+            this.input_weight.ReadOnly = true;
+            this.input_weight.Size = new System.Drawing.Size(51, 20);
+            this.input_weight.TabIndex = 25;
+            // 
+            // lbl_Weight
+            // 
+            this.lbl_Weight.AutoSize = true;
+            this.lbl_Weight.Location = new System.Drawing.Point(12, 196);
+            this.lbl_Weight.Name = "lbl_Weight";
+            this.lbl_Weight.Size = new System.Drawing.Size(44, 13);
+            this.lbl_Weight.TabIndex = 24;
+            this.lbl_Weight.Text = "Weight:";
+            // 
+            // cb_manuYear
+            // 
+            this.cb_manuYear.Enabled = false;
+            this.cb_manuYear.FormattingEnabled = true;
+            this.cb_manuYear.Location = new System.Drawing.Point(452, 159);
+            this.cb_manuYear.Name = "cb_manuYear";
+            this.cb_manuYear.Size = new System.Drawing.Size(74, 21);
+            this.cb_manuYear.TabIndex = 23;
+            // 
+            // lbl_manuyear
+            // 
+            this.lbl_manuyear.AutoSize = true;
+            this.lbl_manuyear.Location = new System.Drawing.Point(357, 162);
+            this.lbl_manuyear.Name = "lbl_manuyear";
+            this.lbl_manuyear.Size = new System.Drawing.Size(89, 13);
+            this.lbl_manuyear.TabIndex = 22;
+            this.lbl_manuyear.Text = "Manufactor Year:";
+            // 
+            // input_fuelCons
+            // 
+            this.input_fuelCons.Location = new System.Drawing.Point(291, 159);
+            this.input_fuelCons.Name = "input_fuelCons";
+            this.input_fuelCons.ReadOnly = true;
+            this.input_fuelCons.Size = new System.Drawing.Size(44, 20);
+            this.input_fuelCons.TabIndex = 21;
+            this.input_fuelCons.Text = "L/km";
+            // 
+            // lbl_fuelCuns
+            // 
+            this.lbl_fuelCuns.AutoSize = true;
+            this.lbl_fuelCuns.Location = new System.Drawing.Point(191, 162);
+            this.lbl_fuelCuns.Name = "lbl_fuelCuns";
+            this.lbl_fuelCuns.Size = new System.Drawing.Size(94, 13);
+            this.lbl_fuelCuns.TabIndex = 20;
+            this.lbl_fuelCuns.Text = "Fuel Consumption:";
+            // 
+            // input_fuelCap
+            // 
+            this.input_fuelCap.Location = new System.Drawing.Point(111, 159);
+            this.input_fuelCap.Name = "input_fuelCap";
+            this.input_fuelCap.ReadOnly = true;
+            this.input_fuelCap.Size = new System.Drawing.Size(60, 20);
+            this.input_fuelCap.TabIndex = 19;
+            // 
+            // lbl_FuelTank
+            // 
+            this.lbl_FuelTank.AutoSize = true;
+            this.lbl_FuelTank.Location = new System.Drawing.Point(3, 162);
+            this.lbl_FuelTank.Name = "lbl_FuelTank";
+            this.lbl_FuelTank.Size = new System.Drawing.Size(102, 13);
+            this.lbl_FuelTank.TabIndex = 18;
+            this.lbl_FuelTank.Text = "Fuel Tank Capacity:";
             // 
             // cb_bodyType
             // 
@@ -354,271 +448,326 @@
             this.cb_bodyType.Size = new System.Drawing.Size(78, 21);
             this.cb_bodyType.TabIndex = 17;
             // 
-            // lbl_FuelTank
+            // lbl_bodyType
             // 
-            this.lbl_FuelTank.AutoSize = true;
-            this.lbl_FuelTank.Location = new System.Drawing.Point(3, 162);
-            this.lbl_FuelTank.Name = "lbl_FuelTank";
-            this.lbl_FuelTank.Size = new System.Drawing.Size(102, 13);
-            this.lbl_FuelTank.TabIndex = 18;
-            this.lbl_FuelTank.Text = "Fuel Tank Capacity:";
+            this.lbl_bodyType.AutoSize = true;
+            this.lbl_bodyType.Location = new System.Drawing.Point(346, 112);
+            this.lbl_bodyType.Name = "lbl_bodyType";
+            this.lbl_bodyType.Size = new System.Drawing.Size(61, 13);
+            this.lbl_bodyType.TabIndex = 16;
+            this.lbl_bodyType.Text = "Body Type:";
             // 
-            // input_fuelCap
+            // input_enigneCapa
             // 
-            this.input_fuelCap.Location = new System.Drawing.Point(111, 159);
-            this.input_fuelCap.Name = "input_fuelCap";
-            this.input_fuelCap.ReadOnly = true;
-            this.input_fuelCap.Size = new System.Drawing.Size(60, 20);
-            this.input_fuelCap.TabIndex = 19;
+            this.input_enigneCapa.Location = new System.Drawing.Point(235, 109);
+            this.input_enigneCapa.Name = "input_enigneCapa";
+            this.input_enigneCapa.ReadOnly = true;
+            this.input_enigneCapa.Size = new System.Drawing.Size(100, 20);
+            this.input_enigneCapa.TabIndex = 15;
             // 
-            // lbl_fuelCuns
+            // lbl_engineCap
             // 
-            this.lbl_fuelCuns.AutoSize = true;
-            this.lbl_fuelCuns.Location = new System.Drawing.Point(191, 162);
-            this.lbl_fuelCuns.Name = "lbl_fuelCuns";
-            this.lbl_fuelCuns.Size = new System.Drawing.Size(94, 13);
-            this.lbl_fuelCuns.TabIndex = 20;
-            this.lbl_fuelCuns.Text = "Fuel Consumption:";
+            this.lbl_engineCap.AutoSize = true;
+            this.lbl_engineCap.Location = new System.Drawing.Point(142, 112);
+            this.lbl_engineCap.Name = "lbl_engineCap";
+            this.lbl_engineCap.Size = new System.Drawing.Size(87, 13);
+            this.lbl_engineCap.TabIndex = 14;
+            this.lbl_engineCap.Text = "Engine Capacity:";
             // 
-            // input_fuelCons
+            // lbl_gear
             // 
-            this.input_fuelCons.Location = new System.Drawing.Point(291, 159);
-            this.input_fuelCons.Name = "input_fuelCons";
-            this.input_fuelCons.ReadOnly = true;
-            this.input_fuelCons.Size = new System.Drawing.Size(44, 20);
-            this.input_fuelCons.TabIndex = 21;
-            this.input_fuelCons.Text = "L/km";
+            this.lbl_gear.AutoSize = true;
+            this.lbl_gear.Location = new System.Drawing.Point(12, 112);
+            this.lbl_gear.Name = "lbl_gear";
+            this.lbl_gear.Size = new System.Drawing.Size(33, 13);
+            this.lbl_gear.TabIndex = 13;
+            this.lbl_gear.Text = "Gear:";
             // 
-            // lbl_manuyear
+            // chkBox_Manual
             // 
-            this.lbl_manuyear.AutoSize = true;
-            this.lbl_manuyear.Location = new System.Drawing.Point(357, 162);
-            this.lbl_manuyear.Name = "lbl_manuyear";
-            this.lbl_manuyear.Size = new System.Drawing.Size(89, 13);
-            this.lbl_manuyear.TabIndex = 22;
-            this.lbl_manuyear.Text = "Manufactor Year:";
+            this.chkBox_Manual.AutoSize = true;
+            this.chkBox_Manual.Enabled = false;
+            this.chkBox_Manual.Location = new System.Drawing.Point(51, 128);
+            this.chkBox_Manual.Name = "chkBox_Manual";
+            this.chkBox_Manual.Size = new System.Drawing.Size(61, 17);
+            this.chkBox_Manual.TabIndex = 12;
+            this.chkBox_Manual.Text = "Manual";
+            this.chkBox_Manual.UseVisualStyleBackColor = true;
+            this.chkBox_Manual.CheckedChanged += new System.EventHandler(this.chkBox_Manual_CheckedChanged);
             // 
-            // cb_manuYear
+            // chkBox_Auto
             // 
-            this.cb_manuYear.Enabled = false;
-            this.cb_manuYear.FormattingEnabled = true;
-            this.cb_manuYear.Location = new System.Drawing.Point(452, 159);
-            this.cb_manuYear.Name = "cb_manuYear";
-            this.cb_manuYear.Size = new System.Drawing.Size(74, 21);
-            this.cb_manuYear.TabIndex = 23;
+            this.chkBox_Auto.AutoSize = true;
+            this.chkBox_Auto.Enabled = false;
+            this.chkBox_Auto.Location = new System.Drawing.Point(51, 112);
+            this.chkBox_Auto.Name = "chkBox_Auto";
+            this.chkBox_Auto.Size = new System.Drawing.Size(73, 17);
+            this.chkBox_Auto.TabIndex = 11;
+            this.chkBox_Auto.Text = "Automatic";
+            this.chkBox_Auto.UseVisualStyleBackColor = true;
+            this.chkBox_Auto.CheckedChanged += new System.EventHandler(this.chkBox_Auto_CheckedChanged);
             // 
-            // lbl_Weight
+            // input_Model
             // 
-            this.lbl_Weight.AutoSize = true;
-            this.lbl_Weight.Location = new System.Drawing.Point(12, 196);
-            this.lbl_Weight.Name = "lbl_Weight";
-            this.lbl_Weight.Size = new System.Drawing.Size(44, 13);
-            this.lbl_Weight.TabIndex = 24;
-            this.lbl_Weight.Text = "Weight:";
+            this.input_Model.Location = new System.Drawing.Point(413, 70);
+            this.input_Model.Name = "input_Model";
+            this.input_Model.ReadOnly = true;
+            this.input_Model.Size = new System.Drawing.Size(126, 20);
+            this.input_Model.TabIndex = 10;
             // 
-            // input_weight
+            // label1
             // 
-            this.input_weight.Location = new System.Drawing.Point(61, 193);
-            this.input_weight.Name = "input_weight";
-            this.input_weight.ReadOnly = true;
-            this.input_weight.Size = new System.Drawing.Size(51, 20);
-            this.input_weight.TabIndex = 25;
+            this.label1.AccessibleDescription = "lbl_model";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(368, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Model:";
             // 
-            // lbl_wheelSize
+            // lbl_company
             // 
-            this.lbl_wheelSize.AutoSize = true;
-            this.lbl_wheelSize.Location = new System.Drawing.Point(137, 196);
-            this.lbl_wheelSize.Name = "lbl_wheelSize";
-            this.lbl_wheelSize.Size = new System.Drawing.Size(64, 13);
-            this.lbl_wheelSize.TabIndex = 26;
-            this.lbl_wheelSize.Text = "Wheel Size:";
+            this.lbl_company.AutoSize = true;
+            this.lbl_company.Location = new System.Drawing.Point(191, 73);
+            this.lbl_company.Name = "lbl_company";
+            this.lbl_company.Size = new System.Drawing.Size(54, 13);
+            this.lbl_company.TabIndex = 8;
+            this.lbl_company.Text = "Company:";
             // 
-            // input_wheelSize
+            // cb_Companies
             // 
-            this.input_wheelSize.Location = new System.Drawing.Point(207, 193);
-            this.input_wheelSize.Name = "input_wheelSize";
-            this.input_wheelSize.ReadOnly = true;
-            this.input_wheelSize.Size = new System.Drawing.Size(51, 20);
-            this.input_wheelSize.TabIndex = 27;
-            this.input_wheelSize.Text = "inch";
+            this.cb_Companies.Enabled = false;
+            this.cb_Companies.FormattingEnabled = true;
+            this.cb_Companies.Location = new System.Drawing.Point(248, 70);
+            this.cb_Companies.Name = "cb_Companies";
+            this.cb_Companies.Size = new System.Drawing.Size(104, 21);
+            this.cb_Companies.TabIndex = 7;
             // 
-            // lbl_maxspeed
+            // lbl_engineType
             // 
-            this.lbl_maxspeed.AutoSize = true;
-            this.lbl_maxspeed.Location = new System.Drawing.Point(273, 196);
-            this.lbl_maxspeed.Name = "lbl_maxspeed";
-            this.lbl_maxspeed.Size = new System.Drawing.Size(64, 13);
-            this.lbl_maxspeed.TabIndex = 28;
-            this.lbl_maxspeed.Text = "Max Speed:";
+            this.lbl_engineType.AutoSize = true;
+            this.lbl_engineType.Location = new System.Drawing.Point(3, 73);
+            this.lbl_engineType.Name = "lbl_engineType";
+            this.lbl_engineType.Size = new System.Drawing.Size(70, 13);
+            this.lbl_engineType.TabIndex = 6;
+            this.lbl_engineType.Text = "Enigne Type:";
             // 
-            // input_maxspeed
+            // cb_enigneType
             // 
-            this.input_maxspeed.Location = new System.Drawing.Point(343, 193);
-            this.input_maxspeed.Name = "input_maxspeed";
-            this.input_maxspeed.ReadOnly = true;
-            this.input_maxspeed.Size = new System.Drawing.Size(48, 20);
-            this.input_maxspeed.TabIndex = 29;
+            this.cb_enigneType.Enabled = false;
+            this.cb_enigneType.FormattingEnabled = true;
+            this.cb_enigneType.Items.AddRange(new object[] {
+            "Gasoline",
+            "Electric"});
+            this.cb_enigneType.Location = new System.Drawing.Point(79, 70);
+            this.cb_enigneType.Name = "cb_enigneType";
+            this.cb_enigneType.Size = new System.Drawing.Size(82, 21);
+            this.cb_enigneType.TabIndex = 5;
+            this.cb_enigneType.SelectedIndexChanged += new System.EventHandler(this.cb_enigneType_SelectedIndexChanged);
             // 
-            // lbl_acc
+            // rdbutt_Cargo
             // 
-            this.lbl_acc.AutoSize = true;
-            this.lbl_acc.Location = new System.Drawing.Point(410, 196);
-            this.lbl_acc.Name = "lbl_acc";
-            this.lbl_acc.Size = new System.Drawing.Size(69, 13);
-            this.lbl_acc.TabIndex = 30;
-            this.lbl_acc.Text = "Acceleration:";
+            this.rdbutt_Cargo.AutoSize = true;
+            this.rdbutt_Cargo.Location = new System.Drawing.Point(430, 28);
+            this.rdbutt_Cargo.Name = "rdbutt_Cargo";
+            this.rdbutt_Cargo.Size = new System.Drawing.Size(53, 17);
+            this.rdbutt_Cargo.TabIndex = 4;
+            this.rdbutt_Cargo.TabStop = true;
+            this.rdbutt_Cargo.Text = "Cargo";
+            this.rdbutt_Cargo.UseVisualStyleBackColor = true;
+            this.rdbutt_Cargo.CheckedChanged += new System.EventHandler(this.rdbutt_Cargo_CheckedChanged);
             // 
-            // input_Accele
+            // rdbutt_Motor
             // 
-            this.input_Accele.Location = new System.Drawing.Point(477, 193);
-            this.input_Accele.Name = "input_Accele";
-            this.input_Accele.ReadOnly = true;
-            this.input_Accele.Size = new System.Drawing.Size(62, 20);
-            this.input_Accele.TabIndex = 31;
-            this.input_Accele.Text = "0-100 sec";
+            this.rdbutt_Motor.AutoSize = true;
+            this.rdbutt_Motor.Location = new System.Drawing.Point(259, 28);
+            this.rdbutt_Motor.Name = "rdbutt_Motor";
+            this.rdbutt_Motor.Size = new System.Drawing.Size(78, 17);
+            this.rdbutt_Motor.TabIndex = 3;
+            this.rdbutt_Motor.TabStop = true;
+            this.rdbutt_Motor.Text = "MotorCycle";
+            this.rdbutt_Motor.UseVisualStyleBackColor = true;
+            this.rdbutt_Motor.CheckedChanged += new System.EventHandler(this.rdbutt_Motor_CheckedChanged);
             // 
-            // lbl_color
+            // rdButt_Private
             // 
-            this.lbl_color.AutoSize = true;
-            this.lbl_color.Location = new System.Drawing.Point(12, 236);
-            this.lbl_color.Name = "lbl_color";
-            this.lbl_color.Size = new System.Drawing.Size(34, 13);
-            this.lbl_color.TabIndex = 32;
-            this.lbl_color.Text = "Color:";
+            this.rdButt_Private.AutoSize = true;
+            this.rdButt_Private.Location = new System.Drawing.Point(124, 28);
+            this.rdButt_Private.Name = "rdButt_Private";
+            this.rdButt_Private.Size = new System.Drawing.Size(77, 17);
+            this.rdButt_Private.TabIndex = 2;
+            this.rdButt_Private.TabStop = true;
+            this.rdButt_Private.Text = "Private Car";
+            this.rdButt_Private.UseVisualStyleBackColor = true;
+            this.rdButt_Private.CheckedChanged += new System.EventHandler(this.rdButt_Private_CheckedChanged);
             // 
-            // input_color
+            // lbl_vecType
             // 
-            this.input_color.Location = new System.Drawing.Point(51, 233);
-            this.input_color.Name = "input_color";
-            this.input_color.ReadOnly = true;
-            this.input_color.Size = new System.Drawing.Size(100, 20);
-            this.input_color.TabIndex = 33;
+            this.lbl_vecType.AutoSize = true;
+            this.lbl_vecType.Location = new System.Drawing.Point(12, 28);
+            this.lbl_vecType.Name = "lbl_vecType";
+            this.lbl_vecType.Size = new System.Drawing.Size(96, 13);
+            this.lbl_vecType.TabIndex = 1;
+            this.lbl_vecType.Text = "Pick Veichle Type:";
             // 
-            // lbl_liencePlate
+            // lbl_addnew
             // 
-            this.lbl_liencePlate.AutoSize = true;
-            this.lbl_liencePlate.Location = new System.Drawing.Point(183, 236);
-            this.lbl_liencePlate.Name = "lbl_liencePlate";
-            this.lbl_liencePlate.Size = new System.Drawing.Size(75, 13);
-            this.lbl_liencePlate.TabIndex = 34;
-            this.lbl_liencePlate.Text = "Liecene Plate:";
+            this.lbl_addnew.AutoSize = true;
+            this.lbl_addnew.Location = new System.Drawing.Point(245, 10);
+            this.lbl_addnew.Name = "lbl_addnew";
+            this.lbl_addnew.Size = new System.Drawing.Size(71, 13);
+            this.lbl_addnew.TabIndex = 0;
+            this.lbl_addnew.Text = "Add new Car:";
             // 
-            // input_liecenePl
+            // Panel_edit
             // 
-            this.input_liecenePl.Location = new System.Drawing.Point(264, 233);
-            this.input_liecenePl.Name = "input_liecenePl";
-            this.input_liecenePl.ReadOnly = true;
-            this.input_liecenePl.Size = new System.Drawing.Size(119, 20);
-            this.input_liecenePl.TabIndex = 35;
+            this.Panel_edit.Controls.Add(this.rdBE_Electric);
+            this.Panel_edit.Controls.Add(this.rdBE_Gas);
+            this.Panel_edit.Controls.Add(this.chkBoxE_name);
+            this.Panel_edit.Controls.Add(this.chekBoxE_manual);
+            this.Panel_edit.Controls.Add(this.lblE_bymodel);
+            this.Panel_edit.Controls.Add(this.lblE_model);
+            this.Panel_edit.Controls.Add(this.cBE_model);
+            this.Panel_edit.Controls.Add(this.input_byModel);
+            this.Panel_edit.Controls.Add(this.cBE_vecType);
+            this.Panel_edit.Controls.Add(this.lblE_vectype);
+            this.Panel_edit.Controls.Add(this.lbl_edit);
+            this.Panel_edit.Location = new System.Drawing.Point(195, 0);
+            this.Panel_edit.Name = "Panel_edit";
+            this.Panel_edit.Size = new System.Drawing.Size(575, 393);
+            this.Panel_edit.TabIndex = 4;
+            this.Panel_edit.Visible = false;
             // 
-            // butt_saveCar
+            // chkBoxE_name
             // 
-            this.butt_saveCar.Location = new System.Drawing.Point(248, 332);
-            this.butt_saveCar.Name = "butt_saveCar";
-            this.butt_saveCar.Size = new System.Drawing.Size(104, 45);
-            this.butt_saveCar.TabIndex = 36;
-            this.butt_saveCar.Text = "Add Car To Stock";
-            this.butt_saveCar.UseVisualStyleBackColor = true;
-            this.butt_saveCar.Click += new System.EventHandler(this.butt_saveCar_Click);
+            this.chkBoxE_name.AutoSize = true;
+            this.chkBoxE_name.Location = new System.Drawing.Point(123, 10);
+            this.chkBoxE_name.Name = "chkBoxE_name";
+            this.chkBoxE_name.Size = new System.Drawing.Size(69, 17);
+            this.chkBoxE_name.TabIndex = 8;
+            this.chkBoxE_name.Text = "By Name";
+            this.chkBoxE_name.UseVisualStyleBackColor = true;
+            this.chkBoxE_name.CheckedChanged += new System.EventHandler(this.chkBoxE_name_CheckedChanged);
             // 
-            // lbl_highet
+            // chekBoxE_manual
             // 
-            this.lbl_highet.AutoSize = true;
-            this.lbl_highet.Location = new System.Drawing.Point(183, 272);
-            this.lbl_highet.Name = "lbl_highet";
-            this.lbl_highet.Size = new System.Drawing.Size(41, 13);
-            this.lbl_highet.TabIndex = 37;
-            this.lbl_highet.Text = "Highet:";
+            this.chekBoxE_manual.AutoSize = true;
+            this.chekBoxE_manual.Location = new System.Drawing.Point(14, 10);
+            this.chekBoxE_manual.Name = "chekBoxE_manual";
+            this.chekBoxE_manual.Size = new System.Drawing.Size(61, 17);
+            this.chekBoxE_manual.TabIndex = 7;
+            this.chekBoxE_manual.Text = "Manual";
+            this.chekBoxE_manual.UseVisualStyleBackColor = true;
+            this.chekBoxE_manual.CheckedChanged += new System.EventHandler(this.chekBoxE_manual_CheckedChanged);
             // 
-            // input_highet
+            // lblE_bymodel
             // 
-            this.input_highet.Location = new System.Drawing.Point(235, 269);
-            this.input_highet.Name = "input_highet";
-            this.input_highet.ReadOnly = true;
-            this.input_highet.Size = new System.Drawing.Size(75, 20);
-            this.input_highet.TabIndex = 38;
+            this.lblE_bymodel.AutoSize = true;
+            this.lblE_bymodel.Location = new System.Drawing.Point(253, 32);
+            this.lblE_bymodel.Name = "lblE_bymodel";
+            this.lblE_bymodel.Size = new System.Drawing.Size(122, 13);
+            this.lblE_bymodel.TabIndex = 6;
+            this.lblE_bymodel.Text = "Search By Model Name:";
             // 
-            // lbl_length
+            // lblE_model
             // 
-            this.lbl_length.AutoSize = true;
-            this.lbl_length.Location = new System.Drawing.Point(348, 272);
-            this.lbl_length.Name = "lbl_length";
-            this.lbl_length.Size = new System.Drawing.Size(43, 13);
-            this.lbl_length.TabIndex = 39;
-            this.lbl_length.Text = "Length:";
+            this.lblE_model.AutoSize = true;
+            this.lblE_model.Location = new System.Drawing.Point(89, 92);
+            this.lblE_model.Name = "lblE_model";
+            this.lblE_model.Size = new System.Drawing.Size(104, 13);
+            this.lblE_model.TabIndex = 5;
+            this.lblE_model.Text = "Choose what to edit:";
+            this.lblE_model.Visible = false;
             // 
-            // input_length
+            // cBE_model
             // 
-            this.input_length.Location = new System.Drawing.Point(405, 269);
-            this.input_length.Name = "input_length";
-            this.input_length.ReadOnly = true;
-            this.input_length.Size = new System.Drawing.Size(100, 20);
-            this.input_length.TabIndex = 40;
+            this.cBE_model.FormattingEnabled = true;
+            this.cBE_model.Location = new System.Drawing.Point(199, 89);
+            this.cBE_model.Name = "cBE_model";
+            this.cBE_model.Size = new System.Drawing.Size(121, 21);
+            this.cBE_model.TabIndex = 4;
+            this.cBE_model.Visible = false;
             // 
-            // lbl_range
+            // input_byModel
             // 
-            this.lbl_range.AutoSize = true;
-            this.lbl_range.Location = new System.Drawing.Point(405, 236);
-            this.lbl_range.Name = "lbl_range";
-            this.lbl_range.Size = new System.Drawing.Size(42, 13);
-            this.lbl_range.TabIndex = 41;
-            this.lbl_range.Text = "Range:";
+            this.input_byModel.Enabled = false;
+            this.input_byModel.Location = new System.Drawing.Point(381, 28);
+            this.input_byModel.Name = "input_byModel";
+            this.input_byModel.Size = new System.Drawing.Size(178, 20);
+            this.input_byModel.TabIndex = 3;
             // 
-            // input_Range
+            // cBE_vecType
             // 
-            this.input_Range.Location = new System.Drawing.Point(452, 233);
-            this.input_Range.Name = "input_Range";
-            this.input_Range.ReadOnly = true;
-            this.input_Range.Size = new System.Drawing.Size(100, 20);
-            this.input_Range.TabIndex = 42;
+            this.cBE_vecType.Enabled = false;
+            this.cBE_vecType.FormattingEnabled = true;
+            this.cBE_vecType.Items.AddRange(new object[] {
+            "Private Car",
+            "MotorCycle",
+            "Cargo"});
+            this.cBE_vecType.Location = new System.Drawing.Point(130, 51);
+            this.cBE_vecType.Name = "cBE_vecType";
+            this.cBE_vecType.Size = new System.Drawing.Size(121, 21);
+            this.cBE_vecType.TabIndex = 2;
+            this.cBE_vecType.SelectedIndexChanged += new System.EventHandler(this.cBE_vecType_SelectedIndexChanged);
             // 
-            // lbl_batterycap
+            // lblE_vectype
             // 
-            this.lbl_batterycap.AutoSize = true;
-            this.lbl_batterycap.Location = new System.Drawing.Point(18, 272);
-            this.lbl_batterycap.Name = "lbl_batterycap";
-            this.lbl_batterycap.Size = new System.Drawing.Size(87, 13);
-            this.lbl_batterycap.TabIndex = 43;
-            this.lbl_batterycap.Text = "Battery Capacity:";
+            this.lblE_vectype.AutoSize = true;
+            this.lblE_vectype.Location = new System.Drawing.Point(17, 54);
+            this.lblE_vectype.Name = "lblE_vectype";
+            this.lblE_vectype.Size = new System.Drawing.Size(107, 13);
+            this.lblE_vectype.TabIndex = 1;
+            this.lblE_vectype.Text = "Choose Veichle type:";
             // 
-            // input_capaa
+            // lbl_edit
             // 
-            this.input_capaa.Location = new System.Drawing.Point(102, 269);
-            this.input_capaa.Name = "input_capaa";
-            this.input_capaa.ReadOnly = true;
-            this.input_capaa.Size = new System.Drawing.Size(59, 20);
-            this.input_capaa.TabIndex = 44;
+            this.lbl_edit.AutoSize = true;
+            this.lbl_edit.Location = new System.Drawing.Point(238, 10);
+            this.lbl_edit.Name = "lbl_edit";
+            this.lbl_edit.Size = new System.Drawing.Size(96, 13);
+            this.lbl_edit.TabIndex = 0;
+            this.lbl_edit.Text = "Edit Current Stock:";
             // 
-            // lbl_chargetime
+            // rdBE_Gas
             // 
-            this.lbl_chargetime.AutoSize = true;
-            this.lbl_chargetime.Location = new System.Drawing.Point(193, 304);
-            this.lbl_chargetime.Name = "lbl_chargetime";
-            this.lbl_chargetime.Size = new System.Drawing.Size(78, 13);
-            this.lbl_chargetime.TabIndex = 45;
-            this.lbl_chargetime.Text = "Charging Time:";
+            this.rdBE_Gas.AutoSize = true;
+            this.rdBE_Gas.Location = new System.Drawing.Point(346, 90);
+            this.rdBE_Gas.Name = "rdBE_Gas";
+            this.rdBE_Gas.Size = new System.Drawing.Size(44, 17);
+            this.rdBE_Gas.TabIndex = 9;
+            this.rdBE_Gas.TabStop = true;
+            this.rdBE_Gas.Text = "Gas";
+            this.rdBE_Gas.UseVisualStyleBackColor = true;
+            this.rdBE_Gas.Visible = false;
             // 
-            // input_ChargeTime
+            // rdBE_Electric
             // 
-            this.input_ChargeTime.Location = new System.Drawing.Point(276, 301);
-            this.input_ChargeTime.Name = "input_ChargeTime";
-            this.input_ChargeTime.ReadOnly = true;
-            this.input_ChargeTime.Size = new System.Drawing.Size(100, 20);
-            this.input_ChargeTime.TabIndex = 46;
+            this.rdBE_Electric.AutoSize = true;
+            this.rdBE_Electric.Location = new System.Drawing.Point(418, 90);
+            this.rdBE_Electric.Name = "rdBE_Electric";
+            this.rdBE_Electric.Size = new System.Drawing.Size(60, 17);
+            this.rdBE_Electric.TabIndex = 10;
+            this.rdBE_Electric.TabStop = true;
+            this.rdBE_Electric.Text = "Electric";
+            this.rdBE_Electric.UseVisualStyleBackColor = true;
+            this.rdBE_Electric.Visible = false;
             // 
             // CatalogMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.input_engineCap);
+            this.Controls.Add(this.Panel_edit);
+            this.Controls.Add(this.panel_addNew);
             this.Controls.Add(this.butt_editstock);
             this.Controls.Add(this.butt_addnew);
             this.Controls.Add(this.butt_gotoadmn);
             this.Name = "CatalogMng";
             this.Text = "CatalogMng";
-            this.input_engineCap.ResumeLayout(false);
-            this.input_engineCap.PerformLayout();
+            this.panel_addNew.ResumeLayout(false);
+            this.panel_addNew.PerformLayout();
+            this.Panel_edit.ResumeLayout(false);
+            this.Panel_edit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -628,7 +777,7 @@
         private System.Windows.Forms.Button butt_gotoadmn;
         private System.Windows.Forms.Button butt_addnew;
         private System.Windows.Forms.Button butt_editstock;
-        private System.Windows.Forms.Panel input_engineCap;
+        private System.Windows.Forms.Panel panel_addNew;
         private System.Windows.Forms.Label lbl_addnew;
         private System.Windows.Forms.RadioButton rdbutt_Cargo;
         private System.Windows.Forms.RadioButton rdbutt_Motor;
@@ -676,5 +825,17 @@
         private System.Windows.Forms.Label lbl_range;
         private System.Windows.Forms.TextBox input_ChargeTime;
         private System.Windows.Forms.Label lbl_chargetime;
+        private System.Windows.Forms.Panel Panel_edit;
+        private System.Windows.Forms.CheckBox chkBoxE_name;
+        private System.Windows.Forms.CheckBox chekBoxE_manual;
+        private System.Windows.Forms.Label lblE_bymodel;
+        private System.Windows.Forms.Label lblE_model;
+        private System.Windows.Forms.ComboBox cBE_model;
+        private System.Windows.Forms.TextBox input_byModel;
+        private System.Windows.Forms.ComboBox cBE_vecType;
+        private System.Windows.Forms.Label lblE_vectype;
+        private System.Windows.Forms.Label lbl_edit;
+        private System.Windows.Forms.RadioButton rdBE_Electric;
+        private System.Windows.Forms.RadioButton rdBE_Gas;
     }
 }

@@ -33,14 +33,16 @@ namespace car_rental
 
         private void butt_addnew_Click(object sender, EventArgs e)
         {
-            input_engineCap.Visible = true;
+            panel_addNew.Visible = true;
+            Panel_edit.Visible = false;
 
         }
 
         private void butt_editstock_Click(object sender, EventArgs e)
         {
 
-            input_engineCap.Visible = false;
+            panel_addNew.Visible = false;
+            Panel_edit.Visible = true;
         }
 
         private void rdButt_Private_CheckedChanged(object sender, EventArgs e)
@@ -82,14 +84,14 @@ namespace car_rental
                 for (int i = 0; i < PrivateCompanys.Length; i++)
                     cb_Companies.Items.Add(PrivateCompanys[i].ToString());
                 enablesforPrivateGas();
-                
+
             }
             else
             {
                 for (int i = 0; i < ElectrisCarsCOmpany.Length; i++)
                     cb_Companies.Items.Add(ElectrisCarsCOmpany[i].ToString());
                 enablesforElectricCar();
-                
+
             }
             cb_Companies.SelectedItem = cb_Companies.Items[0];
 
@@ -158,7 +160,7 @@ namespace car_rental
                 else if (rdbutt_Motor.Checked)
                 {
                     extraCheck = true;
-                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1,cb_Companies.Text +" "+input_Model.Text);
+                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                 }
                 else//means cargo
                 {
@@ -189,9 +191,9 @@ namespace car_rental
 
         private bool CheckGlobalInputs()
         {
-            if(input_Model.Text.Length == 0)
+            if (input_Model.Text.Length == 0)
                 return false;
-           if (chkBox_Auto.Checked == false && chkBox_Manual.Checked == false)
+            if (chkBox_Auto.Checked == false && chkBox_Manual.Checked == false)
                 return false;
             if (cb_manuYear.Text.Length == 0)
                 return false;
@@ -299,6 +301,35 @@ namespace car_rental
             input_highet.Text = "-";
             input_length.Text = "-";
             input_capaa.Text = "-";
+        }
+
+        private void chekBoxE_manual_CheckedChanged(object sender, EventArgs e)
+        {
+            chkBoxE_name.Checked = false;
+            cBE_vecType.Enabled = true;
+            input_byModel.ReadOnly = true;
+          
+        }
+
+        private void chkBoxE_name_CheckedChanged(object sender, EventArgs e)
+        {
+            input_byModel.ReadOnly = false;
+            chekBoxE_manual.Checked = false;
+            cBE_vecType.Enabled = false;
+            cBE_model.Visible = false;
+            lblE_model.Visible = false;
+           }
+
+        private void cBE_vecType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblE_model.Visible = true;
+            cBE_model.Visible = true;
+            cBE_model.Enabled = true;
+
+            if(cBE_vecType.Text == "Private Car")
+            {
+               
+            }
         }
     }
 }
