@@ -17,7 +17,7 @@ namespace car_rental
         //string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UserNameInput.txt";
         string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
 
-        List<string> Useres = new List<string>();
+        List<string> Useres = new List<string>(); //List for push\ pull from data
         List<Client> Clients = new List<Client>(); // Creating list that holds all the users in Object
         private int countUsers = 0;
         private static bool flagIsDel = false;
@@ -49,7 +49,7 @@ namespace car_rental
                 i++;
             }
             show_Fname.Text = Clients[i].getPrivateName();
-            show_Lname.Text = Clients[i].getUserName();
+            show_Lname.Text = Clients[i].Last_name;
             show_id.Text = Clients[i].getIDnum().ToString();
             show_Username.Text = Clients[i].getUserName();
             show_pass.Text = Clients[i].getPassword();
