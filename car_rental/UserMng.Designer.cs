@@ -49,6 +49,9 @@
             this.butt_delUser = new System.Windows.Forms.Button();
             this.butt_editUs = new System.Windows.Forms.Button();
             this.butt_restoreUsr = new System.Windows.Forms.Button();
+            this.butt_Cancelchng = new System.Windows.Forms.Button();
+            this.butt_saveChngs = new System.Windows.Forms.Button();
+            this.FavoriteCarIn = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_headr
@@ -238,11 +241,50 @@
             this.butt_restoreUsr.Visible = false;
             this.butt_restoreUsr.Click += new System.EventHandler(this.butt_restoreUsr_Click);
             // 
+            // butt_Cancelchng
+            // 
+            this.butt_Cancelchng.Location = new System.Drawing.Point(217, 277);
+            this.butt_Cancelchng.Name = "butt_Cancelchng";
+            this.butt_Cancelchng.Size = new System.Drawing.Size(82, 46);
+            this.butt_Cancelchng.TabIndex = 23;
+            this.butt_Cancelchng.Text = "Canel Changes";
+            this.butt_Cancelchng.UseVisualStyleBackColor = true;
+            this.butt_Cancelchng.Visible = false;
+            this.butt_Cancelchng.Click += new System.EventHandler(this.butt_Cancelchng_Click);
+            // 
+            // butt_saveChngs
+            // 
+            this.butt_saveChngs.Location = new System.Drawing.Point(317, 277);
+            this.butt_saveChngs.Name = "butt_saveChngs";
+            this.butt_saveChngs.Size = new System.Drawing.Size(80, 46);
+            this.butt_saveChngs.TabIndex = 24;
+            this.butt_saveChngs.Text = "Save The Changes";
+            this.butt_saveChngs.UseVisualStyleBackColor = true;
+            this.butt_saveChngs.Visible = false;
+            this.butt_saveChngs.Click += new System.EventHandler(this.butt_saveChngs_Click);
+            // 
+            // FavoriteCarIn
+            // 
+            this.FavoriteCarIn.Items.AddRange(new object[] {
+            "Alfa Romeo",
+            "Mercedes",
+            "BMW"});
+            this.FavoriteCarIn.Location = new System.Drawing.Point(376, 168);
+            this.FavoriteCarIn.Name = "FavoriteCarIn";
+            this.FavoriteCarIn.Size = new System.Drawing.Size(100, 21);
+            this.FavoriteCarIn.TabIndex = 25;
+            this.FavoriteCarIn.Text = "Pick a Car:";
+            this.FavoriteCarIn.Visible = false;
+            this.FavoriteCarIn.SelectedIndexChanged += new System.EventHandler(this.FavoriteCarIn_SelectedIndexChanged);
+            // 
             // UserMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 335);
+            this.Controls.Add(this.FavoriteCarIn);
+            this.Controls.Add(this.butt_saveChngs);
+            this.Controls.Add(this.butt_Cancelchng);
             this.Controls.Add(this.butt_restoreUsr);
             this.Controls.Add(this.butt_editUs);
             this.Controls.Add(this.butt_delUser);
@@ -293,5 +335,8 @@
         private System.Windows.Forms.Button butt_delUser;
         private System.Windows.Forms.Button butt_editUs;
         private System.Windows.Forms.Button butt_restoreUsr;
+        private System.Windows.Forms.Button butt_Cancelchng;
+        private System.Windows.Forms.Button butt_saveChngs;
+        private System.Windows.Forms.ComboBox FavoriteCarIn;
     }
 }

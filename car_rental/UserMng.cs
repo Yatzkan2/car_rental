@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Reflection;
 
 namespace car_rental
 {
     public partial class UserMng : Form
     {
-        //string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UserNameInput.txt";
-        string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UserNameInput.txt";
+        //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
 
         List<string> Useres = new List<string>(); //List for push\ pull from data
         List<Client> Clients = new List<Client>(); // Creating list that holds all the users in Object
@@ -107,6 +108,20 @@ namespace car_rental
 
         private void butt_editUs_Click(object sender, EventArgs e)
         {
+            butt_editUs.Visible = false;
+            butt_Cancelchng.Visible = true;
+            butt_saveChngs.Visible = true;
+            FavoriteCarIn.Visible = true;
+
+            //Making all field (not Username) editable
+            show_Fname.ReadOnly = false;
+            show_Lname.ReadOnly = false;
+            show_id.ReadOnly = false;
+            show_pass.ReadOnly = false;
+
+           
+
+
 
         }
 
@@ -132,6 +147,90 @@ namespace car_rental
             result = MessageBox.Show(message, caption, buttons);
             if (result == DialogResult.OK)
                 Program.OpenCenteredForm(this, new UserMng());
+        }
+
+        private void butt_Cancelchng_Click(object sender, EventArgs e)
+        {
+            Program.OpenCenteredForm(this, new UserMng());
+        }
+
+        private void butt_saveChngs_Click(object sender, EventArgs e)
+        {
+            bool flagCorrectInput = true;
+            if (show_Fname.Text.Length == 0)
+            {
+                flagCorrectInput = false;
+                string message = "You didnt enter Your first Name";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                // Displays the MessageBox.
+                MessageBox.Show(message, caption, buttons);
+            }
+            if (show_Lname.Text.Length == 0)
+            {
+                flagCorrectInput = false;
+                string message = "You didnt enter Your Last Name";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+            if (show_id.Text.Length < 9 || show_id.Text.Length > 9)
+            {
+                flagCorrectInput = false;
+                string message = "Your ID number is not valid";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+
+            }
+
+
+
+            if (show_pass.Text.Length < 5)
+            {
+                flagCorrectInput = false;
+                string message = "Your Password is too short";
+                string caption = "Error Detected in Input";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+
+            if (flagCorrectInput == true)
+            {
+                int userplace = 0;
+                foreach (string User in Useres) // finding the place of the current users in the data list
+                {
+                    string[] items = User.Split(',');
+                    if (items[3] == show_Username.Text)
+                    {
+                        break;
+                    }
+                    userplace++;
+                }
+
+                Useres[userplace] = show_Fname.Text + ',' + show_Lname.Text + ',' + show_id.Text + ',' + show_Username.Text + ',' + show_pass.Text + ',' + show_favcar.Text;
+                File.WriteAllLines(file, Useres);
+
+                string message = "You have been succsecfully edited :" + show_Username.Text;
+                string caption = "Message";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                Program.OpenCenteredForm(this, new UserMng());
+
+            }
+        }
+
+        private void FavoriteCarIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            show_favcar.Text = FavoriteCarIn.Text;
         }
     }
 }
