@@ -41,6 +41,52 @@ namespace car_rental
             fuel_tank_capacity = (int)info.GetValue("FuelTankCapa", typeof(int));
             fuel_consumption = (double)info.GetValue("FuelConsumption", typeof(double));
         }
-        
+        public bool Gear
+        {
+            get
+            {
+                return this.gear;
+            }
+            set
+            {
+                gear = value;
+            }
+        }
+        public double EngineCapacity
+        {
+            get
+            {
+                return this.engine_capacity;
+            }
+            set
+            {
+                this.engine_capacity = value;
+            }
+        }
+        public double FuelConsumption
+        {
+            get
+            {
+                return this.fuel_consumption;
+            }
+            set
+            {
+                this.fuel_consumption = value;
+            }
+
+        }
+        public int FuelTankCapacity
+        {
+            get
+            {
+
+                return this.fuel_tank_capacity;
+            }
+            set
+            {
+                this.fuel_tank_capacity= value; 
+            }
+
+        }
     }
 }

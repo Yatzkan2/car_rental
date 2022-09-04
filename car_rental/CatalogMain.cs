@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,6 +44,7 @@ namespace car_rental
         //button events: Manual functions
         private void open_vehicle_view_Click(object sender, EventArgs e)
         {
+
             foreach (Vehicle vehicle in vehicle_model_global)
             {
                 if (((Control)sender).Name == vehicle.Model)
@@ -56,12 +59,17 @@ namespace car_rental
             else
                Program.OpenCenteredForm(this, new UserDashBoard());
         }
-        
+
         private void open_motorcycle_view_CheckedChanged(object sender, EventArgs e)
         {
+            Stream stream = File.Open("MotorCycleStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Vehicle> motor = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+            stream.Close();
+
             groupBoxPrivateCar.Visible = false;
             flowLayoutPanelVehicleButtons.Controls.Clear();
-            MakeVehicleViewButtons(Program.motorCycleList);
+            MakeVehicleViewButtons(motor);
         }
 
         private void open_cargo_view_CheckedChanged(object sender, EventArgs e)

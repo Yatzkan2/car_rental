@@ -12,11 +12,11 @@ namespace car_rental
         private double range { get; set; }
         private double battery_KWH { get; set; }
         private double charging_time { get; set; }
-        
-         public ElectricCar(double range, double battery_KWH, double charging_time, uint liecense_plate, 
-                                 double weight, int wheels, string wheel_size, double acceleration, double max_speed, 
-                                 uint manufacturing_year, string color, int amount, string model) 
-                                 :base(liecense_plate, weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
+
+        public ElectricCar(double range, double battery_KWH, double charging_time, uint liecense_plate,
+                                double weight, int wheels, string wheel_size, double acceleration, double max_speed,
+                                uint manufacturing_year, string color, int amount, string model)
+                                : base(liecense_plate, weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
         {
             this.range = range;
             this.battery_KWH = battery_KWH;
@@ -37,6 +37,43 @@ namespace car_rental
             battery_KWH = (double)info.GetValue("BatteryKW", typeof(double));
             charging_time = (double)info.GetValue("ChargeTime", typeof(double));
         }
+        public double Range
+        {
+            get
+            {
+                return this.range;
+            }
+            set
+            {
+                this.range = value;
+            }
+        }
+        public double BatteryKwh
+        {
+            get
+            {
+                return this.battery_KWH;
+            }
+            set
+            {
+                this.battery_KWH = value;
+            }
+        }
+        public double ChargingTime
+        {
+            get
+            {
+                return this.charging_time;
+            }
+            set
+            {
+                this.charging_time = value;
+            }
+        }
+
+
+
+
 
     }
 }

@@ -30,5 +30,16 @@ namespace car_rental
         {
             type = (string)info.GetValue("Type", typeof(string));
         }
+        public string Type
+        {
+            get
+            {
+                return this.type;
+            }
+            set
+            {
+                this.type = value;
+            }
+        }
     }
 }

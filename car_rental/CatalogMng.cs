@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace car_rental
@@ -199,7 +201,8 @@ namespace car_rental
                                 break;
 
                         }
-                        
+                        SaveAllChanges();
+
                         Program.OpenCenteredForm(this, new CatalogMng());
                     }
                 }
@@ -494,6 +497,7 @@ namespace car_rental
                         indexinallPrivate++;
                     Program.allPrivatelist.Remove(Program.allPrivatelist[indexinallPrivate]);
                 }
+                SaveAllChanges();
                 Program.OpenCenteredForm(this, new CatalogMng());
             }
         }
@@ -530,6 +534,8 @@ namespace car_rental
                         indexinallPrivate++;
                     Program.allPrivatelist[indexinallPrivate].Amount = int.Parse(inputE_stcok.Text);
                 }
+
+                SaveAllChanges();
                 Program.OpenCenteredForm(this, new CatalogMng());
             }
         }
@@ -538,7 +544,65 @@ namespace car_rental
         {
             Program.OpenCenteredForm(this, new CatalogMain());
         }
+
+        private void SaveAllChanges()
+        {
+            Stream stream;
+            BinaryFormatter bf;
+            switch (type)
+            {
+                case 0:
+                    stream = File.Open("MotorCycleStock.dat", FileMode.Create);
+                    bf = new BinaryFormatter();
+                    bf.Serialize(stream, Program.motorCycleList);
+                    stream.Close();
+                    break;
+
+                case 1:
+                    stream = File.Open("PrivateElectricStock.dat", FileMode.Create);
+                    bf = new BinaryFormatter();
+                    bf.Serialize(stream, Program.privateElcCarList);
+                    stream.Close();
+
+                    stream = File.Open("AllPrivateStock.dat", FileMode.Create);
+                    bf = new BinaryFormatter();
+                    bf.Serialize(stream, Program.allPrivatelist);
+                    stream.Close();
+                    break;
+
+
+                case 2:
+                    stream = File.Open("PrivateGasStock.dat", FileMode.Create);
+                    bf = new BinaryFormatter();
+                    bf.Serialize(stream, Program.privateGasCarList);
+                    stream.Close();
+                    stream = File.Open("AllPrivateStock.dat", FileMode.Create);
+                    bf = new BinaryFormatter();
+                    bf.Serialize(stream, Program.allPrivatelist);
+                    stream.Close();
+                    break;
+
+                case 3:
+                    stream = File.Open("CargoStock.dat", FileMode.Create);
+                    bf = new BinaryFormatter();
+                    bf.Serialize(stream, Program.cargoList);
+                    stream.Close();
+                    break;
+
+            }
+            //Storing the new Stock Updates
+            
+
+            
+
+            
+
+            
+
+           
+        }
     }
+    
 }
  
 

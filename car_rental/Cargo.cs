@@ -34,5 +34,27 @@ namespace car_rental
             hieght = (double)info.GetValue("Hieght", typeof(double));
             length = (double)info.GetValue("Length", typeof(double));
         }
+        public double Hieght
+        {
+            get
+            {
+                return this.hieght;
+            }
+            set
+            {
+                this.hieght = value;
+            }
+        }
+        public double Length
+        {
+            get
+            {
+                return this.length;
+            }
+            set
+            {
+                this.length = value;
+            }
+        }
     }
 }
