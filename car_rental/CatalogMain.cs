@@ -74,9 +74,13 @@ namespace car_rental
 
         private void open_cargo_view_CheckedChanged(object sender, EventArgs e)
         {
+            Stream stream = File.Open("CargoStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Vehicle> cargo = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+            stream.Close();
             groupBoxPrivateCar.Visible = false;
             flowLayoutPanelVehicleButtons.Controls.Clear();
-            MakeVehicleViewButtons(Program.cargoList);
+            MakeVehicleViewButtons(cargo);
         }
 
         private void open_groupBox_pricvate_car_CheckedChanged(object sender, EventArgs e)
@@ -87,20 +91,32 @@ namespace car_rental
 
         private void open_gasoline_private_car_view_CheckedChanged(object sender, EventArgs e)
         {
+            Stream stream = File.Open("PrivateGasStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Vehicle> PrivateGasCar = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+            stream.Close();
             flowLayoutPanelVehicleButtons.Controls.Clear();
-            MakeVehicleViewButtons(Program.privateGasCarList);
+            MakeVehicleViewButtons(PrivateGasCar);
         }
 
         private void open_elc_private_car_view_CheckedChanged(object sender, EventArgs e)
         {
+            Stream stream = File.Open("PrivateElectricStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Vehicle> privateElcCarList = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+            stream.Close();
             flowLayoutPanelVehicleButtons.Controls.Clear();
-            MakeVehicleViewButtons(Program.privateElcCarList);
+            MakeVehicleViewButtons(privateElcCarList);
         }
 
         private void open_all_private_car_view_CheckedChanged(object sender, EventArgs e)
         {
+            Stream stream = File.Open("AllPrivateStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Vehicle> allPrivatelist = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+            stream.Close();
             flowLayoutPanelVehicleButtons.Controls.Clear(); 
-            MakeVehicleViewButtons(Program.allPrivatelist);
+            MakeVehicleViewButtons(allPrivatelist);
         }
     }
 }
