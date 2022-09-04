@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +9,9 @@ namespace car_rental
 {
     public class ElectricCar : Vehicle
     {
-        private double range;
-        private double battery_KWH;
-        private double charging_time;
+        private double range { get; set; }
+        private double battery_KWH { get; set; }
+        private double charging_time { get; set; }
         
          public ElectricCar(double range, double battery_KWH, double charging_time, uint liecense_plate, 
                                  double weight, int wheels, string wheel_size, double acceleration, double max_speed, 
@@ -20,10 +21,22 @@ namespace car_rental
             this.range = range;
             this.battery_KWH = battery_KWH;
             this.charging_time = charging_time;
-        } 
-        public double Range { get { return range; } set { range = value; } } 
-        public double BatteryKwh { get { return battery_KWH; } set { battery_KWH = value; } }
-        public double ChargingTime { get { return charging_time; } set { charging_time = value; } }
+        }
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Range", range);
+            info.AddValue("BatteryKW", battery_KWH);
+            info.AddValue("ChargeTime", charging_time);
+
+
+        }
+        public ElectricCar(SerializationInfo info, StreamingContext context) : base(info, context) //Getting from the saved data
+        {
+            range = (double)info.GetValue("Range", typeof(double));
+            battery_KWH = (double)info.GetValue("BatteryKW", typeof(double));
+            charging_time = (double)info.GetValue("ChargeTime", typeof(double));
+        }
 
     }
 }

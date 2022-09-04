@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,10 +9,10 @@ namespace car_rental
 {
     public abstract class GasolineVehicle: Vehicle
     {
-        private bool gear;
-        private double engine_capacity;
-        private int fuel_tank_capacity;
-        private double fuel_consumption;
+        private bool gear { get; set; }
+        private double engine_capacity { get; set; }
+        private int fuel_tank_capacity { get; set; }
+        private double fuel_consumption { get; set; }
 
         public GasolineVehicle(bool gear, double engine_capacity, int fuel_tank_capacity, double fuel_consumption, 
                                 uint liecense_plate, double weight, int wheels, string wheel_size,
@@ -23,13 +24,23 @@ namespace car_rental
             this.fuel_tank_capacity = fuel_tank_capacity;
             this.fuel_consumption = fuel_consumption;
         }
-        public bool Gear
-        { get { return gear; } set { gear = value; } }
-        public double EngineCapacity 
-        { get { return engine_capacity; } set { engine_capacity = value; } }
-        public int FuelTankCapacity 
-        { get { return fuel_tank_capacity; } set { fuel_tank_capacity = value; } }
-        public double FuelConsumption 
-        { get { return fuel_consumption; } set { fuel_consumption = value; } }
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Gear", gear);
+            info.AddValue("EngineCapacity", engine_capacity);
+            info.AddValue("FuelTankCapa", fuel_tank_capacity);
+            info.AddValue("FuelConsumption", fuel_consumption);
+
+
+        }
+        public GasolineVehicle(SerializationInfo info, StreamingContext context) : base(info, context) //Getting from the saved data
+        {
+            gear = (bool)info.GetValue("Gear", typeof(bool));
+            engine_capacity = (double)info.GetValue("EngineCapacity", typeof(double));
+            fuel_tank_capacity = (int)info.GetValue("FuelTankCapa", typeof(int));
+            fuel_consumption = (double)info.GetValue("FuelConsumption", typeof(double));
+        }
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace car_rental
     public class GasolinePrivateCar : GasolineVehicle
     {
         
-        private string type;
+        private string type { get; set; }
         public GasolinePrivateCar(string type, bool gear, double engine_capacity, int fuel_tank_capacity, double fuel_consumption,
                                 uint liecense_plate, double weight, int wheels, string wheel_size,
                                 double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model) 
@@ -18,7 +19,16 @@ namespace car_rental
         {
             this.type = type; 
         }
-        public string Type 
-        { get { return type; } set { type = value; } }
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("Type", type);
+
+
+        }
+        public GasolinePrivateCar(SerializationInfo info, StreamingContext context) : base(info, context) //Getting from the saved data
+        {
+            type = (string)info.GetValue("Type", typeof(string));
+        }
     }
 }

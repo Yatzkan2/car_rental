@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace car_rental
 {
-    public abstract class Vehicle
+    [Serializable()]
+    public abstract class Vehicle:ISerializable
     {
         private uint liecense_plate;
         private double weight;
@@ -31,6 +36,35 @@ namespace car_rental
             this.color = color;
             this.amount = amount;
             this.model = model;
+        }
+        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("LiecensePlate", liecense_plate);
+            info.AddValue("Weight", weight);
+            info.AddValue("Wheels", wheels);
+            info.AddValue("WheelSize", wheel_size);
+            info.AddValue("Acceleration", acceleration);
+            info.AddValue("MaxSpeed", max_speed);
+            info.AddValue("ManufacturingYear", manufacturing_year);
+            info.AddValue("Color", color);
+            info.AddValue("Amount", amount);
+            info.AddValue("Model", model);
+
+
+
+        }
+        public Vehicle(SerializationInfo info, StreamingContext context)
+        {
+            liecense_plate = (uint)info.GetValue("LiecensePlate", typeof(uint));
+            weight = (double)info.GetValue("Weight", typeof(double));
+            wheels = (int)info.GetValue("Wheels", typeof(int));
+            wheel_size = (string)info.GetValue("WheelSize", typeof(string));
+            acceleration = (double)info.GetValue("Acceleration", typeof(double));
+            max_speed = (double)info.GetValue("MaxSpeed", typeof(double));
+            manufacturing_year = (uint)info.GetValue("ManufacturingYear", typeof(uint));
+            color = (string)info.GetValue("Color", typeof(string));
+            amount = (int)info.GetValue("Amount", typeof(int));
+            model = (string)info.GetValue("Model", typeof(string));
         }
         public uint License_Plate
         {
