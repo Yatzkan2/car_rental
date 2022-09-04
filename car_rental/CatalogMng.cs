@@ -16,11 +16,11 @@ namespace car_rental
         string[] ElectrisCarsCOmpany = { "Tesla", "Huyndai" };
         public static Vehicle temp; // an object to create a new object and put it into the lists
         public static int vechilePlaceinList = 0;
-        public List<MotorCycle> motorlist;
-        public List<GasolinePrivateCar> GasCarlist;
-        public List<ElectricCar> ElectricCarlist;
-        public List<Cargo> cargoList;
-        public List<Vehicle> allPrivateList;
+        public List<Vehicle> motorlist;
+        public List<Vehicle> GasCarlist;
+        public List<Vehicle> ElectricCarlist;
+        public List<Vehicle> cargoList;
+        public List<Vehicle> allPrivateList = new List<Vehicle>();
 
         private enum Types
         {
@@ -35,19 +35,19 @@ namespace car_rental
             
             Stream stream = File.Open("MotorCycleStock.dat", FileMode.Open);
             BinaryFormatter  bf = new BinaryFormatter();
-            motorlist = (List<MotorCycle>)bf.Deserialize(stream);
+            motorlist = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
 
            
             stream = File.Open("PrivateGasStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
-            GasCarlist = (List<GasolinePrivateCar>)bf.Deserialize(stream);
+            GasCarlist = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
 
             
             stream = File.Open("PrivateElectricStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
-            ElectricCarlist = (List<ElectricCar>)bf.Deserialize(stream);
+            ElectricCarlist = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
 
             
@@ -55,7 +55,7 @@ namespace car_rental
             
             stream = File.Open("CargoStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
-            cargoList = (List<Cargo>)bf.Deserialize(stream);
+            cargoList = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
 
             allPrivateList.AddRange(GasCarlist);
@@ -197,7 +197,11 @@ namespace car_rental
                     {
                         type = 1;
                         extraCheck = CheckforElctric();
-                        temp = new ElectricCar(double.Parse(input_Range.Text), double.Parse(input_capaa.Text), double.Parse(input_ChargeTime.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 4, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
+                        temp = new ElectricCar(double.Parse(input_Range.Text), double.Parse(input_capaa.Text),
+                            double.Parse(input_ChargeTime.Text), uint.Parse(input_liecenePl.Text), 
+                            double.Parse(input_weight.Text), 4, input_wheelSize.Text, 
+                            double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), 
+                            uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                     }
                 }
                 else if (rdbutt_Motor.Checked)

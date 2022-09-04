@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace car_rental
 {
+    [Serializable()]
     public abstract class GasolineVehicle: Vehicle
     {
         private bool gear { get; set; }

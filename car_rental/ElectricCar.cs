@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace car_rental
 {
+    [Serializable()]
     public class ElectricCar : Vehicle
     {
         private double range { get; set; }
