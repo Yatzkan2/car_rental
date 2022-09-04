@@ -58,6 +58,8 @@ namespace car_rental
         public Form1()
         {
             InitializeComponent();
+            initiateDeafaultVehicleLists();
+            saveAllLists();
             Useres = File.ReadAllLines(file).ToList();
             adminsList.Add(admin1);
             adminsList.Add(admin2);
@@ -183,6 +185,7 @@ namespace car_rental
             bf = new BinaryFormatter();
             bf.Serialize(stream, privateGasCarList);
             stream.Close();
+
             stream = File.Open("AllPrivateStock.dat", FileMode.Create);
             bf = new BinaryFormatter();
             bf.Serialize(stream, allPrivatelist);

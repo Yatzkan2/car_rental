@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
@@ -14,6 +16,12 @@ namespace car_rental
         string[] ElectrisCarsCOmpany = { "Tesla", "Huyndai" };
         public static Vehicle temp; // an object to create a new object and put it into the lists
         public static int vechilePlaceinList = 0;
+        public List<MotorCycle> motorlist;
+        public List<GasolinePrivateCar> GasCarlist;
+        public List<ElectricCar> ElectricCarlist;
+        public List<Cargo> cargoList;
+        public List<Vehicle> allPrivateList;
+
         private enum Types
         {
             MotorCycle, PrivateElectricCar, PrivateGasCar, Cargo
@@ -24,6 +32,37 @@ namespace car_rental
             InitializeComponent();
             for (int i = 1980; i <= 2022; i++) // Creating Years for manufactors years
                 cb_manuYear.Items.Add(i);
+            
+            Stream stream = File.Open("MotorCycleStock.dat", FileMode.Open);
+            BinaryFormatter  bf = new BinaryFormatter();
+            motorlist = (List<MotorCycle>)bf.Deserialize(stream);
+            stream.Close();
+
+           
+            stream = File.Open("PrivateGasStock.dat", FileMode.Open);
+            bf = new BinaryFormatter();
+            GasCarlist = (List<GasolinePrivateCar>)bf.Deserialize(stream);
+            stream.Close();
+
+            
+            stream = File.Open("PrivateElectricStock.dat", FileMode.Open);
+            bf = new BinaryFormatter();
+            ElectricCarlist = (List<ElectricCar>)bf.Deserialize(stream);
+            stream.Close();
+
+            
+
+            
+            stream = File.Open("CargoStock.dat", FileMode.Open);
+            bf = new BinaryFormatter();
+            cargoList = (List<Cargo>)bf.Deserialize(stream);
+            stream.Close();
+
+            allPrivateList.AddRange(GasCarlist);
+            allPrivateList.AddRange(ElectricCarlist);
+
+
+
         }
 
         private void butt_gotoadmn_Click(object sender, EventArgs e)
@@ -186,18 +225,18 @@ namespace car_rental
                         {
                             case 0:
 
-                                Program.motorCycleList.Add(temp);
+                                motorlist.Add((MotorCycle)temp);
                                 break;
                             case 1:
-                                Program.privateElcCarList.Add(temp);
-                                Program.allPrivatelist.Add(temp);
+                                ElectricCarlist.Add( (ElectricCar) temp);
+                                allPrivateList.Add(temp);
                                 break;
                             case 2:
-                                Program.privateGasCarList.Add(temp);
-                                Program.allPrivatelist.Add(temp);
+                               GasCarlist.Add((GasolinePrivateCar)  temp);
+                                allPrivateList.Add(temp);
                                 break;
                             case 3:
-                                Program.cargoList.Add(temp);
+                                cargoList.Add((Cargo)temp);
                                 break;
 
                         }
@@ -365,7 +404,7 @@ namespace car_rental
                 rdBE_Electric.Visible = false;
                 rdBE_Gas.Visible = false;
                 type = 0;
-                foreach (MotorCycle motor in Program.motorCycleList)
+                foreach (MotorCycle motor in motorlist)
                 {
                     cBE_model.Items.Add(motor.Model);
 
@@ -378,7 +417,7 @@ namespace car_rental
                 cBE_model.Visible = true;
                 rdBE_Electric.Visible = false;
                 rdBE_Gas.Visible = false;
-                foreach (Cargo car in Program.cargoList)
+                foreach (Cargo car in cargoList)
                 {
                     cBE_model.Items.Add(car.Model);
                 }
@@ -392,7 +431,7 @@ namespace car_rental
             hideWhenTypeisChanged();
             type = 2;
 
-            foreach (GasolinePrivateCar car in Program.privateGasCarList)
+            foreach (GasolinePrivateCar car in GasCarlist)
             {
                 lblE_model.Visible = true;
                 cBE_model.Visible = true;
@@ -406,7 +445,7 @@ namespace car_rental
             cBE_model.ResetText();
             hideWhenTypeisChanged();
             type = 1;
-            foreach (ElectricCar car in Program.privateElcCarList)
+            foreach (ElectricCar car in ElectricCarlist)
             {
                 lblE_model.Visible = true;
                 cBE_model.Visible = true;
@@ -421,27 +460,30 @@ namespace car_rental
             switch (type)
             {
                 case 0: // MotorCycle
-                    while (Program.motorCycleList[vechilePlaceinList].Model != cBE_model.Text)
+                    while (motorlist[vechilePlaceinList].Model != cBE_model.Text)
                         vechilePlaceinList++;
-                    inputE_stcok.Text = Program.motorCycleList[vechilePlaceinList].Amount.ToString();
+                    inputE_stcok.Text = motorlist[vechilePlaceinList].Amount.ToString();
                     break;
 
                 case 1: // PrivateElectric
-                    while (Program.privateElcCarList[vechilePlaceinList].Model != cBE_model.Text)
+                    while (ElectricCarlist[vechilePlaceinList].Model != cBE_model.Text)
                         vechilePlaceinList++;
-                    inputE_stcok.Text = Program.privateElcCarList[vechilePlaceinList].Amount.ToString();
+                    inputE_stcok.Text = ElectricCarlist[vechilePlaceinList].Amount.ToString();
                     break;
                 case 2: // Private Gas
-                    while (Program.privateGasCarList[vechilePlaceinList].Model != cBE_model.Text)
+                    while (GasCarlist[vechilePlaceinList].Model != cBE_model.Text)
                         vechilePlaceinList++;
-                    inputE_stcok.Text = Program.privateGasCarList[vechilePlaceinList].Amount.ToString();
+                    inputE_stcok.Text = GasCarlist[vechilePlaceinList].Amount.ToString();
                     break;
                 case 3: // Cargo
-                    while (Program.cargoList[vechilePlaceinList].Model != cBE_model.Text)
+                    while (cargoList[vechilePlaceinList].Model != cBE_model.Text)
                         vechilePlaceinList++;
-                    inputE_stcok.Text = Program.cargoList[vechilePlaceinList].Amount.ToString();
+                    inputE_stcok.Text = cargoList[vechilePlaceinList].Amount.ToString();
                     break;
+
+               
             }
+            
         }
         private void exposeWhenModelhasFound()
         {
@@ -477,25 +519,25 @@ namespace car_rental
                 switch (type)
                 {
                     case 0: // MotorCycle
-                        Program.motorCycleList.Remove(Program.motorCycleList[vechilePlaceinList]);
+                        motorlist.Remove(motorlist[vechilePlaceinList]);
                         break;
 
                     case 1: // PrivateElectric
-                        Program.privateElcCarList.Remove(Program.privateElcCarList[vechilePlaceinList]);
+                        ElectricCarlist.Remove(ElectricCarlist[vechilePlaceinList]);
                         break;
                     case 2: // Private Gas
-                        Program.privateGasCarList.Remove(Program.privateGasCarList[vechilePlaceinList]);
+                       GasCarlist.Remove(GasCarlist[vechilePlaceinList]);
                         break;
                     case 3: // Cargo
-                        Program.cargoList.Remove(Program.cargoList[vechilePlaceinList]);
+                       cargoList.Remove(cargoList[vechilePlaceinList]);
                         break;
                 }
                 if (type == 1 || type == 2)
                 {
                     int indexinallPrivate = 0;
-                    while (Program.allPrivatelist[indexinallPrivate].Model != cBE_model.Text)
+                    while (allPrivateList[indexinallPrivate].Model != cBE_model.Text)
                         indexinallPrivate++;
-                    Program.allPrivatelist.Remove(Program.allPrivatelist[indexinallPrivate]);
+                   allPrivateList.Remove(allPrivateList[indexinallPrivate]);
                 }
                 SaveAllChanges();
                 Program.OpenCenteredForm(this, new CatalogMng());
@@ -514,25 +556,25 @@ namespace car_rental
                 switch (type)
                 {
                     case 0: // MotorCycle
-                        Program.motorCycleList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        motorlist[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
                         break;
 
                     case 1: // PrivateElectric
-                        Program.privateElcCarList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        ElectricCarlist[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
                         break;
                     case 2: // Private Gas
-                        Program.privateGasCarList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        GasCarlist[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
                         break;
                     case 3: // Cargo
-                        Program.cargoList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        cargoList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
                         break;
                 }
                 if (type == 1 || type == 2)
                 {
                     int indexinallPrivate = 0;
-                    while (Program.allPrivatelist[indexinallPrivate].Model != cBE_model.Text)
+                    while (allPrivateList[indexinallPrivate].Model != cBE_model.Text)
                         indexinallPrivate++;
-                    Program.allPrivatelist[indexinallPrivate].Amount = int.Parse(inputE_stcok.Text);
+                    allPrivateList[indexinallPrivate].Amount = int.Parse(inputE_stcok.Text);
                 }
 
                 SaveAllChanges();
@@ -554,19 +596,19 @@ namespace car_rental
                 case 0:
                     stream = File.Open("MotorCycleStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, Program.motorCycleList);
+                    bf.Serialize(stream, motorlist);
                     stream.Close();
                     break;
 
                 case 1:
                     stream = File.Open("PrivateElectricStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, Program.privateElcCarList);
+                    bf.Serialize(stream, ElectricCarlist);
                     stream.Close();
 
                     stream = File.Open("AllPrivateStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, Program.allPrivatelist);
+                    bf.Serialize(stream, allPrivateList);
                     stream.Close();
                     break;
 
@@ -574,18 +616,18 @@ namespace car_rental
                 case 2:
                     stream = File.Open("PrivateGasStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, Program.privateGasCarList);
+                    bf.Serialize(stream, GasCarlist);
                     stream.Close();
                     stream = File.Open("AllPrivateStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, Program.allPrivatelist);
+                    bf.Serialize(stream, allPrivateList) ;
                     stream.Close();
                     break;
 
                 case 3:
                     stream = File.Open("CargoStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, Program.cargoList);
+                    bf.Serialize(stream, cargoList);
                     stream.Close();
                     break;
 
