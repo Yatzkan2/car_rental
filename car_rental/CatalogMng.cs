@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace car_rental
@@ -19,8 +11,10 @@ namespace car_rental
         string[] CargoCompanys = { "Isuzu", "Mercedes", "Chevrolette" };
         string[] ElectrisCarsCOmpany = { "Tesla", "Huyndai" };
         public static Vehicle temp; // an object to create a new object and put it into the lists
-        private enum Types{
-            MotorCycle,PrivateElectricCar,PrivateGasCar,Cargo
+        public static int vechilePlaceinList = 0;
+        private enum Types
+        {
+            MotorCycle, PrivateElectricCar, PrivateGasCar, Cargo
         };
         private int type;
         public CatalogMng()
@@ -52,7 +46,7 @@ namespace car_rental
         private void rdButt_Private_CheckedChanged(object sender, EventArgs e)
         {
             enablesForallPrivateCars();
-           
+
         }
 
         private void rdbutt_Motor_CheckedChanged(object sender, EventArgs e)
@@ -111,7 +105,7 @@ namespace car_rental
         {
             cb_Companies.Enabled = true;
             cb_Companies.Items.Clear();
-            cb_Companies.ResetText(); 
+            cb_Companies.ResetText();
             chkBox_Auto.Enabled = true;
             chkBox_Manual.Enabled = true;
             input_enigneCapa.ReadOnly = false;
@@ -125,6 +119,7 @@ namespace car_rental
             input_Accele.ReadOnly = false;
             input_color.ReadOnly = false;
             input_liecenePl.ReadOnly = false;
+            input_Model.ReadOnly = false;
 
 
 
@@ -153,22 +148,26 @@ namespace car_rental
 
                     if (cb_enigneType.Text == "Gasoline")
                     {
+                        type = 2;
                         extraCheck = true;
                         temp = new GasolinePrivateCar(cb_bodyType.Text, isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 4, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                     }
                     else // Electire private
                     {
+                        type = 1;
                         extraCheck = CheckforElctric();
                         temp = new ElectricCar(double.Parse(input_Range.Text), double.Parse(input_capaa.Text), double.Parse(input_ChargeTime.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 4, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                     }
                 }
                 else if (rdbutt_Motor.Checked)
                 {
+                    type = 0;
                     extraCheck = true;
                     temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                 }
                 else//means cargo
                 {
+                    type = 4;
                     extraCheck = CheckForCargo();
                     temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text, double.Parse(input_highet.Text), double.Parse(input_length.Text));
                 }
@@ -181,8 +180,26 @@ namespace car_rental
                     DialogResult res = MessageBox.Show(message, caption, button);
                     if (res == DialogResult.OK)
                     {
-                        Program.allPrivatelist.Add(temp);
-                        Program.privateGasCarList.Add(temp);
+                        switch (type)
+                        {
+                            case 0:
+
+                                Program.motorCycleList.Add(temp);
+                                break;
+                            case 1:
+                                Program.privateElcCarList.Add(temp);
+                                Program.allPrivatelist.Add(temp);
+                                break;
+                            case 2:
+                                Program.privateGasCarList.Add(temp);
+                                Program.allPrivatelist.Add(temp);
+                                break;
+                            case 3:
+                                Program.cargoList.Add(temp);
+                                break;
+
+                        }
+                        
                         Program.OpenCenteredForm(this, new CatalogMng());
                     }
                 }
@@ -254,7 +271,8 @@ namespace car_rental
             chkBox_Manual.Checked = false;
             chkBox_Auto.Enabled = false;
             chkBox_Manual.Enabled = false;
-            input_fuelCons.ReadOnly = false;
+            input_fuelCons.ReadOnly = true;
+            input_enigneCapa.ReadOnly = true;
         }
         private void enablesforCargo()
         {
@@ -267,6 +285,8 @@ namespace car_rental
             input_length.Text = null;
             input_highet.Text = null;
             input_fuelCons.ReadOnly = false;
+            input_enigneCapa.ReadOnly = false;
+            cb_bodyType.Enabled = false;
         }
         private void enablesforPrivateGas()
         {
@@ -288,6 +308,8 @@ namespace car_rental
             input_Range.ReadOnly = true;
             input_enigneCapa.ReadOnly = false;
             input_fuelCons.ReadOnly = false;
+            cb_bodyType.Enabled = false;
+
             input_Range.Text = "-";
             input_highet.Text = "-";
             input_length.Text = "-";
@@ -303,63 +325,56 @@ namespace car_rental
             input_length.ReadOnly = true;
             input_capaa.ReadOnly = true;
             input_Range.ReadOnly = true;
-
+            cb_bodyType.Enabled = true;
             input_Range.Text = "-";
             input_highet.Text = "-";
             input_length.Text = "-";
             input_capaa.Text = "-";
+
         }
 
+        ///
+        ///
         /// Edit Stock Panel
-        private void chekBoxE_manual_CheckedChanged(object sender, EventArgs e)
-        {
-            chkBoxE_name.Checked = false;
-            cBE_vecType.Enabled = true;
-            input_byModel.ReadOnly = true;
-          
-        }
-
-        private void chkBoxE_name_CheckedChanged(object sender, EventArgs e)
-        {
-            input_byModel.ReadOnly = false;
-            chekBoxE_manual.Checked = false;
-            cBE_vecType.Enabled = false;
-            cBE_model.Visible = false;
-            lblE_model.Visible = false;
-            
-           }
+       
 
         private void cBE_vecType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             cBE_model.Enabled = true;
             cBE_model.Items.Clear();
             cBE_model.ResetText();
+            hideWhenTypeisChanged();
 
-            
-            if(cBE_vecType.Text == "Private Car")
+
+
+            if (cBE_vecType.Text == "Private Car")
             {
                 rdBE_Electric.Visible = true;
                 rdBE_Gas.Visible = true;
 
             }
-            else if(cBE_vecType.Text == "MotorCycle")
+            else if (cBE_vecType.Text == "MotorCycle")
             {
-               
+
                 lblE_model.Visible = true;
                 cBE_model.Visible = true;
+                rdBE_Electric.Visible = false;
+                rdBE_Gas.Visible = false;
                 type = 0;
                 foreach (MotorCycle motor in Program.motorCycleList)
                 {
                     cBE_model.Items.Add(motor.Model);
-                    
+
                 }
             }
-            else if(cBE_vecType.Text == "Cargo")
+            else if (cBE_vecType.Text == "Cargo")
             {
                 type = 3;
                 lblE_model.Visible = true;
                 cBE_model.Visible = true;
+                rdBE_Electric.Visible = false;
+                rdBE_Gas.Visible = false;
                 foreach (Cargo car in Program.cargoList)
                 {
                     cBE_model.Items.Add(car.Model);
@@ -370,7 +385,10 @@ namespace car_rental
         private void rdBE_Gas_CheckedChanged(object sender, EventArgs e)
         {
             cBE_model.Items.Clear();
+            cBE_model.ResetText();
+            hideWhenTypeisChanged();
             type = 2;
+
             foreach (GasolinePrivateCar car in Program.privateGasCarList)
             {
                 lblE_model.Visible = true;
@@ -382,8 +400,10 @@ namespace car_rental
         private void rdBE_Electric_CheckedChanged(object sender, EventArgs e)
         {
             cBE_model.Items.Clear();
+            cBE_model.ResetText();
+            hideWhenTypeisChanged();
             type = 1;
-            foreach(ElectricCar car in Program.privateElcCarList )
+            foreach (ElectricCar car in Program.privateElcCarList)
             {
                 lblE_model.Visible = true;
                 cBE_model.Visible = true;
@@ -393,20 +413,134 @@ namespace car_rental
 
         private void cBE_model_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(type)
+            exposeWhenModelhasFound();
+            vechilePlaceinList = 0;
+            switch (type)
             {
-                case 0:
-                   
+                case 0: // MotorCycle
+                    while (Program.motorCycleList[vechilePlaceinList].Model != cBE_model.Text)
+                        vechilePlaceinList++;
+                    inputE_stcok.Text = Program.motorCycleList[vechilePlaceinList].Amount.ToString();
+                    break;
 
-
-                case 1:
-                case 2:
-                case 3:
+                case 1: // PrivateElectric
+                    while (Program.privateElcCarList[vechilePlaceinList].Model != cBE_model.Text)
+                        vechilePlaceinList++;
+                    inputE_stcok.Text = Program.privateElcCarList[vechilePlaceinList].Amount.ToString();
+                    break;
+                case 2: // Private Gas
+                    while (Program.privateGasCarList[vechilePlaceinList].Model != cBE_model.Text)
+                        vechilePlaceinList++;
+                    inputE_stcok.Text = Program.privateGasCarList[vechilePlaceinList].Amount.ToString();
+                    break;
+                case 3: // Cargo
+                    while (Program.cargoList[vechilePlaceinList].Model != cBE_model.Text)
+                        vechilePlaceinList++;
+                    inputE_stcok.Text = Program.cargoList[vechilePlaceinList].Amount.ToString();
+                    break;
             }
+        }
+        private void exposeWhenModelhasFound()
+        {
+            lblE_stock.Visible = true;
+            inputE_stcok.Visible = true;
+            buttE_edit.Visible = true;
+            buttE_Save.Visible = true;
+            
+            buttE_delete.Visible = true;
+        }
+        private void hideWhenTypeisChanged()
+        {
+            lblE_stock.Visible = false;
+            inputE_stcok.Visible = false;
+            buttE_edit.Visible = false;
+            buttE_Save.Visible = false;
+            
+            buttE_delete.Visible = false;
+        }
+        private void buttE_edit_Click(object sender, EventArgs e)
+        {
+            inputE_stcok.ReadOnly = false;
+        }
+
+        private void buttE_delete_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want delete this Vechile?";
+            string caption = "Validation";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult res = MessageBox.Show(message, caption, button);
+            if(res == DialogResult.Yes)
+            {
+                switch (type)
+                {
+                    case 0: // MotorCycle
+                        Program.motorCycleList.Remove(Program.motorCycleList[vechilePlaceinList]);
+                        break;
+
+                    case 1: // PrivateElectric
+                        Program.privateElcCarList.Remove(Program.privateElcCarList[vechilePlaceinList]);
+                        break;
+                    case 2: // Private Gas
+                        Program.privateGasCarList.Remove(Program.privateGasCarList[vechilePlaceinList]);
+                        break;
+                    case 3: // Cargo
+                        Program.cargoList.Remove(Program.cargoList[vechilePlaceinList]);
+                        break;
+                }
+                if (type == 1 || type == 2)
+                {
+                    int indexinallPrivate = 0;
+                    while (Program.allPrivatelist[indexinallPrivate].Model != cBE_model.Text)
+                        indexinallPrivate++;
+                    Program.allPrivatelist.Remove(Program.allPrivatelist[indexinallPrivate]);
+                }
+                Program.OpenCenteredForm(this, new CatalogMng());
+            }
+        }
+
+        private void buttE_Save_Click(object sender, EventArgs e)
+        {
+
+            string message = "Are you sure you want to change this vechile stock";
+            string caption = "Validation";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult res = MessageBox.Show(message, caption, button);
+            if (res == DialogResult.Yes)
+            {
+                switch (type)
+                {
+                    case 0: // MotorCycle
+                        Program.motorCycleList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        break;
+
+                    case 1: // PrivateElectric
+                        Program.privateElcCarList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        break;
+                    case 2: // Private Gas
+                        Program.privateGasCarList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        break;
+                    case 3: // Cargo
+                        Program.cargoList[vechilePlaceinList].Amount = int.Parse(inputE_stcok.Text);
+                        break;
+                }
+                if (type == 1 || type == 2)
+                {
+                    int indexinallPrivate = 0;
+                    while (Program.allPrivatelist[indexinallPrivate].Model != cBE_model.Text)
+                        indexinallPrivate++;
+                    Program.allPrivatelist[indexinallPrivate].Amount = int.Parse(inputE_stcok.Text);
+                }
+                Program.OpenCenteredForm(this, new CatalogMng());
+            }
+        }
+
+        private void butt_gotocata_Click(object sender, EventArgs e)
+        {
+            Program.OpenCenteredForm(this, new CatalogMain());
         }
     }
 }
+ 
 
 
-       
 

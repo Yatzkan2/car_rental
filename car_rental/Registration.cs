@@ -135,5 +135,10 @@ namespace car_rental
             }
 
         }
+
+        private void butt_Back_Click(object sender, EventArgs e)
+        {
+            Program.OpenCenteredForm(this, new Form1());
+        }
     }
 }

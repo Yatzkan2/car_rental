@@ -21,6 +21,7 @@ namespace car_rental
         public static Admin admin1 = new Admin("Arad", "David", 12345, "admin1", "admin1234");
         public static Admin admin2 = new Admin("Yair", "Yatzkan", 1231241, "admin2", "admin123");
         public static string whoisLoged;
+        public static bool isAdminisLoged = false; // To check if admin is loged 
         bool flagIsRightPass = false;
 
         //For User Log In
@@ -72,6 +73,7 @@ namespace car_rental
                 if (userName_input.Text == adminCheck.getUserName() && password_input.Text == adminCheck.getPassword())
                 {
                     flagIsRightPass = true;
+                    isAdminisLoged = true;
                     whoisLoged = adminCheck.getPrivateName();
                     adDashboard a = new adDashboard();
                     Program.OpenCenteredForm(this, a);
@@ -93,6 +95,7 @@ namespace car_rental
                     if (userName_input.Text == items[3] && password_input.Text == items[4]) //Checking if the pass and username are fit
                     {
                         flagIsRightPass = true;
+                        isAdminisLoged = false;
                         whoisLoged = items[0];
                         UserDashBoard us = new UserDashBoard();
                         Program.OpenCenteredForm(this, us);

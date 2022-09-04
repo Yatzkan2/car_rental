@@ -45,6 +45,7 @@ namespace car_rental
             this.lbl_favCar = new System.Windows.Forms.Label();
             this.butt_Register = new System.Windows.Forms.Button();
             this.FavoriteCarIn = new System.Windows.Forms.ComboBox();
+            this.butt_Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -169,11 +170,22 @@ namespace car_rental
             this.FavoriteCarIn.DropDown += new System.EventHandler(this.FavoriteCarIN_DropDown);
             this.FavoriteCarIn.SelectedIndexChanged += new System.EventHandler(this.FavoriteCarIn_SelectedIndexChanged);
             // 
+            // butt_Back
+            // 
+            this.butt_Back.Location = new System.Drawing.Point(12, 12);
+            this.butt_Back.Name = "butt_Back";
+            this.butt_Back.Size = new System.Drawing.Size(53, 23);
+            this.butt_Back.TabIndex = 13;
+            this.butt_Back.Text = "Back";
+            this.butt_Back.UseVisualStyleBackColor = true;
+            this.butt_Back.Click += new System.EventHandler(this.butt_Back_Click);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 259);
+            this.Controls.Add(this.butt_Back);
             this.Controls.Add(this.FavoriteCarIn);
             this.Controls.Add(this.butt_Register);
             this.Controls.Add(this.lbl_favCar);
@@ -216,5 +228,6 @@ namespace car_rental
         private System.Windows.Forms.Label lbl_favCar;
         private System.Windows.Forms.Button butt_Register;
         private System.Windows.Forms.ComboBox FavoriteCarIn;
+        private System.Windows.Forms.Button butt_Back;
     }
 }

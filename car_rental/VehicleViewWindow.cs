@@ -18,6 +18,8 @@ namespace car_rental
             InitializeComponent();
             vehicle = vehicle_item;
             this.Text = vehicle_item.Model;
+            if (Form1.isAdminisLoged == true)
+                rent_button.Visible = false;
         }
 
         private void VehicleViewWindow_Load(object sender, EventArgs e)
