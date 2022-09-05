@@ -15,6 +15,7 @@ namespace car_rental
     public partial class CatalogMain : Form
     {
         public List<Vehicle> vehicle_model_global; // to "pass" object of specific view button to 'VehicleViewWindow'
+        public static int typeVec;//0- motor 1-elecar 2-gascar 3-cargo 4-allcar
         public CatalogMain()
         {
             InitializeComponent();                  
@@ -67,6 +68,7 @@ namespace car_rental
             List<Vehicle> motor = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
             stream.Close();
 
+            typeVec = 0;
             groupBoxPrivateCar.Visible = false;
             flowLayoutPanelVehicleButtons.Controls.Clear();
             MakeVehicleViewButtons(motor);
@@ -78,6 +80,7 @@ namespace car_rental
             BinaryFormatter bf = new BinaryFormatter();
             List<Vehicle> cargo = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
             stream.Close();
+            typeVec = 3;
             groupBoxPrivateCar.Visible = false;
             flowLayoutPanelVehicleButtons.Controls.Clear();
             MakeVehicleViewButtons(cargo);
@@ -95,6 +98,7 @@ namespace car_rental
             BinaryFormatter bf = new BinaryFormatter();
             List<Vehicle> PrivateGasCar = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
             stream.Close();
+            typeVec = 2;
             flowLayoutPanelVehicleButtons.Controls.Clear();
             MakeVehicleViewButtons(PrivateGasCar);
         }
@@ -105,6 +109,7 @@ namespace car_rental
             BinaryFormatter bf = new BinaryFormatter();
             List<Vehicle> privateElcCarList = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
             stream.Close();
+            typeVec = 1;
             flowLayoutPanelVehicleButtons.Controls.Clear();
             MakeVehicleViewButtons(privateElcCarList);
         }
@@ -117,6 +122,7 @@ namespace car_rental
             stream.Close();
             flowLayoutPanelVehicleButtons.Controls.Clear(); 
             MakeVehicleViewButtons(allPrivatelist);
+            typeVec = 4;
         }
     }
 }

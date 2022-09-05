@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace car_rental
 {
     public partial class VehicleViewWindow : Form
     {
         private static Vehicle vehicle;
+        public List<Vehicle> vecs = new List<Vehicle>();
+      
         public VehicleViewWindow(Vehicle vehicle_item)
         {
             InitializeComponent();
@@ -99,6 +102,8 @@ namespace car_rental
 
         private void rent_button_Click(object sender, EventArgs e)
         {
+            Stream stream;
+            BinaryFormatter bf;
             string message = "Are You sure you want to retn this vehicle?";
             string caption = "Validation";
             MessageBoxButtons rent_validation = MessageBoxButtons.YesNo;
@@ -115,6 +120,161 @@ namespace car_rental
                 allPurch.Add(information);
                 File.WriteAllLines(file,allPurch);
 
+
+                //Updating in Data
+               
+                
+                switch (CatalogMain.typeVec)
+                {
+                    case 0:
+                         stream = File.Open("MotorCycleStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+                         bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+                        stream.Close();
+
+                        int i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("MotorCycleStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+                        break;
+
+                    case 1:
+                        stream = File.Open("PrivateElectricStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+                        stream.Close();
+                        i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("PrivateElectricStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+
+
+                        stream = File.Open("AllPrivateStock.dat", FileMode.Open); 
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // 
+                        stream.Close();
+
+                        i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("AllPrivateStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+                        break;
+
+                    case 2:
+                        stream = File.Open("PrivateGasStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+                        stream.Close();
+                        i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("PrivateGasStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+
+
+                        stream = File.Open("AllPrivateStock.dat", FileMode.Open);
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // 
+                        stream.Close();
+
+                        i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("AllPrivateStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+                        break;
+
+                    case 3:
+
+                        stream = File.Open("CargoStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+                        stream.Close();
+
+                         i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("CargoStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+                        break;
+
+
+                    case 4:
+                        bool flag = false;
+                        stream = File.Open("PrivateGasStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+                        stream.Close();
+                        i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        if (vecs[i].Model == vehicle.Model)
+                        {
+                            flag = true;
+                            vecs[i].Amount--;
+                        }
+                        stream = File.Open("PrivateGasStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+
+                        if (flag == false)
+                        {
+                            stream = File.Open("PrivateElectricStock.dat", FileMode.Open); // loading the file that stores the deleted motor list
+                            bf = new BinaryFormatter();
+                            vecs = (List<Vehicle>)bf.Deserialize(stream); // puting the informatin into a new client object
+                            stream.Close();
+                            i = 0;
+                            while (vecs[i].Model != vehicle.Model)
+                                i++;
+                            
+                                flag = true;
+                                vecs[i].Amount--;
+                           
+                        }
+                        stream = File.Open("PrivateElectricStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+
+
+
+                        stream = File.Open("AllPrivateStock.dat", FileMode.Open);
+                        bf = new BinaryFormatter();
+                        vecs = (List<Vehicle>)bf.Deserialize(stream); 
+                        stream.Close();
+
+                        i = 0;
+                        while (vecs[i].Model != vehicle.Model)
+                            i++;
+                        vecs[i].Amount--;
+                        stream = File.Open("AllPrivateStock.dat", FileMode.Create);
+                        bf = new BinaryFormatter();
+                        bf.Serialize(stream, vecs);
+                        stream.Close();
+                        break;
+                }
                 vehicle.Amount--;
                 MessageBox.Show("Thank you for purchasing, hope to see you again!");
                 this.Close();
