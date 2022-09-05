@@ -15,7 +15,7 @@ namespace car_rental
     public partial class Registration : Form
     {
 
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalDesign\car_rental\Data\UserNameInput.txt";
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
         //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
 
 

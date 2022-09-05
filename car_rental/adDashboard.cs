@@ -16,8 +16,8 @@ namespace car_rental
 {
     public partial class adDashboard : Form
     {
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalDesign\car_rental\Data\UsersPurchaes.txt";
-        string userFile = @"C:\Users\IMOE001\Source\Repos\car_rentalDesign\car_rental\Data\UserNameInput.txt"; // to load all users name
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
+        string userFile = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt"; // to load all users name
 
         List<string> totalPurch = new List<string>();
         List<string> totoalPurchID = new List<string>();
