@@ -289,7 +289,7 @@ namespace car_rental
                 return false;
             if (input_color.Text.Length == 0)
                 return false;
-            if (input_amount.Text.Length != 7 && input_amount.Text.Length != 8)
+            if (input_amount.Text.Length == 0)
                 return false;
 
             return true;

@@ -117,7 +117,10 @@
     <EmbeddedResource Include="CatalogMng.resx">
       <DependentUpon>CatalogMng.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx" />
+    <EmbeddedResource Include="Form1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Form11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserMng.resx">
       <DependentUpon>UserMng.cs</DependentUpon>
     </EmbeddedResource>

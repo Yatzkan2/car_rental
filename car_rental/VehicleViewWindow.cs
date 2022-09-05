@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace car_rental
 {
@@ -106,6 +107,14 @@ namespace car_rental
             result = MessageBox.Show(message, caption, rent_validation);
             if (result == DialogResult.Yes)
             {
+                string time = DateTime.Now.Hour +":" + DateTime.Now.Minute + ":"+ DateTime.Now.Second;
+                string date = DateTime.Now.Day + "/" + DateTime.Now.Month + "/"+ DateTime.Now.Year;
+                string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UsersPurchaes.txt";
+                List<string> allPurch = File.ReadLines(file).ToList();
+                string information = Form1.whoisLoged.ToString() + "," + vehicle.Model + "," + date + "," + time;
+                allPurch.Add(information);
+                File.WriteAllLines(file,allPurch);
+
                 vehicle.Amount--;
                 MessageBox.Show("Thank you for purchasing, hope to see you again!");
                 this.Close();

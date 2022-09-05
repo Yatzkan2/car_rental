@@ -288,11 +288,11 @@
             // lbl_amount
             // 
             this.lbl_amount.AutoSize = true;
-            this.lbl_amount.Location = new System.Drawing.Point(183, 236);
+            this.lbl_amount.Location = new System.Drawing.Point(204, 236);
             this.lbl_amount.Name = "lbl_amount";
-            this.lbl_amount.Size = new System.Drawing.Size(75, 13);
+            this.lbl_amount.Size = new System.Drawing.Size(43, 13);
             this.lbl_amount.TabIndex = 34;
-            this.lbl_amount.Text = "Liecene Plate:";
+            this.lbl_amount.Text = "Amout :";
             // 
             // input_color
             // 
