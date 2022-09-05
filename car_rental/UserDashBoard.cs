@@ -14,9 +14,8 @@ namespace car_rental
     {
         string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UsersPurchaes.txt";
         List<string> allPurch;
-        List<string> mypurch;
-        string[] purchidDate;
-        string[] purhchidTime; 
+        List<string> mypurch = new List<string>();
+         
         public UserDashBoard()
         {
             InitializeComponent();
@@ -56,10 +55,8 @@ namespace car_rental
                 {
                     countPur++;
                     cb_cars.Items.Add(item[1]);
-                    //mypurch.Add(pur);
-                  //  purchidDate[i++] = item[2];
-                  //  purhchidTime[i++] = item[3];
-
+                    mypurch.Add(pur);
+         
                 }
             }
             lbl_amount.Text += countPur.ToString();
@@ -68,18 +65,22 @@ namespace car_rental
         
         private void cb_cars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            int i = 0;
-            foreach(string pur in mypurch)
+            lbl_date.Text = "Date:";
+            lbl_time.Text = "Time:";
+            foreach (string pur in mypurch)
             {
                 string[] item = pur.Split(',');
-                if (item[1] == cb_cars.Text && item[2] == purchidDate[i] && purhchidTime[i] == item[3])
+                if (cb_cars.Text == item[1])
+                {
+                    lbl_date.Text += item[2];
+                    lbl_time.Text += item[3];
                     break;
-                
+                }
             }
-            lbl_date.Text += purchidDate[i];
-            lbl_time.Text += purhchidTime[i];
-            */
+            
+            
+            
+           
         }
         
     }
