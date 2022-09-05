@@ -14,10 +14,11 @@ namespace car_rental
 {
     public partial class UserDashBoard : Form
     {
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UsersPurchaes.txt";
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UsersPurchaes.txt";
         List<string> allPurch;
         List<string> mypurch = new List<string>();
         bool flagisinPurcahse = false;
+        
         public UserDashBoard()
         {
             InitializeComponent();
@@ -42,18 +43,17 @@ namespace car_rental
         private void butt_HidePur_Click(object sender, EventArgs e)
         {
             panel_purch.Visible = false;
-            flagisinPurcahse=false;
+            
         }
 
         private void butt_Purchase_Click(object sender, EventArgs e)
         {
-
+            panel_purch.Visible = true;
             if (flagisinPurcahse == false)
             {
-
                 int countPur = 0;
                 int i = 0;
-                panel_purch.Visible = true;
+                
                 foreach (string pur in allPurch)
                 {
                     string[] item = pur.Split(',');

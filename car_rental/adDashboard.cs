@@ -8,15 +8,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Web;
 
 namespace car_rental
+
 {
     public partial class adDashboard : Form
     {
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UsersPurchaes.txt";
+        string userFile = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UserNameInput.txt";
+
+        List<string> totalPurch = new List<string>();
+        List<string> totoalPurchID = new List<string>();
+        List<string> allUseres = new List<string>();
+        bool isInPurchaseHistory = false;
         public adDashboard()
         {
+            int i = 0;
             InitializeComponent();
             lbl_hello.Text += Form1.whoisLoged;
+            totalPurch = File.ReadAllLines(file).ToList();
+            cb_userPurhcaes.Enabled = false;
+            foreach (string line in totalPurch)
+            {
+                string temp = line;
+                temp += "," + i;
+                totoalPurchID.Add(temp);
+                i++;
+
+            }
+
+
         }
 
         private void butt_logout_Click(object sender, EventArgs e)
@@ -39,5 +62,142 @@ namespace car_rental
         {
             Program.OpenCenteredForm(this, new CatalogMng());
         }
+
+        private void butt_PurchaseHIsotry_Click(object sender, EventArgs e)
+        {
+            lbl_totalPur.Text = "Total Purchases:";
+            if (isInPurchaseHistory == false)
+            {
+                isInPurchaseHistory = true;
+                butt_PurchaseHIsotry.Text = "Hide Purchase History";
+                panel_Purchase.Visible = true;
+                lbl_totalPur.Text += " " + totalPurch.Count().ToString();
+            }
+            else
+            {
+                isInPurchaseHistory = false;
+                panel_Purchase.Visible = false;
+                butt_PurchaseHIsotry.Text = "Purchase History";
+
+            }
+
+
+        }
+
+        private void rdButt_ByUser_CheckedChanged(object sender, EventArgs e)
+        {
+            cb_load.Items.Clear();
+            cb_load.ResetText();
+            allUseres = File.ReadAllLines(userFile).ToList();
+            foreach(string user in allUseres)
+            {
+                string[] item = user.Split(',');
+                cb_load.Items.Add(item[3]);
+            }
+            cb_userPurhcaes.Visible = true;
+        }
+
+        private void rdbutt_all_CheckedChanged(object sender, EventArgs e)
+        {
+            cb_load.Items.Clear();
+            cb_load.ResetText();
+            lbl_byWho.Text = "Bought by:";
+            lbl_Date.Text = "Purchase Date:";
+            lbl_Time.Text = "Time Date:";
+            foreach (string pur in totalPurch)
+            {
+                string[] item = pur.Split(',');
+                cb_load.Items.Add(item[1]);
+            }
+            cb_userPurhcaes.Visible = false;
+        }
+
+        private void cb_load_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_byWho.Text = "Bought by:";
+            lbl_Date.Text = "Purchase Date:";
+            lbl_Time.Text = "Time Date:";
+
+            if (rdButt_ByUser.Checked)
+            {
+                cb_userPurhcaes.Enabled = true;
+                cb_userPurhcaes.Items.Clear();
+                cb_userPurhcaes.ResetText();
+                foreach (string pur in totalPurch)
+                {
+                    string[] item = pur.Split(',');
+                    if (item[0] == cb_load.Text)
+                    {
+                        cb_userPurhcaes.Items.Add(item[1]);//where string array holds the Model Name
+                    }
+                }
+
+            }
+            else if (rdbutt_all.Checked)
+            {
+               
+                foreach(string pur in totoalPurchID)
+                {
+                    string[] item = pur.Split(',');
+                    if(cb_load.Text == item[1] && cb_load.SelectedIndex == int.Parse(item[4]))
+                    {
+                        lbl_byWho.Text += item[0];
+                        lbl_Date.Text += item[2];
+                        lbl_Time.Text += item[3];
+                        break;
+                    }
+                    enablelablels();
+                }
+
+            }
+        }
+        private void cb_userPurhcaes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_byWho.Text = "Bought by:";
+            lbl_Date.Text = "Purchase Date:";
+            lbl_Time.Text = "Time Date:";
+
+            List<string> listbyUser = new List<string>();
+            int i = 0;
+            foreach(string pur in totalPurch)
+            {
+                string[] item = pur.Split(',');
+                if (item[0] == cb_load.Text)
+                {
+                    string temp = pur;
+                    temp += "," + i;
+                    listbyUser.Add(temp);
+                    i++;
+                }
+            }
+            
+                foreach (string pur in listbyUser)
+                {
+                    string[] item = pur.Split(',');
+                    if (item[1] == cb_userPurhcaes.Text && cb_userPurhcaes.SelectedIndex == int.Parse(item[4]))
+                    {
+                        lbl_byWho.Text += item[0];
+                        lbl_Date.Text += item[2];
+                        lbl_Time.Text += item[3];
+                        break;
+                    }
+                    enablelablels();
+                }
+           
+           
+              
+            
+        }
+        private void enablelablels()
+        {
+            lbl_byWho.Visible = true;
+            lbl_Date.Visible = true;
+            lbl_Time.Visible = true;
+            lbl_byWho.Text = "Bought by:";
+            lbl_Date.Text = "Purchase Date:";
+            lbl_Time.Text = "Time Date:";
+        }
+        
+        
     }
 }

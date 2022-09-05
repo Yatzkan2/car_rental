@@ -109,7 +109,7 @@ namespace car_rental
             {
                 string time = DateTime.Now.Hour +":" + DateTime.Now.Minute + ":"+ DateTime.Now.Second;
                 string date = DateTime.Now.Day + "/" + DateTime.Now.Month + "/"+ DateTime.Now.Year;
-                string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UsersPurchaes.txt";
+                string file = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UsersPurchaes.txt";
                 List<string> allPurch = File.ReadLines(file).ToList();
                 string information = Form1.whoisLoged.ToString() + "," + vehicle.Model + "," + date + "," + time;
                 allPurch.Add(information);
