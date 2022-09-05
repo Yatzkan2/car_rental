@@ -16,8 +16,8 @@ namespace car_rental
 {
     public partial class adDashboard : Form
     {
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UsersPurchaes.txt";
-        string userFile = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UserNameInput.txt";
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalDesign\car_rental\Data\UsersPurchaes.txt";
+        string userFile = @"C:\Users\IMOE001\Source\Repos\car_rentalDesign\car_rental\Data\UserNameInput.txt"; // to load all users name
 
         List<string> totalPurch = new List<string>();
         List<string> totoalPurchID = new List<string>();
@@ -92,7 +92,7 @@ namespace car_rental
             foreach(string user in allUseres)
             {
                 string[] item = user.Split(',');
-                cb_load.Items.Add(item[3]);
+                cb_load.Items.Add(item[0]);
             }
             cb_userPurhcaes.Visible = true;
         }
@@ -153,9 +153,7 @@ namespace car_rental
         }
         private void cb_userPurhcaes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_byWho.Text = "Bought by:";
-            lbl_Date.Text = "Purchase Date:";
-            lbl_Time.Text = "Time Date:";
+            enablelablels();
 
             List<string> listbyUser = new List<string>();
             int i = 0;
@@ -181,12 +179,13 @@ namespace car_rental
                         lbl_Time.Text += item[3];
                         break;
                     }
-                    enablelablels();
+                    
                 }
-           
-           
-              
             
+
+
+
+
         }
         private void enablelablels()
         {

@@ -14,7 +14,7 @@ namespace car_rental
 {
     public partial class UserDashBoard : Form
     {
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentaLast\car_rental\Data\UsersPurchaes.txt";
+        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalDesign\car_rental\Data\UsersPurchaes.txt";
         List<string> allPurch;
         List<string> mypurch = new List<string>();
         bool flagisinPurcahse = false;

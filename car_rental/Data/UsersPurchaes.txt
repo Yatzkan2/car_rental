@@ -4,3 +4,4 @@
 1,Ferarri Laferarri,5/9/2022,18:19:24
 1,Tesla Model X,5/9/2022,18:36:49
 1,toyota LQ,5/9/2022,19:16:40
+Arad,Ferarri Laferarri,5/9/2022,20:2:39
