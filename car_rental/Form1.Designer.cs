@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 139);
+            this.ClientSize = new System.Drawing.Size(490, 248);
             this.Controls.Add(this.butt_Reg);
             this.Controls.Add(this.user_name);
             this.Controls.Add(this.userName_input);
