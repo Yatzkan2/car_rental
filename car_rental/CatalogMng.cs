@@ -16,6 +16,7 @@ namespace car_rental
         string[] ElectrisCarsCOmpany = { "Tesla", "Huyndai" };
         public static Vehicle temp; // an object to create a new object and put it into the lists
         public static int vechilePlaceinList = 0;
+        //List to load from data and edit them and than push back
         public List<Vehicle> motorlist;
         public List<Vehicle> GasCarlist;
         public List<Vehicle> ElectricCarlist;
@@ -26,24 +27,26 @@ namespace car_rental
         {
             MotorCycle, PrivateElectricCar, PrivateGasCar, Cargo
         };
-        private int type;
+        private int type; 
         public CatalogMng()
         {
             InitializeComponent();
             for (int i = 1980; i <= 2022; i++) // Creating Years for manufactors years
                 cb_manuYear.Items.Add(i);
-            
-            Stream stream = File.Open("MotorCycleStock.dat", FileMode.Open);
-            BinaryFormatter  bf = new BinaryFormatter();
-            motorlist = (List<Vehicle>)bf.Deserialize(stream);
-            stream.Close();
-
+            Stream stream;
+            BinaryFormatter bf;
            
+            
+             stream = File.Open("MotorCycleStock.dat", FileMode.Open);
+             bf = new BinaryFormatter();
+             motorlist = (List<Vehicle>)bf.Deserialize(stream);
+             stream.Close();
+          
             stream = File.Open("PrivateGasStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
             GasCarlist = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
-
+           
             
             stream = File.Open("PrivateElectricStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
@@ -150,7 +153,6 @@ namespace car_rental
             chkBox_Auto.Enabled = true;
             chkBox_Manual.Enabled = true;
             input_enigneCapa.ReadOnly = false;
-            cb_bodyType.Enabled = true;
             input_fuelCap.ReadOnly = false;
             input_fuelCons.ReadOnly = false;
             cb_manuYear.Enabled = true;
@@ -159,7 +161,7 @@ namespace car_rental
             input_maxspeed.ReadOnly = false;
             input_Accele.ReadOnly = false;
             input_color.ReadOnly = false;
-            input_liecenePl.ReadOnly = false;
+            input_amount.ReadOnly = false;
             input_Model.ReadOnly = false;
 
 
@@ -191,14 +193,14 @@ namespace car_rental
                     {
                         type = 2;
                         extraCheck = true;
-                        temp = new GasolinePrivateCar(cb_bodyType.Text, isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 4, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
+                        temp = new GasolinePrivateCar(cb_bodyType.Text, isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_amount.Text), double.Parse(input_weight.Text), 4, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                     }
                     else // Electire private
                     {
                         type = 1;
                         extraCheck = CheckforElctric();
                         temp = new ElectricCar(double.Parse(input_Range.Text), double.Parse(input_capaa.Text),
-                            double.Parse(input_ChargeTime.Text), uint.Parse(input_liecenePl.Text), 
+                            double.Parse(input_ChargeTime.Text), uint.Parse(input_amount.Text), 
                             double.Parse(input_weight.Text), 4, input_wheelSize.Text, 
                             double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), 
                             uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
@@ -208,13 +210,13 @@ namespace car_rental
                 {
                     type = 0;
                     extraCheck = true;
-                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
+                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_amount.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
                 }
                 else//means cargo
                 {
                     type = 4;
                     extraCheck = CheckForCargo();
-                    temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_liecenePl.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text, double.Parse(input_highet.Text), double.Parse(input_length.Text));
+                    temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_amount.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text, double.Parse(input_highet.Text), double.Parse(input_length.Text));
                 }
 
                 if (extraCheck == true)
@@ -275,7 +277,7 @@ namespace car_rental
                 return false;
             if (input_color.Text.Length == 0)
                 return false;
-            if (input_liecenePl.Text.Length != 7 && input_liecenePl.Text.Length != 8)
+            if (input_amount.Text.Length != 7 && input_amount.Text.Length != 8)
                 return false;
 
             return true;
@@ -319,6 +321,7 @@ namespace car_rental
             chkBox_Manual.Enabled = false;
             input_fuelCons.ReadOnly = true;
             input_enigneCapa.ReadOnly = true;
+            input_fuelCap.ReadOnly = true;
         }
         private void enablesforCargo()
         {
@@ -333,13 +336,14 @@ namespace car_rental
             input_fuelCons.ReadOnly = false;
             input_enigneCapa.ReadOnly = false;
             cb_bodyType.Enabled = false;
+
         }
         private void enablesforPrivateGas()
         {
             input_capaa.ReadOnly = true;
             input_Range.ReadOnly = true;
             input_enigneCapa.ReadOnly = false;
-
+            cb_bodyType.Enabled = true;
             input_fuelCons.ReadOnly = false;
             input_capaa.Text = "-";
             input_Range.Text = "-";
@@ -646,6 +650,21 @@ namespace car_rental
             
 
            
+        }
+
+        private void input_wheelSize_MouseClick(object sender, MouseEventArgs e)
+        {
+            input_wheelSize.Clear();
+        }
+
+        private void input_Accele_MouseClick(object sender, MouseEventArgs e)
+        {
+            input_Accele.Clear();
+        }
+
+        private void input_fuelCons_Click(object sender, EventArgs e)
+        {
+            input_fuelCons.Clear();
         }
     }
     

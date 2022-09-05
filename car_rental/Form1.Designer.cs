@@ -80,7 +80,6 @@
             this.userName_input.Name = "userName_input";
             this.userName_input.Size = new System.Drawing.Size(138, 20);
             this.userName_input.TabIndex = 4;
-            
             // 
             // user_name
             // 
@@ -105,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 136);
+            this.ClientSize = new System.Drawing.Size(349, 139);
             this.Controls.Add(this.butt_Reg);
             this.Controls.Add(this.user_name);
             this.Controls.Add(this.userName_input);

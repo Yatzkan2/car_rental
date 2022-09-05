@@ -43,8 +43,8 @@
             this.input_highet = new System.Windows.Forms.TextBox();
             this.lbl_highet = new System.Windows.Forms.Label();
             this.butt_saveCar = new System.Windows.Forms.Button();
-            this.input_liecenePl = new System.Windows.Forms.TextBox();
-            this.lbl_liencePlate = new System.Windows.Forms.Label();
+            this.input_amount = new System.Windows.Forms.TextBox();
+            this.lbl_amount = new System.Windows.Forms.Label();
             this.input_color = new System.Windows.Forms.TextBox();
             this.lbl_color = new System.Windows.Forms.Label();
             this.input_Accele = new System.Windows.Forms.TextBox();
@@ -140,8 +140,8 @@
             this.panel_addNew.Controls.Add(this.input_highet);
             this.panel_addNew.Controls.Add(this.lbl_highet);
             this.panel_addNew.Controls.Add(this.butt_saveCar);
-            this.panel_addNew.Controls.Add(this.input_liecenePl);
-            this.panel_addNew.Controls.Add(this.lbl_liencePlate);
+            this.panel_addNew.Controls.Add(this.input_amount);
+            this.panel_addNew.Controls.Add(this.lbl_amount);
             this.panel_addNew.Controls.Add(this.input_color);
             this.panel_addNew.Controls.Add(this.lbl_color);
             this.panel_addNew.Controls.Add(this.input_Accele);
@@ -277,22 +277,22 @@
             this.butt_saveCar.UseVisualStyleBackColor = true;
             this.butt_saveCar.Click += new System.EventHandler(this.butt_saveCar_Click);
             // 
-            // input_liecenePl
+            // input_amount
             // 
-            this.input_liecenePl.Location = new System.Drawing.Point(264, 233);
-            this.input_liecenePl.Name = "input_liecenePl";
-            this.input_liecenePl.ReadOnly = true;
-            this.input_liecenePl.Size = new System.Drawing.Size(119, 20);
-            this.input_liecenePl.TabIndex = 35;
+            this.input_amount.Location = new System.Drawing.Point(264, 233);
+            this.input_amount.Name = "input_amount";
+            this.input_amount.ReadOnly = true;
+            this.input_amount.Size = new System.Drawing.Size(119, 20);
+            this.input_amount.TabIndex = 35;
             // 
-            // lbl_liencePlate
+            // lbl_amount
             // 
-            this.lbl_liencePlate.AutoSize = true;
-            this.lbl_liencePlate.Location = new System.Drawing.Point(183, 236);
-            this.lbl_liencePlate.Name = "lbl_liencePlate";
-            this.lbl_liencePlate.Size = new System.Drawing.Size(75, 13);
-            this.lbl_liencePlate.TabIndex = 34;
-            this.lbl_liencePlate.Text = "Liecene Plate:";
+            this.lbl_amount.AutoSize = true;
+            this.lbl_amount.Location = new System.Drawing.Point(183, 236);
+            this.lbl_amount.Name = "lbl_amount";
+            this.lbl_amount.Size = new System.Drawing.Size(75, 13);
+            this.lbl_amount.TabIndex = 34;
+            this.lbl_amount.Text = "Liecene Plate:";
             // 
             // input_color
             // 
@@ -319,6 +319,7 @@
             this.input_Accele.Size = new System.Drawing.Size(62, 20);
             this.input_Accele.TabIndex = 31;
             this.input_Accele.Text = "0-100 sec";
+            this.input_Accele.MouseClick += new System.Windows.Forms.MouseEventHandler(this.input_Accele_MouseClick);
             // 
             // lbl_acc
             // 
@@ -354,6 +355,7 @@
             this.input_wheelSize.Size = new System.Drawing.Size(51, 20);
             this.input_wheelSize.TabIndex = 27;
             this.input_wheelSize.Text = "inch";
+            this.input_wheelSize.MouseClick += new System.Windows.Forms.MouseEventHandler(this.input_wheelSize_MouseClick);
             // 
             // lbl_wheelSize
             // 
@@ -407,6 +409,7 @@
             this.input_fuelCons.Size = new System.Drawing.Size(44, 20);
             this.input_fuelCons.TabIndex = 21;
             this.input_fuelCons.Text = "L/km";
+            this.input_fuelCons.Click += new System.EventHandler(this.input_fuelCons_Click);
             // 
             // lbl_fuelCuns
             // 
@@ -842,8 +845,8 @@
         private System.Windows.Forms.TextBox input_color;
         private System.Windows.Forms.Label lbl_color;
         private System.Windows.Forms.Button butt_saveCar;
-        private System.Windows.Forms.TextBox input_liecenePl;
-        private System.Windows.Forms.Label lbl_liencePlate;
+        private System.Windows.Forms.TextBox input_amount;
+        private System.Windows.Forms.Label lbl_amount;
         private System.Windows.Forms.TextBox input_highet;
         private System.Windows.Forms.Label lbl_highet;
         private System.Windows.Forms.TextBox input_length;
