@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.VisualStyles;
+
 namespace car_rental
 {
     public partial class UserDashBoard : Form
@@ -15,7 +17,7 @@ namespace car_rental
         string file = @"C:\Users\IMOE001\Source\Repos\car_rental99\car_rental\Data\UsersPurchaes.txt";
         List<string> allPurch;
         List<string> mypurch = new List<string>();
-         
+        bool flagisinPurcahse = false;
         public UserDashBoard()
         {
             InitializeComponent();
@@ -40,26 +42,35 @@ namespace car_rental
         private void butt_HidePur_Click(object sender, EventArgs e)
         {
             panel_purch.Visible = false;
+            flagisinPurcahse=false;
         }
 
         private void butt_Purchase_Click(object sender, EventArgs e)
         {
-       
-            int countPur = 0;
-            int i = 0;
-            panel_purch.Visible = true;
-            foreach(string pur in allPurch)
+
+            if (flagisinPurcahse == false)
             {
-                string[] item = pur.Split(',');
-                if (item[0] == Form1.whoisLoged)
+
+                int countPur = 0;
+                int i = 0;
+                panel_purch.Visible = true;
+                foreach (string pur in allPurch)
                 {
-                    countPur++;
-                    cb_cars.Items.Add(item[1]);
-                    mypurch.Add(pur);
-         
+                    string[] item = pur.Split(',');
+                    if (item[0] == Form1.whoisLoged)
+                    {
+                        string temp = pur;
+                        temp += "," + i;
+                        countPur++;
+                        cb_cars.Items.Add(item[1]);
+                        mypurch.Add(temp);
+                        i++;
+
+                    }
                 }
+                lbl_amount.Text += countPur.ToString();
+                flagisinPurcahse = true;
             }
-            lbl_amount.Text += countPur.ToString();
             
         }
         
@@ -70,7 +81,7 @@ namespace car_rental
             foreach (string pur in mypurch)
             {
                 string[] item = pur.Split(',');
-                if (cb_cars.Text == item[1])
+                if (cb_cars.Text == item[1] && cb_cars.SelectedIndex == int.Parse( item[4]))
                 {
                     lbl_date.Text += item[2];
                     lbl_time.Text += item[3];
