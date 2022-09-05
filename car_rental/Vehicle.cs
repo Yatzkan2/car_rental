@@ -13,7 +13,7 @@ namespace car_rental
     [Serializable()]
     public abstract class Vehicle:ISerializable
     {
-        private uint liecense_plate;
+       
         private double weight;
         private int wheels;
         private string wheel_size;
@@ -23,10 +23,10 @@ namespace car_rental
         private string color;
         private int amount;
         private string model; //Porsch 911, ferarri la ferarri, etc...
-        public Vehicle(uint liecense_plate, double weight, int wheels, string wheel_size, 
+        public Vehicle(double weight, int wheels, string wheel_size, 
                        double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model)
         {
-            this.liecense_plate = liecense_plate;
+           
             this.weight = weight;
             this.wheels = wheels;
             this.wheel_size = wheel_size;
@@ -39,7 +39,7 @@ namespace car_rental
         }
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("LiecensePlate", liecense_plate);
+           
             info.AddValue("Weight", weight);
             info.AddValue("Wheels", wheels);
             info.AddValue("WheelSize", wheel_size);
@@ -55,7 +55,7 @@ namespace car_rental
         }
         public Vehicle(SerializationInfo info, StreamingContext context)
         {
-            liecense_plate = (uint)info.GetValue("LiecensePlate", typeof(uint));
+           
             weight = (double)info.GetValue("Weight", typeof(double));
             wheels = (int)info.GetValue("Wheels", typeof(int));
             wheel_size = (string)info.GetValue("WheelSize", typeof(string));
@@ -66,11 +66,7 @@ namespace car_rental
             amount = (int)info.GetValue("Amount", typeof(int));
             model = (string)info.GetValue("Model", typeof(string));
         }
-        public uint License_Plate
-        {
-            get { return this.liecense_plate; }
-            set { this.liecense_plate = value;  }
-        }
+       
         public double Weight
         {
             get { return this.weight; } 

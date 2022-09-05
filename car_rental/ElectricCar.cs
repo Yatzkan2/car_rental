@@ -14,10 +14,10 @@ namespace car_rental
         private double battery_KWH { get; set; }
         private double charging_time { get; set; }
 
-        public ElectricCar(double range, double battery_KWH, double charging_time, uint liecense_plate,
+        public ElectricCar(double range, double battery_KWH, double charging_time,
                                 double weight, int wheels, string wheel_size, double acceleration, double max_speed,
                                 uint manufacturing_year, string color, int amount, string model)
-                                : base(liecense_plate, weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
+                                : base(weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
         {
             this.range = range;
             this.battery_KWH = battery_KWH;

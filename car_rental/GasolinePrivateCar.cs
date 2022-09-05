@@ -13,9 +13,9 @@ namespace car_rental
         
         private string type { get; set; }
         public GasolinePrivateCar(string type, bool gear, double engine_capacity, int fuel_tank_capacity, double fuel_consumption,
-                                uint liecense_plate, double weight, int wheels, string wheel_size,
+                                double weight, int wheels, string wheel_size,
                                 double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model) 
-                                :base(gear, engine_capacity, fuel_tank_capacity, fuel_consumption, liecense_plate, weight, 
+                                :base(gear, engine_capacity, fuel_tank_capacity, fuel_consumption, weight, 
                                  wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
         {
             this.type = type; 

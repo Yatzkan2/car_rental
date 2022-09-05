@@ -16,5 +16,6 @@ namespace car_rental.Design
         private Color OnToggleColor = Color.WhiteSmoke;
         private Color offbackColor = Color.WhiteSmoke;
         private Color offToggleColor = Color.Blue;
-           
+
     }
+}

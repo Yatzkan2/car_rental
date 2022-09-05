@@ -193,30 +193,42 @@ namespace car_rental
                     {
                         type = 2;
                         extraCheck = true;
-                        temp = new GasolinePrivateCar(cb_bodyType.Text, isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_amount.Text), double.Parse(input_weight.Text), 4, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
+                        temp = new GasolinePrivateCar(cb_bodyType.Text, isGear, 
+                                double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), 
+                                double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 4, 
+                                input_wheelSize.Text, double.Parse(input_Accele.Text), 
+                                double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), 
+                                input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text);
                     }
                     else // Electire private
                     {
                         type = 1;
                         extraCheck = CheckforElctric();
                         temp = new ElectricCar(double.Parse(input_Range.Text), double.Parse(input_capaa.Text),
-                            double.Parse(input_ChargeTime.Text), uint.Parse(input_amount.Text), 
+                            double.Parse(input_ChargeTime.Text), 
                             double.Parse(input_weight.Text), 4, input_wheelSize.Text, 
                             double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), 
-                            uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
+                            uint.Parse(cb_manuYear.Text), input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text);
                     }
                 }
                 else if (rdbutt_Motor.Checked)
                 {
                     type = 0;
                     extraCheck = true;
-                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_amount.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text);
+                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), 
+                        double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), 
+                        double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 
+                        int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text);
                 }
                 else//means cargo
                 {
                     type = 4;
                     extraCheck = CheckForCargo();
-                    temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), double.Parse(input_fuelCons.Text), uint.Parse(input_amount.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 1, cb_Companies.Text + " " + input_Model.Text, double.Parse(input_highet.Text), double.Parse(input_length.Text));
+                    temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), 
+                        double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, 
+                        double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), 
+                        uint.Parse(cb_manuYear.Text), input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text, 
+                        double.Parse(input_highet.Text), double.Parse(input_length.Text));
                 }
 
                 if (extraCheck == true)
