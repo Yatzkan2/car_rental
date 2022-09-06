@@ -77,6 +77,11 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserMng.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,14 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,21 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Picture\AlfaGuiliaGreen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Picture\LamboAven.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Picture\LamboHurecan.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Picture\LAmbo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Picture\RedLambo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Picture\BackLambo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

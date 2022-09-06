@@ -150,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::car_rental.Properties.Resources.BackLambo;
+            this.BackgroundImage = global::car_rental.Properties.Resources.AlfaGuiliaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(829, 420);
             this.Controls.Add(this.flowLayoutPanelVehicleButtons);

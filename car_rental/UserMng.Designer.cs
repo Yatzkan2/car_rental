@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::car_rental.Properties.Resources.RedLambo;
+            this.BackgroundImage = global::car_rental.Properties.Resources.AlfaGuiliaGreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(636, 335);
             this.Controls.Add(this.FavoriteCarIn);
