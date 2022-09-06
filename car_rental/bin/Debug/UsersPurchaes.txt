@@ -1,0 +1,12 @@
+1,Alfa Romeo Mito,5/9/2022,13:25:7
+1,Harley Davidson,5/9/2022,13:28:49
+1,Alfa Romeo Mito,5/9/2022,13:39:38
+1,Ferarri Laferarri,5/9/2022,18:19:24
+1,Tesla Model X,5/9/2022,18:36:49
+1,toyota LQ,5/9/2022,19:16:40
+Arad,Ferarri Laferarri,5/9/2022,20:2:39
+1,Ferarri Laferarri,5/9/2022,21:49:26
+1,Ferarri Laferarri,5/9/2022,21:49:56
+1,BMW X5,6/9/2022,9:8:48
+Orel,Harley Davidson,6/9/2022,10:6:10
+1,Harley Davidson,6/9/2022,10:8:55

@@ -1,0 +1,7 @@
+test,test,131444444,test,123456,BMW
+test2,test2,141414122,test2,1234a,Mercedes
+1,1,1,1,1,1
+Nitzan,Krause,315363721,NK,123456,BMW
+rotem,dresler,123456789,rotem123,123456,Alfa Romeo
+ruty,yatzkan,676496320,rutyatzk,123456,BMW
+Arad,Davod,123456781,Arada,123456,Alfa Romeo
