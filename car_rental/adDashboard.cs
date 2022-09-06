@@ -16,8 +16,8 @@ namespace car_rental
 {
     public partial class adDashboard : Form
     {
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
-        string userFile = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt"; // to load all users name
+        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
+        string userFile = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt"; // to load all users name
 
         List<string> totalPurch = new List<string>();
         List<string> totoalPurchID = new List<string>();
@@ -27,7 +27,7 @@ namespace car_rental
         {
             int i = 0;
             InitializeComponent();
-            lbl_hello.Text += Form1.whoisLoged;
+            lbl_hello.Text += HomePage.whoisLoged;
             totalPurch = File.ReadAllLines(file).ToList();
             cb_userPurhcaes.Enabled = false;
             foreach (string line in totalPurch)
@@ -44,7 +44,7 @@ namespace car_rental
 
         private void butt_logout_Click(object sender, EventArgs e)
         {
-            Form1 log = new Form1();
+            HomePage log = new HomePage();
             Program.OpenCenteredForm(this, log);
  
 

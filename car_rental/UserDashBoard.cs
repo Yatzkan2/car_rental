@@ -14,7 +14,8 @@ namespace car_rental
 {
     public partial class UserDashBoard : Form
     {
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
+         
+        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
         List<string> allPurch;
         List<string> mypurch = new List<string>();
         bool flagisinPurcahse = false;
@@ -22,7 +23,7 @@ namespace car_rental
         public UserDashBoard()
         {
             InitializeComponent();
-            lbl_name.Text +=  Form1.whoisLoged;
+            lbl_name.Text +=  HomePage.whoisLoged;
             allPurch = File.ReadLines(file).ToList();
 
 
@@ -37,7 +38,7 @@ namespace car_rental
         private void butt_logout_Click(object sender, EventArgs e)
         {
            
-            Program.OpenCenteredForm(this,new Form1());
+            Program.OpenCenteredForm(this,new HomePage());
         }
 
         private void butt_HidePur_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace car_rental
                 foreach (string pur in allPurch)
                 {
                     string[] item = pur.Split(',');
-                    if (item[0] == Form1.whoisLoged)
+                    if (item[0] == HomePage.whoisLoged)
                     {
                         string temp = pur;
                         temp += "," + i;

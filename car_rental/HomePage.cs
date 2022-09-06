@@ -15,7 +15,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace car_rental
 {
-    public partial class Form1 : Form
+    public partial class HomePage : Form
     {
 
         static bool is_visible_password = false;
@@ -27,7 +27,7 @@ namespace car_rental
         bool flagIsRightPass = false;
 
         //For User Log In
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
+        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
         //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
         List<string> Useres = new List<string>();
 
@@ -55,7 +55,7 @@ namespace car_rental
 
 
 
-        public Form1()
+        public HomePage()
         {
             InitializeComponent();
             initiateDeafaultVehicleLists();
@@ -88,7 +88,7 @@ namespace car_rental
         {
             Registration f1 = new Registration();
             Program.OpenCenteredForm(this, f1);
-            
+
         }
 
         private void butt_login_Click(object sender, EventArgs e)
@@ -144,8 +144,8 @@ namespace car_rental
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons);
             }
-               
- 
+
+
         }
         public void initiateDeafaultVehicleLists()
         {
@@ -171,7 +171,7 @@ namespace car_rental
             Stream stream;
             BinaryFormatter bf;
 
-            
+
             stream = File.Open("MotorCycleStock.dat", FileMode.Create);
             bf = new BinaryFormatter();
             bf.Serialize(stream, motorCycleList);
@@ -199,6 +199,8 @@ namespace car_rental
 
 
         }
-        }
+
+        
+    }
 
 }

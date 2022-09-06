@@ -19,7 +19,7 @@ namespace car_rental
             Application.SetCompatibleTextRenderingDefault(false);
           
 
-            var main = new Form1();
+            var main = new HomePage();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();
             Application.Run();

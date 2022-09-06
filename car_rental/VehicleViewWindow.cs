@@ -22,7 +22,7 @@ namespace car_rental
             InitializeComponent();
             vehicle = vehicle_item;
             this.Text = vehicle_item.Model;
-            if (Form1.isAdminisLoged == true)
+            if (HomePage.isAdminisLoged == true)
                 rent_button.Visible = false;
         }
 
@@ -114,9 +114,9 @@ namespace car_rental
             {
                 string time = DateTime.Now.Hour +":" + DateTime.Now.Minute + ":"+ DateTime.Now.Second;
                 string date = DateTime.Now.Day + "/" + DateTime.Now.Month + "/"+ DateTime.Now.Year;
-                string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
+                string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
                 List<string> allPurch = File.ReadLines(file).ToList();
-                string information = Form1.whoisLoged.ToString() + "," + vehicle.Model + "," + date + "," + time;
+                string information = HomePage.whoisLoged.ToString() + "," + vehicle.Model + "," + date + "," + time;
                 allPurch.Add(information);
                 File.WriteAllLines(file,allPurch);
 

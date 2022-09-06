@@ -15,7 +15,7 @@ namespace car_rental
     public partial class Registration : Form
     {
 
-        string file = @"C:\Users\IMOE001\Source\Repos\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
+        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
         //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
 
 
@@ -129,7 +129,7 @@ namespace car_rental
                 DialogResult result;
                 // Displays the MessageBox.
                 result = MessageBox.Show(message, caption, buttons);
-                Form1 log = new Form1();
+                HomePage log = new HomePage();
                 Program.OpenCenteredForm(this, log);
                 
             }
@@ -138,7 +138,7 @@ namespace car_rental
 
         private void butt_Back_Click(object sender, EventArgs e)
         {
-            Program.OpenCenteredForm(this, new Form1());
+            Program.OpenCenteredForm(this, new HomePage());
         }
     }
 }

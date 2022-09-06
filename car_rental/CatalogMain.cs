@@ -55,7 +55,7 @@ namespace car_rental
         //button events: Automatic functions
         private void back_button_Click(object sender, EventArgs e)
         {
-            if (Form1.isAdminisLoged == true)
+            if (HomePage.isAdminisLoged == true)
                 Program.OpenCenteredForm(this, new CatalogMng());
             else
                Program.OpenCenteredForm(this, new UserDashBoard());
