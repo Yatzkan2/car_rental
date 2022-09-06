@@ -32,6 +32,8 @@
             this.butt_addnew = new System.Windows.Forms.Button();
             this.butt_editstock = new System.Windows.Forms.Button();
             this.panel_addNew = new System.Windows.Forms.Panel();
+            this.loadPic = new System.Windows.Forms.PictureBox();
+            this.but_upload = new System.Windows.Forms.Button();
             this.input_ChargeTime = new System.Windows.Forms.TextBox();
             this.lbl_chargetime = new System.Windows.Forms.Label();
             this.input_capaa = new System.Windows.Forms.TextBox();
@@ -94,6 +96,7 @@
             this.lbl_edit = new System.Windows.Forms.Label();
             this.butt_gotocata = new System.Windows.Forms.Button();
             this.panel_addNew.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPic)).BeginInit();
             this.Panel_edit.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +132,8 @@
             // 
             // panel_addNew
             // 
+            this.panel_addNew.Controls.Add(this.loadPic);
+            this.panel_addNew.Controls.Add(this.but_upload);
             this.panel_addNew.Controls.Add(this.input_ChargeTime);
             this.panel_addNew.Controls.Add(this.lbl_chargetime);
             this.panel_addNew.Controls.Add(this.input_capaa);
@@ -182,9 +187,29 @@
             this.panel_addNew.TabIndex = 3;
             this.panel_addNew.Visible = false;
             // 
+            // loadPic
+            // 
+            this.loadPic.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.loadPic.Location = new System.Drawing.Point(452, 297);
+            this.loadPic.Name = "loadPic";
+            this.loadPic.Size = new System.Drawing.Size(100, 28);
+            this.loadPic.TabIndex = 48;
+            this.loadPic.TabStop = false;
+            
+            // 
+            // but_upload
+            // 
+            this.but_upload.Location = new System.Drawing.Point(305, 298);
+            this.but_upload.Name = "but_upload";
+            this.but_upload.Size = new System.Drawing.Size(142, 28);
+            this.but_upload.TabIndex = 47;
+            this.but_upload.Text = "Upload Picutre There ->";
+            this.but_upload.UseVisualStyleBackColor = true;
+            this.but_upload.Click += new System.EventHandler(this.but_upload_Click);
+            // 
             // input_ChargeTime
             // 
-            this.input_ChargeTime.Location = new System.Drawing.Point(276, 301);
+            this.input_ChargeTime.Location = new System.Drawing.Point(192, 305);
             this.input_ChargeTime.Name = "input_ChargeTime";
             this.input_ChargeTime.ReadOnly = true;
             this.input_ChargeTime.Size = new System.Drawing.Size(100, 20);
@@ -193,7 +218,7 @@
             // lbl_chargetime
             // 
             this.lbl_chargetime.AutoSize = true;
-            this.lbl_chargetime.Location = new System.Drawing.Point(193, 304);
+            this.lbl_chargetime.Location = new System.Drawing.Point(108, 308);
             this.lbl_chargetime.Name = "lbl_chargetime";
             this.lbl_chargetime.Size = new System.Drawing.Size(78, 13);
             this.lbl_chargetime.TabIndex = 45;
@@ -798,6 +823,7 @@
             this.Text = "CatalogMng";
             this.panel_addNew.ResumeLayout(false);
             this.panel_addNew.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPic)).EndInit();
             this.Panel_edit.ResumeLayout(false);
             this.Panel_edit.PerformLayout();
             this.ResumeLayout(false);
@@ -871,5 +897,7 @@
         private System.Windows.Forms.TextBox inputE_stcok;
         private System.Windows.Forms.Label lblE_stock;
         private System.Windows.Forms.Button butt_gotocata;
+        private System.Windows.Forms.Button but_upload;
+        private System.Windows.Forms.PictureBox loadPic;
     }
 }

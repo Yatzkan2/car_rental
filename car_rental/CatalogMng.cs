@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -22,40 +23,43 @@ namespace car_rental
         public List<Vehicle> ElectricCarlist;
         public List<Vehicle> cargoList;
         public List<Vehicle> allPrivateList = new List<Vehicle>();
+        public string imagelocation = "";
+        public Image file; // stores the picture
 
         private enum Types
         {
             MotorCycle, PrivateElectricCar, PrivateGasCar, Cargo
         };
-        private int type; 
+        private int type;
         public CatalogMng()
         {
             InitializeComponent();
             for (int i = 1980; i <= 2022; i++) // Creating Years for manufactors years
                 cb_manuYear.Items.Add(i);
+
             Stream stream;
             BinaryFormatter bf;
-           
-            
-             stream = File.Open("MotorCycleStock.dat", FileMode.Open);
-             bf = new BinaryFormatter();
-             motorlist = (List<Vehicle>)bf.Deserialize(stream);
-             stream.Close();
-          
+
+
+            stream = File.Open("MotorCycleStock.dat", FileMode.Open);
+            bf = new BinaryFormatter();
+            motorlist = (List<Vehicle>)bf.Deserialize(stream);
+            stream.Close();
+
             stream = File.Open("PrivateGasStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
             GasCarlist = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
-           
-            
+
+
             stream = File.Open("PrivateElectricStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
             ElectricCarlist = (List<Vehicle>)bf.Deserialize(stream);
             stream.Close();
 
-            
 
-            
+
+
             stream = File.Open("CargoStock.dat", FileMode.Open);
             bf = new BinaryFormatter();
             cargoList = (List<Vehicle>)bf.Deserialize(stream);
@@ -186,6 +190,7 @@ namespace car_rental
 
             if (IsAllCorrect == true)
             {
+                imagelocation = Directory.GetCurrentDirectory() + "\\Picture\\" + cb_Companies.Text + " " + input_Model.Text;
                 if (rdButt_Private.Checked)
                 {
 
@@ -193,46 +198,47 @@ namespace car_rental
                     {
                         type = 2;
                         extraCheck = true;
-                        temp = new GasolinePrivateCar(cb_bodyType.Text, isGear, 
-                                double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), 
-                                double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 4, 
-                                input_wheelSize.Text, double.Parse(input_Accele.Text), 
-                                double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), 
-                                input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text);
+                        temp = new GasolinePrivateCar(cb_bodyType.Text, isGear,
+                                double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text),
+                                double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 4,
+                                input_wheelSize.Text, double.Parse(input_Accele.Text),
+                                double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text),
+                                input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text, imagelocation);
                     }
                     else // Electire private
                     {
                         type = 1;
                         extraCheck = CheckforElctric();
                         temp = new ElectricCar(double.Parse(input_Range.Text), double.Parse(input_capaa.Text),
-                            double.Parse(input_ChargeTime.Text), 
-                            double.Parse(input_weight.Text), 4, input_wheelSize.Text, 
-                            double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), 
-                            uint.Parse(cb_manuYear.Text), input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text);
+                            double.Parse(input_ChargeTime.Text),
+                            double.Parse(input_weight.Text), 4, input_wheelSize.Text,
+                            double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text),
+                            uint.Parse(cb_manuYear.Text), input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text, imagelocation);
                     }
                 }
                 else if (rdbutt_Motor.Checked)
                 {
                     type = 0;
                     extraCheck = true;
-                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), 
-                        double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text), 
-                        double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text, 
-                        int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text);
+                    temp = new MotorCycle(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text),
+                        double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, double.Parse(input_Accele.Text),
+                        double.Parse(input_maxspeed.Text), uint.Parse(cb_manuYear.Text), input_color.Text,
+                        int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text, imagelocation);
                 }
                 else//means cargo
                 {
                     type = 4;
                     extraCheck = CheckForCargo();
-                    temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text), 
-                        double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text, 
-                        double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text), 
-                        uint.Parse(cb_manuYear.Text), input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text, 
+                    temp = new Cargo(isGear, double.Parse(input_enigneCapa.Text), int.Parse(input_fuelCap.Text),
+                        double.Parse(input_fuelCons.Text), double.Parse(input_weight.Text), 2, input_wheelSize.Text,
+                        double.Parse(input_Accele.Text), double.Parse(input_maxspeed.Text),
+                        uint.Parse(cb_manuYear.Text), input_color.Text, int.Parse(input_amount.Text), cb_Companies.Text + " " + input_Model.Text, imagelocation,
                         double.Parse(input_highet.Text), double.Parse(input_length.Text));
                 }
 
                 if (extraCheck == true)
                 {
+                    
                     string message = "Are You Sure you want to add:" + cb_Companies.Text + " " + input_Model.Text + " To Stock?";
                     string caption = "Validation";
                     MessageBoxButtons button = MessageBoxButtons.OKCancel;
@@ -246,11 +252,11 @@ namespace car_rental
                                 motorlist.Add((MotorCycle)temp);
                                 break;
                             case 1:
-                                ElectricCarlist.Add( (ElectricCar) temp);
+                                ElectricCarlist.Add((ElectricCar)temp);
                                 allPrivateList.Add(temp);
                                 break;
                             case 2:
-                               GasCarlist.Add((GasolinePrivateCar)  temp);
+                                GasCarlist.Add((GasolinePrivateCar)temp);
                                 allPrivateList.Add(temp);
                                 break;
                             case 3:
@@ -259,6 +265,9 @@ namespace car_rental
 
                         }
                         SaveAllChanges();
+
+                        //save the picture
+                        file.Save(Directory.GetCurrentDirectory()+ "\\Picture\\"+ cb_Companies.Text +" "+ input_Model.Text);
 
                         Program.OpenCenteredForm(this, new CatalogMng());
                     }
@@ -291,7 +300,8 @@ namespace car_rental
                 return false;
             if (input_amount.Text.Length == 0 || input_amount.Text == "0")
                 return false;
-
+            if (file == null)
+                return false;
             return true;
         }
         private bool CheckforElctric()
@@ -398,7 +408,7 @@ namespace car_rental
         ///
         ///
         /// Edit Stock Panel
-       
+
 
         private void cBE_vecType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -501,9 +511,9 @@ namespace car_rental
                     inputE_stcok.Text = cargoList[vechilePlaceinList].Amount.ToString();
                     break;
 
-               
+
             }
-            
+
         }
         private void exposeWhenModelhasFound()
         {
@@ -511,7 +521,7 @@ namespace car_rental
             inputE_stcok.Visible = true;
             buttE_edit.Visible = true;
             buttE_Save.Visible = true;
-            
+
             buttE_delete.Visible = true;
         }
         private void hideWhenTypeisChanged()
@@ -520,7 +530,7 @@ namespace car_rental
             inputE_stcok.Visible = false;
             buttE_edit.Visible = false;
             buttE_Save.Visible = false;
-            
+
             buttE_delete.Visible = false;
         }
         private void buttE_edit_Click(object sender, EventArgs e)
@@ -534,7 +544,7 @@ namespace car_rental
             string caption = "Validation";
             MessageBoxButtons button = MessageBoxButtons.YesNo;
             DialogResult res = MessageBox.Show(message, caption, button);
-            if(res == DialogResult.Yes)
+            if (res == DialogResult.Yes)
             {
                 switch (type)
                 {
@@ -546,10 +556,10 @@ namespace car_rental
                         ElectricCarlist.Remove(ElectricCarlist[vechilePlaceinList]);
                         break;
                     case 2: // Private Gas
-                       GasCarlist.Remove(GasCarlist[vechilePlaceinList]);
+                        GasCarlist.Remove(GasCarlist[vechilePlaceinList]);
                         break;
                     case 3: // Cargo
-                       cargoList.Remove(cargoList[vechilePlaceinList]);
+                        cargoList.Remove(cargoList[vechilePlaceinList]);
                         break;
                 }
                 if (type == 1 || type == 2)
@@ -557,9 +567,10 @@ namespace car_rental
                     int indexinallPrivate = 0;
                     while (allPrivateList[indexinallPrivate].Model != cBE_model.Text)
                         indexinallPrivate++;
-                   allPrivateList.Remove(allPrivateList[indexinallPrivate]);
+                    allPrivateList.Remove(allPrivateList[indexinallPrivate]);
                 }
                 SaveAllChanges();
+                File.Delete(Directory.GetCurrentDirectory() + "\\Picture\\"+cBE_model.Text);
                 Program.OpenCenteredForm(this, new CatalogMng());
             }
         }
@@ -640,7 +651,7 @@ namespace car_rental
                     stream.Close();
                     stream = File.Open("AllPrivateStock.dat", FileMode.Create);
                     bf = new BinaryFormatter();
-                    bf.Serialize(stream, allPrivateList) ;
+                    bf.Serialize(stream, allPrivateList);
                     stream.Close();
                     break;
 
@@ -653,15 +664,15 @@ namespace car_rental
 
             }
             //Storing the new Stock Updates
-            
 
-            
 
-            
 
-            
 
-           
+
+
+
+
+
         }
 
         private void input_wheelSize_MouseClick(object sender, MouseEventArgs e)
@@ -678,9 +689,33 @@ namespace car_rental
         {
             input_fuelCons.Clear();
         }
+
+        
+        private void but_upload_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "jpg files(.*jpg)|*.jpg| PNG files(*.png)|.*png| All Files(*.*)|*.*";
+
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    file = Image.FromFile(open.FileName);
+                    loadPic.Image = file;
+                }
+            }
+            catch (Exception)
+            {
+                string message = "Something wrong with the picture upload";
+                string caption = "Error";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBox.Show(message, caption, button);
+            }
+        }
     }
-    
 }
+        
  
 
 

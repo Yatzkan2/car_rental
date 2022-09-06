@@ -17,8 +17,8 @@ namespace car_rental
 
         public GasolineVehicle(bool gear, double engine_capacity, int fuel_tank_capacity, double fuel_consumption, 
                                double weight, int wheels, string wheel_size,
-                                double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model) 
-                                : base(weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
+                                double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model,string picture)
+                                : base(weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model,picture)
         {
             this.gear = gear;
             this.engine_capacity = engine_capacity;

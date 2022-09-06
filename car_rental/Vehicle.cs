@@ -7,6 +7,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.IO.IsolatedStorage;
 
 namespace car_rental
 {
@@ -23,10 +24,11 @@ namespace car_rental
         private string color;
         private int amount;
         private string model; //Porsch 911, ferarri la ferarri, etc...
-        public Vehicle(double weight, int wheels, string wheel_size, 
-                       double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model)
+        private string picture;
+        public Vehicle(double weight, int wheels, string wheel_size,
+                       double acceleration, double max_speed, uint manufacturing_year, string color, int amount, string model, string picture)
         {
-           
+
             this.weight = weight;
             this.wheels = wheels;
             this.wheel_size = wheel_size;
@@ -36,6 +38,7 @@ namespace car_rental
             this.color = color;
             this.amount = amount;
             this.model = model;
+            this.picture = picture;
         }
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -49,6 +52,7 @@ namespace car_rental
             info.AddValue("Color", color);
             info.AddValue("Amount", amount);
             info.AddValue("Model", model);
+            info.AddValue("Picture",picture); 
 
 
 
@@ -65,6 +69,7 @@ namespace car_rental
             color = (string)info.GetValue("Color", typeof(string));
             amount = (int)info.GetValue("Amount", typeof(int));
             model = (string)info.GetValue("Model", typeof(string));
+            picture = (string)info.GetValue("Picture", typeof(string));
         }
        
         public double Weight
@@ -111,6 +116,16 @@ namespace car_rental
         {
             get { return this.model; }
             set { this.model = value; }
+        }
+        public string Picutre
+        {
+            get {
+                return this.picture;
+                    }
+            set
+            {
+                this.picture = value;
+            }
         }
     }
 }

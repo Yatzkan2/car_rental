@@ -43,6 +43,8 @@
             this.battery_kwh = new System.Windows.Forms.Label();
             this.charging_time = new System.Windows.Forms.Label();
             this.rent_button = new System.Windows.Forms.Button();
+            this.show_picture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.show_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel_technicalDetails
@@ -190,11 +192,22 @@
             this.rent_button.UseVisualStyleBackColor = true;
             this.rent_button.Click += new System.EventHandler(this.rent_button_Click);
             // 
+            // show_picture
+            // 
+            this.show_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.show_picture.Location = new System.Drawing.Point(279, 44);
+            this.show_picture.Name = "show_picture";
+            this.show_picture.Size = new System.Drawing.Size(495, 298);
+            this.show_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.show_picture.TabIndex = 11;
+            this.show_picture.TabStop = false;
+            // 
             // VehicleViewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.show_picture);
             this.Controls.Add(this.rent_button);
             this.Controls.Add(this.charging_time);
             this.Controls.Add(this.battery_kwh);
@@ -213,6 +226,7 @@
             this.Name = "VehicleViewWindow";
             this.Text = "vehicle details";
             this.Load += new System.EventHandler(this.VehicleViewWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.show_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +249,6 @@
         private System.Windows.Forms.Label battery_kwh;
         private System.Windows.Forms.Label charging_time;
         private System.Windows.Forms.Button rent_button;
+        private System.Windows.Forms.PictureBox show_picture;
     }
 }

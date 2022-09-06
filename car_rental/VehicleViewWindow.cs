@@ -32,11 +32,13 @@ namespace car_rental
             model.Text = "Model: " + vehicle.Model;
             color.Text = "Color: " + vehicle.Color;
             year.Text = "Year: " + vehicle.Manufacturing_year;
+            
 
             flowLayoutPanel_technicalDetails.Controls.Add(model);
             flowLayoutPanel_technicalDetails.Controls.Add(color);
             flowLayoutPanel_technicalDetails.Controls.Add(year);
-
+           
+            
 
 
             if (vehicle.GetType().BaseType.Name == "GasolineVehicle")
@@ -95,9 +97,9 @@ namespace car_rental
                     flowLayoutPanel_technicalDetails.Controls.Add(charging_time);
 
                 }
-                    
+
+            show_picture.Image = Image.FromFile(vehicle.Picutre);
             
-                
         }
 
         private void rent_button_Click(object sender, EventArgs e)

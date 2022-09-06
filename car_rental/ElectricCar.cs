@@ -16,8 +16,8 @@ namespace car_rental
 
         public ElectricCar(double range, double battery_KWH, double charging_time,
                                 double weight, int wheels, string wheel_size, double acceleration, double max_speed,
-                                uint manufacturing_year, string color, int amount, string model)
-                                : base(weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
+                                uint manufacturing_year, string color, int amount, string model,string picture)
+                                : base(weight, wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model,picture)
         {
             this.range = range;
             this.battery_KWH = battery_KWH;

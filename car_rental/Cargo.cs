@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -15,9 +16,9 @@ namespace car_rental
         public Cargo(bool gear, double engine_capacity, int fuel_tank_capacity, double fuel_consumption,
                                double weight, int wheels, string wheel_size,
                                double acceleration, double max_speed, uint manufacturing_year, string color, int amount, 
-                               string model, double hieght, double length)
+                               string model,string picture, double hieght, double length)
                                : base(gear, engine_capacity, fuel_tank_capacity, fuel_consumption, weight,
-                                wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model)
+                                wheels, wheel_size, acceleration, max_speed, manufacturing_year, color, amount, model,picture)
         {
             this.hieght = hieght;
             this.length = length;

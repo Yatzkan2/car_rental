@@ -105,7 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::car_rental.Properties.Resources.AlfaGuilia;
-            this.ClientSize = new System.Drawing.Size(470, 294);
+            this.ClientSize = new System.Drawing.Size(481, 306);
             this.Controls.Add(this.butt_Reg);
             this.Controls.Add(this.user_name);
             this.Controls.Add(this.userName_input);

@@ -28,25 +28,26 @@ namespace car_rental
 
         //For User Log In
         
-        List<string> Useres = new List<string>();
+        public List<string> Useres = new List<string>();
+       
 
         //deafault vehicle properties
         //---------------------------------------------------------------------------------------------------------------------------------------//
-        public MotorCycle harley = new MotorCycle(true, 500, 500, 14, 150, 2, "1000", 9, 200, 1978, "Red", 4, "Harley Davidson");
-        public MotorCycle yamaha = new MotorCycle(true, 400, 400, 14, 200, 2, "1000", 9, 200, 1978, "Blue", 4, "Yamaha");
+        public MotorCycle harley = new MotorCycle(true, 500, 500, 14, 150, 2, "1000", 9, 200, 1978, "Red", 4, "Harley Davidson", Directory.GetCurrentDirectory() +"\\Picture\\HarleyDavidson.jpg");
+        public MotorCycle yamaha = new MotorCycle(true, 400, 400, 14, 200, 2, "1000", 9, 200, 1978, "Blue", 4, "Yamaha", Directory.GetCurrentDirectory()+ "\\Picture\\AlfaGuilia.jpg");
         public List<Vehicle> motorCycleList = new List<Vehicle>();
 
-        public Cargo isuzuSumo = new Cargo(true, 2000, 100, 8, 7.5, 4, "6000", 3, 150, 2021, "Green", 10, "Isuzu Sumo", 4.5, 10.2);
-        public Cargo mercedesActross = new Cargo(true, 4500, 400, 6, 18, 4, "5500", 3.5, 160, 2016, "Black", 7, "Mercedes Actross", 3.2, 6.4);
-        public Cargo fiatDucato = new Cargo(true, 1500, 400, 6, 4.2, 4, "3500", 4, 200, 2020, "White", 4, "Fiat Ducato", 2.4, 3.6);
+        public Cargo isuzuSumo = new Cargo(true, 2000, 100, 8, 7.5, 4, "6000", 3, 150, 2021, "Green", 10, "Isuzu Sumo", Directory.GetCurrentDirectory() + "\\Picture\\IsuzuSumo.jpg", 4.5, 10.2);
+        public Cargo mercedesActross = new Cargo(true, 4500, 400, 6, 18, 4, "5500", 3.5, 160, 2016, "Black", 7, "Mercedes Actross", Directory.GetCurrentDirectory() + "\\Picture\\MercedesActros.jpg", 3.2, 6.4);
+        public Cargo fiatDucato = new Cargo(true, 1500, 400, 6, 4.2, 4, "3500", 4, 200, 2020, "White", 4, "Fiat Ducato", Directory.GetCurrentDirectory() + "\\Picture\\FiatDUcato.jpg", 2.4, 3.6);
         public List<Vehicle> cargoList = new List<Vehicle>();
 
-        public GasolinePrivateCar bmwX5 = new GasolinePrivateCar("SUV", false, 360, 60, 12, 0.7, 4, "700", 6, 280, 2022, "Grey", 25, "BMW X5");
-        public GasolinePrivateCar ferarriLaferarri = new GasolinePrivateCar("coupe", true, 6.3, 75, 9.5, 1.58, 4, "2650", 3, 370, 2014, "Red", 3, "Ferarri Laferarri");
+        public GasolinePrivateCar bmwX5 = new GasolinePrivateCar("SUV", false, 360, 60, 12, 0.7, 4, "700", 6, 280, 2022, "Grey", 25, "BMW X5", Directory.GetCurrentDirectory() + "\\Picture\\BmwX5.jpg");
+        public GasolinePrivateCar ferarriLaferarri = new GasolinePrivateCar("coupe", true, 6.3, 75, 9.5, 1.58, 4, "2650", 3, 370, 2014, "Red", 3, "Ferarri Laferarri", Directory.GetCurrentDirectory() + "\\Picture\\FerrariLa.jpg");
         public List<Vehicle> privateGasCarList = new List<Vehicle>();
 
-        public ElectricCar teslaModelX = new ElectricCar(536, 100, 7.5, 2.36, 4, "5.2", 2.3, 250, 2022, "Silver", 6, "Tesla Model X");
-        public ElectricCar toyotaLQ = new ElectricCar(300, 120, 5.5, 1.2, 4, "6.12", 3.4, 220, 2022, "White", 7, "toyota LQ");
+        public ElectricCar teslaModelX = new ElectricCar(536, 100, 7.5, 2.36, 4, "5.2", 2.3, 250, 2022, "Silver", 6, "Tesla Model X", Directory.GetCurrentDirectory() + "\\Picture\\TeslamodelX.jpg");
+        public ElectricCar toyotaLQ = new ElectricCar(300, 120, 5.5, 1.2, 4, "6.12", 3.4, 220, 2022, "White", 7, "toyota LQ", Directory.GetCurrentDirectory() + "\\Picture\\ToyotaLQ.jpg");
         public List<Vehicle> privateElcCarList = new List<Vehicle>();
 
         public List<Vehicle> allPrivatelist = new List<Vehicle>();
