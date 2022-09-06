@@ -344,6 +344,7 @@ namespace car_rental
             input_fuelCons.ReadOnly = true;
             input_enigneCapa.ReadOnly = true;
             input_fuelCap.ReadOnly = true;
+            input_ChargeTime.ReadOnly = false;
         }
         private void enablesforCargo()
         {

@@ -11,3 +11,5 @@ Arad,Ferarri Laferarri,5/9/2022,20:2:39
 Orel,Harley Davidson,6/9/2022,10:6:10
 1,Harley Davidson,6/9/2022,10:8:55
 1,Alfa Romeo Guilia,6/9/2022,17:16:13
+Nitzan,Mercedes Actross,6/9/2022,22:26:44
+Nitzan,Tesla Model Y,6/9/2022,22:27:24
