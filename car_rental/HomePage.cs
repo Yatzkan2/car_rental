@@ -27,8 +27,7 @@ namespace car_rental
         bool flagIsRightPass = false;
 
         //For User Log In
-        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
-        //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
+        
         List<string> Useres = new List<string>();
 
         //deafault vehicle properties
@@ -60,7 +59,7 @@ namespace car_rental
             InitializeComponent();
             initiateDeafaultVehicleLists();
             //saveAllLists();
-            Useres = File.ReadAllLines(file).ToList();
+            Useres = File.ReadAllLines(Program.userDetailsFile).ToList();
             adminsList.Add(admin1);
             adminsList.Add(admin2);
 

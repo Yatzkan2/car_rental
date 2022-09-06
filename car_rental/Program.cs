@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 //second_change
 namespace car_rental
 {
@@ -41,6 +42,8 @@ namespace car_rental
                 form_Parent.Close();
         }
         
+        public static string userDetailsFile = Directory.GetCurrentDirectory() + "\\UserNameInput.txt";
+        public static string userHistoryFile = Directory.GetCurrentDirectory() + "\\UsersPurchaes.txt";
        
     }
 }

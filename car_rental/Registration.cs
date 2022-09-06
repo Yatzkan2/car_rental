@@ -15,9 +15,6 @@ namespace car_rental
     public partial class Registration : Form
     {
 
-        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
-        //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
-
 
         List<string> Useres = new List<string>();
         private bool flagPickedCar = false;
@@ -25,7 +22,7 @@ namespace car_rental
         public Registration()
         {
             InitializeComponent();
-            Useres = File.ReadAllLines(file).ToList(); // Loading list of all existing users
+            Useres = File.ReadAllLines(Program.userDetailsFile).ToList(); // Loading list of all existing users
         }
 
         private void FavoriteCarIn_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,7 +119,7 @@ namespace car_rental
 
                 string newUser = input_Fname.Text +","+ input_Lname.Text+","+input_ID.Text+ ","+input_UserName.Text + "," + input_Password.Text + "," +  FavoriteCarIn.Text;
                 Useres.Add(newUser);
-                File.WriteAllLines(file, Useres);
+                File.WriteAllLines(Program.userDetailsFile, Useres);
                 string message = "You have been succsecfully Registered";
                 string caption = "Congrats and Welcome";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;

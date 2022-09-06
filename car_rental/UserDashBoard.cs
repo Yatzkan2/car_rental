@@ -14,8 +14,7 @@ namespace car_rental
 {
     public partial class UserDashBoard : Form
     {
-         
-        string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UsersPurchaes.txt";
+        
         List<string> allPurch;
         List<string> mypurch = new List<string>();
         bool flagisinPurcahse = false;
@@ -24,7 +23,7 @@ namespace car_rental
         {
             InitializeComponent();
             lbl_name.Text +=  HomePage.whoisLoged;
-            allPurch = File.ReadLines(file).ToList();
+            allPurch = File.ReadLines(Program.userHistoryFile).ToList();
 
 
 

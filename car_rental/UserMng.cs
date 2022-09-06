@@ -15,9 +15,7 @@ namespace car_rental
 {
     public partial class UserMng : Form
     {
-         string file = @"C:\Users\IMOE001\Desktop\In Bad Case\car_rentalbeforeDesign\car_rental\Data\UserNameInput.txt";
-        //string file = @"C:\Users\Yair\Desktop\car rental backup\car_rental-master\car_rental-master\car_rental\Data\UserNameInput.txt";
-
+      
         List<string> Useres = new List<string>(); //List for push\ pull from data
         List<Client> Clients = new List<Client>(); // Creating list that holds all the users in Object
         private int countUsers = 0;
@@ -26,7 +24,7 @@ namespace car_rental
         public UserMng()
         {
             InitializeComponent();
-            Useres = File.ReadAllLines(file).ToList(); // Users Hold list of the Existing Useres
+            Useres = File.ReadAllLines(Program.userDetailsFile).ToList(); // Users Hold list of the Existing Useres
             foreach(string User in Useres)
             {
                 string[] items = User.Split(',');
@@ -98,7 +96,7 @@ namespace car_rental
 
                     
                     Useres.Remove(Useres[i]); // Delete in the clients string that goes to the data
-                    File.WriteAllLines(file, Useres); // overwrite to the data the new list without the deleted client
+                    File.WriteAllLines(Program.userDetailsFile, Useres); // overwrite to the data the new list without the deleted client
                     Program.OpenCenteredForm(this, new UserMng());
 
                 }
@@ -134,7 +132,7 @@ namespace car_rental
             //Creating string that going to be stored in Data file of the usernames and than stores it
             string infofordata = restoredClient.First_name.ToString() + "," + restoredClient.Last_name.ToString() + "," + restoredClient.id.ToString() + "," + restoredClient.userName.ToString() + "," + restoredClient.password.ToString() + "," + restoredClient.getFavoriteCar().ToString();
             Useres.Add(infofordata);
-            File.WriteAllLines(file, Useres);
+            File.WriteAllLines(Program.userDetailsFile, Useres);
             flagIsDel = false;
 
             string message = "User has been Restored!";
@@ -213,7 +211,7 @@ namespace car_rental
                 }
 
                 Useres[userplace] = show_Fname.Text + ',' + show_Lname.Text + ',' + show_id.Text + ',' + show_Username.Text + ',' + show_pass.Text + ',' + show_favcar.Text;
-                File.WriteAllLines(file, Useres);
+                File.WriteAllLines(Program.userDetailsFile, Useres);
 
                 string message = "You have been succsecfully edited :" + show_Username.Text;
                 string caption = "Message";
