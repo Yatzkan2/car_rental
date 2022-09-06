@@ -53,7 +53,7 @@
             // open_motorcycle_view
             // 
             this.open_motorcycle_view.AutoSize = true;
-            this.open_motorcycle_view.Location = new System.Drawing.Point(105, 51);
+            this.open_motorcycle_view.Location = new System.Drawing.Point(343, 40);
             this.open_motorcycle_view.Name = "open_motorcycle_view";
             this.open_motorcycle_view.Size = new System.Drawing.Size(77, 17);
             this.open_motorcycle_view.TabIndex = 3;
@@ -65,7 +65,7 @@
             // open_groupBox_pricvate_car
             // 
             this.open_groupBox_pricvate_car.AutoSize = true;
-            this.open_groupBox_pricvate_car.Location = new System.Drawing.Point(324, 51);
+            this.open_groupBox_pricvate_car.Location = new System.Drawing.Point(89, 40);
             this.open_groupBox_pricvate_car.Name = "open_groupBox_pricvate_car";
             this.open_groupBox_pricvate_car.Size = new System.Drawing.Size(58, 17);
             this.open_groupBox_pricvate_car.TabIndex = 4;
@@ -77,7 +77,7 @@
             // open_cargo_view
             // 
             this.open_cargo_view.AutoSize = true;
-            this.open_cargo_view.Location = new System.Drawing.Point(572, 51);
+            this.open_cargo_view.Location = new System.Drawing.Point(588, 40);
             this.open_cargo_view.Name = "open_cargo_view";
             this.open_cargo_view.Size = new System.Drawing.Size(53, 17);
             this.open_cargo_view.TabIndex = 6;
@@ -89,9 +89,10 @@
             // open_gasoline_private_car_view
             // 
             this.open_gasoline_private_car_view.AutoSize = true;
+            this.open_gasoline_private_car_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.open_gasoline_private_car_view.Location = new System.Drawing.Point(16, 23);
             this.open_gasoline_private_car_view.Name = "open_gasoline_private_car_view";
-            this.open_gasoline_private_car_view.Size = new System.Drawing.Size(44, 17);
+            this.open_gasoline_private_car_view.Size = new System.Drawing.Size(47, 17);
             this.open_gasoline_private_car_view.TabIndex = 5;
             this.open_gasoline_private_car_view.TabStop = true;
             this.open_gasoline_private_car_view.Text = "Gas";
@@ -101,9 +102,10 @@
             // open_elc_private_car_view
             // 
             this.open_elc_private_car_view.AutoSize = true;
+            this.open_elc_private_car_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.open_elc_private_car_view.Location = new System.Drawing.Point(16, 46);
             this.open_elc_private_car_view.Name = "open_elc_private_car_view";
-            this.open_elc_private_car_view.Size = new System.Drawing.Size(60, 17);
+            this.open_elc_private_car_view.Size = new System.Drawing.Size(68, 17);
             this.open_elc_private_car_view.TabIndex = 8;
             this.open_elc_private_car_view.TabStop = true;
             this.open_elc_private_car_view.Text = "Electric";
@@ -113,9 +115,10 @@
             // open_all_private_car_view
             // 
             this.open_all_private_car_view.AutoSize = true;
+            this.open_all_private_car_view.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.open_all_private_car_view.Location = new System.Drawing.Point(16, 69);
             this.open_all_private_car_view.Name = "open_all_private_car_view";
-            this.open_all_private_car_view.Size = new System.Drawing.Size(36, 17);
+            this.open_all_private_car_view.Size = new System.Drawing.Size(39, 17);
             this.open_all_private_car_view.TabIndex = 7;
             this.open_all_private_car_view.TabStop = true;
             this.open_all_private_car_view.Text = "All";
@@ -124,28 +127,32 @@
             // 
             // groupBoxPrivateCar
             // 
+            this.groupBoxPrivateCar.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxPrivateCar.Controls.Add(this.open_elc_private_car_view);
             this.groupBoxPrivateCar.Controls.Add(this.open_gasoline_private_car_view);
             this.groupBoxPrivateCar.Controls.Add(this.open_all_private_car_view);
-            this.groupBoxPrivateCar.Location = new System.Drawing.Point(295, 87);
+            this.groupBoxPrivateCar.Location = new System.Drawing.Point(47, 74);
             this.groupBoxPrivateCar.Name = "groupBoxPrivateCar";
-            this.groupBoxPrivateCar.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxPrivateCar.Size = new System.Drawing.Size(100, 96);
             this.groupBoxPrivateCar.TabIndex = 9;
             this.groupBoxPrivateCar.TabStop = false;
             this.groupBoxPrivateCar.Visible = false;
             // 
             // flowLayoutPanelVehicleButtons
             // 
-            this.flowLayoutPanelVehicleButtons.Location = new System.Drawing.Point(12, 264);
+            this.flowLayoutPanelVehicleButtons.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanelVehicleButtons.Location = new System.Drawing.Point(47, 176);
             this.flowLayoutPanelVehicleButtons.Name = "flowLayoutPanelVehicleButtons";
-            this.flowLayoutPanelVehicleButtons.Size = new System.Drawing.Size(776, 306);
+            this.flowLayoutPanelVehicleButtons.Size = new System.Drawing.Size(686, 214);
             this.flowLayoutPanelVehicleButtons.TabIndex = 10;
             // 
             // CatalogMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 582);
+            this.BackgroundImage = global::car_rental.Properties.Resources.BackLambo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(829, 420);
             this.Controls.Add(this.flowLayoutPanelVehicleButtons);
             this.Controls.Add(this.groupBoxPrivateCar);
             this.Controls.Add(this.open_cargo_view);

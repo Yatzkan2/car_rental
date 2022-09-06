@@ -96,7 +96,7 @@
             // 
             // panel_Purchase
             // 
-            this.panel_Purchase.BackColor = System.Drawing.Color.IndianRed;
+            this.panel_Purchase.BackColor = System.Drawing.Color.GreenYellow;
             this.panel_Purchase.Controls.Add(this.lbl_Time);
             this.panel_Purchase.Controls.Add(this.lbl_Date);
             this.panel_Purchase.Controls.Add(this.lbl_byWho);
@@ -198,6 +198,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::car_rental.Properties.Resources.LamboAven;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(678, 296);
             this.Controls.Add(this.panel_Purchase);
             this.Controls.Add(this.butt_PurchaseHIsotry);

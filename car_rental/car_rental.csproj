@@ -162,5 +162,26 @@
   <ItemGroup>
     <None Include="Picture\AlfaGuilia.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\AlfaGuiliaGreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\LamboAven.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\LamboHurecan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\LAmbo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\RedLambo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\BackLambo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Corvette4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

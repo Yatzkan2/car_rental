@@ -189,13 +189,12 @@
             // 
             // loadPic
             // 
-            this.loadPic.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.loadPic.BackColor = System.Drawing.SystemColors.ControlDark;
             this.loadPic.Location = new System.Drawing.Point(452, 297);
             this.loadPic.Name = "loadPic";
             this.loadPic.Size = new System.Drawing.Size(100, 28);
             this.loadPic.TabIndex = 48;
             this.loadPic.TabStop = false;
-            
             // 
             // but_upload
             // 
@@ -663,9 +662,9 @@
             this.Panel_edit.Controls.Add(this.cBE_vecType);
             this.Panel_edit.Controls.Add(this.lblE_vectype);
             this.Panel_edit.Controls.Add(this.lbl_edit);
-            this.Panel_edit.Location = new System.Drawing.Point(195, 0);
+            this.Panel_edit.Location = new System.Drawing.Point(195, 13);
             this.Panel_edit.Name = "Panel_edit";
-            this.Panel_edit.Size = new System.Drawing.Size(575, 196);
+            this.Panel_edit.Size = new System.Drawing.Size(572, 183);
             this.Panel_edit.TabIndex = 4;
             this.Panel_edit.Visible = false;
             // 
@@ -812,7 +811,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::car_rental.Properties.Resources.LAmbo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(801, 415);
             this.Controls.Add(this.butt_gotocata);
             this.Controls.Add(this.Panel_edit);
             this.Controls.Add(this.panel_addNew);

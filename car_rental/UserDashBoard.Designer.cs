@@ -33,11 +33,11 @@
             this.butt_Purchase = new System.Windows.Forms.Button();
             this.lbl_name = new System.Windows.Forms.Label();
             this.panel_purch = new System.Windows.Forms.Panel();
-            this.butt_HidePur = new System.Windows.Forms.Button();
-            this.lbl_amount = new System.Windows.Forms.Label();
-            this.cb_cars = new System.Windows.Forms.ComboBox();
-            this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
+            this.lbl_date = new System.Windows.Forms.Label();
+            this.cb_cars = new System.Windows.Forms.ComboBox();
+            this.lbl_amount = new System.Windows.Forms.Label();
+            this.butt_HidePur = new System.Windows.Forms.Button();
             this.panel_purch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +82,7 @@
             // 
             // panel_purch
             // 
-            this.panel_purch.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel_purch.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel_purch.Controls.Add(this.lbl_time);
             this.panel_purch.Controls.Add(this.lbl_date);
             this.panel_purch.Controls.Add(this.cb_cars);
@@ -93,6 +93,42 @@
             this.panel_purch.Size = new System.Drawing.Size(270, 210);
             this.panel_purch.TabIndex = 4;
             this.panel_purch.Visible = false;
+            // 
+            // lbl_time
+            // 
+            this.lbl_time.AutoSize = true;
+            this.lbl_time.Location = new System.Drawing.Point(30, 87);
+            this.lbl_time.Name = "lbl_time";
+            this.lbl_time.Size = new System.Drawing.Size(33, 13);
+            this.lbl_time.TabIndex = 4;
+            this.lbl_time.Text = "Time:";
+            // 
+            // lbl_date
+            // 
+            this.lbl_date.AutoSize = true;
+            this.lbl_date.Location = new System.Drawing.Point(30, 63);
+            this.lbl_date.Name = "lbl_date";
+            this.lbl_date.Size = new System.Drawing.Size(33, 13);
+            this.lbl_date.TabIndex = 3;
+            this.lbl_date.Text = "Date:";
+            // 
+            // cb_cars
+            // 
+            this.cb_cars.FormattingEnabled = true;
+            this.cb_cars.Location = new System.Drawing.Point(77, 30);
+            this.cb_cars.Name = "cb_cars";
+            this.cb_cars.Size = new System.Drawing.Size(121, 21);
+            this.cb_cars.TabIndex = 2;
+            this.cb_cars.SelectedIndexChanged += new System.EventHandler(this.cb_cars_SelectedIndexChanged);
+            // 
+            // lbl_amount
+            // 
+            this.lbl_amount.AutoSize = true;
+            this.lbl_amount.Location = new System.Drawing.Point(13, 7);
+            this.lbl_amount.Name = "lbl_amount";
+            this.lbl_amount.Size = new System.Drawing.Size(72, 13);
+            this.lbl_amount.TabIndex = 1;
+            this.lbl_amount.Text = "My Purchaes:";
             // 
             // butt_HidePur
             // 
@@ -107,46 +143,12 @@
             this.butt_HidePur.UseVisualStyleBackColor = false;
             this.butt_HidePur.Click += new System.EventHandler(this.butt_HidePur_Click);
             // 
-            // lbl_amount
-            // 
-            this.lbl_amount.AutoSize = true;
-            this.lbl_amount.Location = new System.Drawing.Point(13, 7);
-            this.lbl_amount.Name = "lbl_amount";
-            this.lbl_amount.Size = new System.Drawing.Size(72, 13);
-            this.lbl_amount.TabIndex = 1;
-            this.lbl_amount.Text = "My Purchaes:";
-            // 
-            // cb_cars
-            // 
-            this.cb_cars.FormattingEnabled = true;
-            this.cb_cars.Location = new System.Drawing.Point(77, 30);
-            this.cb_cars.Name = "cb_cars";
-            this.cb_cars.Size = new System.Drawing.Size(121, 21);
-            this.cb_cars.TabIndex = 2;
-            this.cb_cars.SelectedIndexChanged += new System.EventHandler(this.cb_cars_SelectedIndexChanged);
-            // 
-            // lbl_date
-            // 
-            this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(30, 63);
-            this.lbl_date.Name = "lbl_date";
-            this.lbl_date.Size = new System.Drawing.Size(33, 13);
-            this.lbl_date.TabIndex = 3;
-            this.lbl_date.Text = "Date:";
-            // 
-            // lbl_time
-            // 
-            this.lbl_time.AutoSize = true;
-            this.lbl_time.Location = new System.Drawing.Point(30, 87);
-            this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(33, 13);
-            this.lbl_time.TabIndex = 4;
-            this.lbl_time.Text = "Time:";
-            // 
             // UserDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::car_rental.Properties.Resources.AlfaGuiliaGreen1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(597, 264);
             this.Controls.Add(this.panel_purch);
             this.Controls.Add(this.lbl_name);
