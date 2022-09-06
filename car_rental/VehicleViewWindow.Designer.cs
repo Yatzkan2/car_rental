@@ -194,7 +194,6 @@
             // 
             // show_picture
             // 
-            this.show_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.show_picture.Location = new System.Drawing.Point(279, 44);
             this.show_picture.Name = "show_picture";
             this.show_picture.Size = new System.Drawing.Size(495, 298);
