@@ -194,9 +194,10 @@
             // 
             // show_picture
             // 
-            this.show_picture.Location = new System.Drawing.Point(279, 44);
+            this.show_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.show_picture.Location = new System.Drawing.Point(267, 39);
             this.show_picture.Name = "show_picture";
-            this.show_picture.Size = new System.Drawing.Size(499, 306);
+            this.show_picture.Size = new System.Drawing.Size(511, 311);
             this.show_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.show_picture.TabIndex = 11;
             this.show_picture.TabStop = false;

@@ -37,7 +37,7 @@ namespace car_rental
         public MotorCycle yamaha = new MotorCycle(true, 400, 400, 14, 200, 2, "1000", 9, 200, 1978, "Blue", 4, "Yamaha", Directory.GetCurrentDirectory()+ "\\Picture\\AlfaGuilia.jpg");
         public List<Vehicle> motorCycleList = new List<Vehicle>();
 
-        public Cargo isuzuSumo = new Cargo(true, 2000, 100, 8, 7.5, 4, "6000", 3, 150, 2021, "Green", 10, "Isuzu Sumo", Directory.GetCurrentDirectory() + "\\Picture\\IsuzuSumo.jpg", 4.5, 10.2);
+        public Cargo isuzuSumo = new Cargo(true, 2000, 100, 8, 7.5, 4, "6000", 3, 150, 2021, "Green", 10, "Isuzu Sumo", Directory.GetCurrentDirectory() + "\\Picture\\IsuzuSumo.png", 4.5, 10.2);
         public Cargo mercedesActross = new Cargo(true, 4500, 400, 6, 18, 4, "5500", 3.5, 160, 2016, "Black", 7, "Mercedes Actross", Directory.GetCurrentDirectory() + "\\Picture\\MercedesActros.jpg", 3.2, 6.4);
         public Cargo fiatDucato = new Cargo(true, 1500, 400, 6, 4.2, 4, "3500", 4, 200, 2020, "White", 4, "Fiat Ducato", Directory.GetCurrentDirectory() + "\\Picture\\FiatDUcato.jpg", 2.4, 3.6);
         public List<Vehicle> cargoList = new List<Vehicle>();
